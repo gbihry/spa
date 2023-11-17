@@ -1,18 +1,18 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Créer type";
+$titre = "Modifier type";
 $menu = MENU;
 
 ob_start();
 
-if(!isset($_SESSION['acces'])){
+if(isset($_SESSION['USER'])){
     ?>
-    <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterType"?> method="POST">
+    <form action=<?=$_SERVER['PHP_SELF']."?action=modifierType&&idType=".$_GET['idType']?> method="POST">
         <div class="form_elt">
             <label for="">
                 <span>libelle</span>
-                <input type="text" name="libelle" class="texte" id="" placeholder="indiquez nom type">
+                <input type="text" name="libelle" value="<?= $libelle ?>" class="texte" id="" placeholder="indiquez nom type">
             </label>
         </div>
         <input type="submit" class="valid" name="ok" value="valider">
@@ -23,4 +23,4 @@ if(!isset($_SESSION['acces'])){
 
 $contenu = ob_get_clean();
 $footer = "&copy; SAE 3D01";
-require "gabarit.php";
+require "vue/gabarit.php";

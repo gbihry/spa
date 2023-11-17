@@ -14,10 +14,16 @@ try {
                 login();
                 break;
             case "ajouterType":
-                ajouterType();
+                createType();
                 break;
             case "supprimerType":
                 removeType($_GET['idType']);
+                break;
+            case "modifierType":
+                editType($_GET['idType']);
+                break;
+            case "ajouterAnimal":
+                createAnimal();
                 break;
             case "admin":
                 admin();

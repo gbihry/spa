@@ -2,30 +2,30 @@
 
 require_once "modele/modele.php";
 
-class Type extends database {
+class Animal extends database {
 
-    public function getTypes(){
+    public function getAnimaux(){
         $req = ' 
         SELECT * 
-        FROM `type` 
+        FROM `animal` 
         ';
         $res = $this->execReq($req);
 
         return $res;
     }
 
-    public function getType($idType){
+    public function getAnimal($idAnimal){
         $req = ' 
-        SELECT libelle 
-        FROM `type` 
-        WHERE type.id_type = ?
+        SELECT * 
+        FROM `animal` 
+        WHERE animal.id_animal = ?
         ';
-        $res = $this->execReqPrep($req, array($idType))[0];
+        $res = $this->execReqPrep($req, array($idAnimal))[0];
 
         return $res;
     }
 
-    public function createType($libelle){
+    public function createAnimal($libelle){
         $req = ' 
         INSERT INTO
         type
@@ -36,26 +36,25 @@ class Type extends database {
         return $res;
     }
 
-    public function removeType($idType){
+    public function removeAnimal($idAnimal){
         $req = ' 
         DELETE 
         FROM type
         WHERE type.id_type = ?
         ';
-        $res = $this->execReqPrep($req, array($idType));
+        $res = $this->execReqPrep($req, array($idAnimal));
 
         return $res;
     }
 
-    public function editType($libelle, $idType ){
+    public function editAnimal($libelle, $idAnimal){
         $req = ' 
         UPDATE type 
         SET libelle = ?
         WHERE type.id_type = ?
         ';
-        $res = $this->execReqPrep($req, array($libelle, $idType));
-
-        var_dump($res);
+        $res = $this->execReqPrep($req, array($libelle, $idAnimal));
+        
         return $res;
     }
 }

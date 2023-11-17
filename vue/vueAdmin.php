@@ -7,19 +7,34 @@ $menu = MENU;
 
 ob_start();
 
-foreach($types as $type){
-    echo(
-        '
-            <div class="type">
-                <p>'.$type['libelle'].'</p>
-                <a href="index.php?action=supprimerType&&idType='.$type['id_type'].'">Supprimer</a>
-            </div>
-        '
-    );
-}
+?>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Supprimer</th>
+            <th>Modifier</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            foreach($types as $type){
+                ?>
+                <tr>   
+                    <td><?= $type['libelle'] ?></td>
+                    <td><a href="index.php?action=supprimerType&&idType=<?=$type['id_type']?>">Supprimer</a></td>
+                    <td><a href="index.php?action=modifierType&&idType=<?=$type['id_type']?>">Modifier</a></td>
+                </tr>
+                <?php
+            }
+        ?>
+    </tbody>
+</table>
+
+<?php
 
 echo ('<a href="index.php?action=ajouterType">Ajouter type</a>');
-echo ('<a href="index.php?action=ajouterType">Ajouter animal</a>');
+echo ('<a href="index.php?action=ajouterAnimal">Ajouter animal</a>');
 
 
 

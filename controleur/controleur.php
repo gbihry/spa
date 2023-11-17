@@ -15,15 +15,17 @@ function admin(){
     require "vue/vueAdmin.php";
 }
 
-function ajouterType(){
+// TYPE
+
+function createType(){
     if($_POST){
         $type = new Type();
         $type->createType($_POST['libelle']);
         $types = $type->getTypes();
 
-        require "vue/vueAdmin.php";
+        header('Location: index.php?action=admin');
     }else{
-        require "vue/vueType.php";
+        require "vue/type/create.php";
     }
     
 }
@@ -33,7 +35,38 @@ function removeType($idType){
     $type->removeType($idType);
     $types = $type->getTypes();
     
-    require "vue/vueAdmin.php";
+    header('Location: index.php?action=admin');
+    
+}
+
+function editType($idType){
+    if ($_POST){
+        $type = new Type();
+        $type->editType($_POST['libelle'], $idType);
+        $types = $type->getTypes();
+        
+        header('Location: index.php?action=admin');
+    }else{
+        $type = new Type();
+        $libelle = $type->getType($idType)['libelle'];
+        require "vue/type/edit.php";
+    }
+}
+
+// ANIMAL
+
+function createAnimal(){
+    if($_POST){
+        $type = new Type();
+        $type->createAnimal($_POST['libelle']);
+        $types = $type->getTypes();
+
+        header('Location: index.php?action=admin');
+    }else{
+        $type = new Type();
+        $types = $type->getTypes();
+        require "vue/animal/create.php";
+    }
     
 }
 
