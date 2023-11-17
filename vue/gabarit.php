@@ -12,11 +12,13 @@
         <div class="menu">
             <?php
             echo($menu);
-            if(!isset($_SESSION['user'])){
+            if(!isset($_SESSION['USER'])){
                 echo('<a class="lien" href="index.php?action=login">Connexion</a>');
                 echo('<a class="lien" href="index.php?action=signup">S\'inscrire</a>');
             }else{
-                echo('<a class="lien" href="index.php?action=admin">Administration</a>');
+                if ($_SESSION['ROLE'] == "ADMIN"){
+                    echo('<a class="lien" href="index.php?action=admin">Administration</a>');
+                }
                 echo('<a class="lien" href="index.php?action=delog">Quitter</a>');
             }
             ?>

@@ -2,12 +2,12 @@
 
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Administration du magasin";
+$titre = "Bienvenue à la spa";
 $menu = MENU;
 
 ob_start();
-if(isset($_SESSION['user'])){
-    echo('<p> Bienvenu '. $_SESSION['user'] . '!');
+if(isset($_SESSION['USER'])){
+    echo('<p> Bienvenu '. $_SESSION['USER'] . '!');
 }
 
 $contenu = ob_get_clean();  

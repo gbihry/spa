@@ -13,6 +13,15 @@ try {
             case "login":
                 login();
                 break;
+            case "ajouterType":
+                ajouterType();
+                break;
+            case "supprimerType":
+                removeType($_GET['idType']);
+                break;
+            case "admin":
+                admin();
+                break;
             case "signup":
                 signup();
                 break;

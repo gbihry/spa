@@ -2,10 +2,39 @@
 // Affichage de la page d'accueil
 
 require_once "modele/utilisateur.php";
+require_once "modele/type.php";
 
 function accueil() {
     setcookie('page', '', time()-1);
     require "vue/vueAccueil.php";
+}
+
+function admin(){
+    $type = new Type();
+    $types = $type->getTypes();
+    require "vue/vueAdmin.php";
+}
+
+function ajouterType(){
+    if($_POST){
+        $type = new Type();
+        $type->createType($_POST['libelle']);
+        $types = $type->getTypes();
+
+        require "vue/vueAdmin.php";
+    }else{
+        require "vue/vueType.php";
+    }
+    
+}
+
+function removeType($idType){
+    $type = new Type();
+    $type->removeType($idType);
+    $types = $type->getTypes();
+    
+    require "vue/vueAdmin.php";
+    
 }
 
 function login() {
@@ -17,12 +46,12 @@ function login() {
         $user = $utilisateur->getUtilisateurByPseudo($pseudo);
 
         if (crypt($mdp, $user['motDePasse'])){
-            $_SESSION['user'] = $user['pseudo'];
-            $_SESSION['role'] = $user['role'];
-            $_SESSiON['loc'] = $user['localisation'];
+            $_SESSION['USER'] = $user['pseudo'];
+            $_SESSION['ROLE'] = $user['role'];
+            $_SESSiON['LOC'] = $user['localisation'];
         }
     }
-    if(isset($_SESSION['user'])){
+    if(isset($_SESSION['USER'])){
         if (isset($_COOKIE['page'])){
             header('Location: index.php'.$_COOKIE['page']);
         }else{
