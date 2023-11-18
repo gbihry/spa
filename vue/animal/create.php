@@ -8,7 +8,7 @@ ob_start();
 
 if(isset($_SESSION['USER'])){
     ?>
-    <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterAnimal"?> method="POST">
+    <form enctype="multipart/form-data" action="index.php?action=ajouterAnimal" method="POST">
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
@@ -67,6 +67,11 @@ if(isset($_SESSION['USER'])){
                 </select>
             </label>
         </div>
+        <div class="form_elt">
+            <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+            <input type="file" class="texte" name="photoAnimal">
+        </div>
+
         <input type="submit" class="valid" name="ok" value="valider">
     </form>
 

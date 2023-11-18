@@ -1,3 +1,4 @@
 - Faire les favoris
-- Table image (id_animal, base64_img, ordre)
-- Importation d'image
+- Faire la sécurité
+- Faire edit de la table animal avec les photos
+- ? ajouter le choix de mettre plusieurs photo

@@ -74,7 +74,6 @@ function editType($idType){
 
 function createAnimal(){
     if($_POST){
-        var_dump($_POST);
         $animal = new Animal();
         $type = new Type();
         
@@ -113,8 +112,6 @@ function removeAnimal($idAnimal){
 function editAnimal($idAnimal){
     if ($_POST){
         $animal = new Animal();
-
-        var_dump($_POST);
         $animal->editAnimal(
             $_POST['nom'], 
             $_POST['age'], 
