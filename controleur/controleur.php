@@ -3,6 +3,8 @@
 
 require_once "modele/utilisateur.php";
 require_once "modele/type.php";
+require_once "modele/animal.php";
+require_once "modele/spa.php";
 
 function accueil() {
     setcookie('page', '', time()-1);
@@ -11,7 +13,13 @@ function accueil() {
 
 function admin(){
     $type = new Type();
+    $spa = new Spa();
+    $animal = new Animal();
+
     $types = $type->getTypes();
+    $AllSPA = $spa->getAllSPA();
+    $animals = $animal->getAnimals();
+
     require "vue/vueAdmin.php";
 }
 
@@ -20,7 +28,10 @@ function admin(){
 function createType(){
     if($_POST){
         $type = new Type();
-        $type->createType($_POST['libelle']);
+
+        $type->createType(
+            $_POST['libelle']
+        );
         $types = $type->getTypes();
 
         header('Location: index.php?action=admin');
@@ -32,6 +43,7 @@ function createType(){
 
 function removeType($idType){
     $type = new Type();
+
     $type->removeType($idType);
     $types = $type->getTypes();
     
@@ -42,12 +54,17 @@ function removeType($idType){
 function editType($idType){
     if ($_POST){
         $type = new Type();
-        $type->editType($_POST['libelle'], $idType);
+
+        $type->editType(
+            $_POST['libelle'], 
+            $idType
+        );
         $types = $type->getTypes();
         
         header('Location: index.php?action=admin');
     }else{
         $type = new Type();
+
         $libelle = $type->getType($idType)['libelle'];
         require "vue/type/edit.php";
     }
@@ -57,22 +74,128 @@ function editType($idType){
 
 function createAnimal(){
     if($_POST){
+        var_dump($_POST);
+        $animal = new Animal();
         $type = new Type();
-        $type->createAnimal($_POST['libelle']);
+        
+        $animal->createAnimal(
+            $_POST['nom'], 
+            $_POST['age'], 
+            $_POST['taille'],
+            $_POST['poid'],
+            $_POST['handicape'],
+            $_POST['spa'],
+            $_POST['type']
+        );
         $types = $type->getTypes();
 
         header('Location: index.php?action=admin');
     }else{
         $type = new Type();
+        $spa = new Spa();
+
         $types = $type->getTypes();
+        $AllSPA = $spa->getAllSPA();
         require "vue/animal/create.php";
+    }
+}
+
+function removeAnimal($idAnimal){
+    $animal = new Animal();
+
+    $animal->removeAnimal($idAnimal);
+    $animals = $animal->getAnimals();
+    
+    header('Location: index.php?action=admin');
+    
+}
+
+function editAnimal($idAnimal){
+    if ($_POST){
+        $animal = new Animal();
+
+        var_dump($_POST);
+        $animal->editAnimal(
+            $_POST['nom'], 
+            $_POST['age'], 
+            $_POST['taille'], 
+            $_POST['poid'], 
+            $_POST['handicape'], 
+            $_POST['type'], 
+            $_POST['spa'], 
+            $idAnimal
+        );
+        $animals = $animal->getAnimals();
+
+        header('Location: index.php?action=admin');
+    }else{
+        $animal = new Animal();
+        $type = new Type();
+        $spa = new Spa();
+
+        $types = $type->getTypes();
+        $AllSPA = $spa->getAllSPA();
+
+        $animal = $animal->getAnimal($idAnimal);
+
+        require "vue/animal/edit.php";
+    }
+}
+
+//SPA
+function createSPA(){
+    if($_POST){
+        $spa = new Spa();
+
+        $spa->createSPA(
+            $_POST['nom'], 
+            $_POST['localisation']
+        );
+        $AllSPA = $spa->getAllSPA();
+
+        header('Location: index.php?action=admin');
+    }else{
+        require "vue/spa/create.php";
     }
     
 }
 
+function removeSPA($idSpa){
+    $spa = new Spa();
+
+    $spa->removeSPA($idSpa);
+    $AllSPA = $spa->getAllSPA();
+    
+    header('Location: index.php?action=admin');
+    
+}
+
+function editSPA($idSpa){
+    if ($_POST){
+        $spa = new Spa();
+
+        $spa->editSPA(
+            $_POST['nom'], 
+            $_POST['localisation'], 
+            $idSpa
+        );
+        $AllSPA = $spa->getAllSPA();
+        
+        header('Location: index.php?action=admin');
+    }else{
+        $spa = new Spa();
+
+        $spa = $spa->getSPA($idSpa);
+        require "vue/spa/edit.php";
+    }
+}
+
+
+
 function login() {
     if ($_POST){
         $utilisateur = new Utilisateur();
+
         $pseudo = $_POST['pseudo'];
         $mdp = $_POST['mdp'];
 

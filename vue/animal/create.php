@@ -8,7 +8,7 @@ ob_start();
 
 if(isset($_SESSION['USER'])){
     ?>
-    <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterType"?> method="POST">
+    <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterAnimal"?> method="POST">
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
@@ -36,17 +36,11 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>Handicape ?</span>
-                <input type="radio" id="contactChoice1" name="handicape" value="email" />
+                <input type="radio" id="contactChoice1" name="handicape" value="1"/>
                 <label for="contactChoice1">Oui</label>
 
-                <input type="radio" id="contactChoice2" name="handicape" value="telephone" />
+                <input type="radio" id="contactChoice2" name="handicape" value="0"/>
                 <label for="contactChoice2">Non</label>
-            </label>
-        </div>
-        <div class="form_elt">
-            <label for="">
-                <span>SPA</span>
-                <input type="text" name="spa" class="texte" id="" placeholder="indiquez nom type">
             </label>
         </div>
         <div class="form_elt">
@@ -56,6 +50,18 @@ if(isset($_SESSION['USER'])){
                     <?php
                         foreach($types as $type){
                             echo("<option value=".$type['id_type'].">".$type['libelle']."</option>");
+                        }
+                    ?> 
+                </select>
+            </label>
+        </div>
+        <div class="form_elt">
+            <label for="">
+                <span>SPA</span>
+                <select name="spa" id="pet-select">   
+                    <?php
+                        foreach($AllSPA as $spa){
+                            echo("<option value=".$spa['id_spa'].">".$spa['nom']."</option>");
                         }
                     ?> 
                 </select>

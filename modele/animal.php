@@ -4,10 +4,12 @@ require_once "modele/modele.php";
 
 class Animal extends database {
 
-    public function getAnimaux(){
+    public function getAnimals(){
         $req = ' 
-        SELECT * 
+        SELECT id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom"
         FROM `animal` 
+        JOIN type ON animal.id_type = type.id_type
+        JOIN spa ON animal.id_spa = spa.id_spa
         ';
         $res = $this->execReq($req);
 
@@ -16,8 +18,10 @@ class Animal extends database {
 
     public function getAnimal($idAnimal){
         $req = ' 
-        SELECT * 
+        SELECT id_animal, animal.nom, age, taille, poid, handicape, spa.id_spa, type.id_type
         FROM `animal` 
+        JOIN type ON animal.id_type = type.id_type
+        JOIN spa ON animal.id_spa = spa.id_spa
         WHERE animal.id_animal = ?
         ';
         $res = $this->execReqPrep($req, array($idAnimal))[0];
@@ -25,13 +29,13 @@ class Animal extends database {
         return $res;
     }
 
-    public function createAnimal($libelle){
+    public function createAnimal($nom, $age, $taille, $poid, $handicape, $idSPA, $idType){
         $req = ' 
         INSERT INTO
-        type
-        VALUES ("", ?)
+        animal
+        VALUES ("", ?, ?, ?, ?, ?, ?, ?)
         ';
-        $res = $this->execReqPrep($req, array($libelle));
+        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $idSPA, $idType));
 
         return $res;
     }
@@ -39,22 +43,23 @@ class Animal extends database {
     public function removeAnimal($idAnimal){
         $req = ' 
         DELETE 
-        FROM type
-        WHERE type.id_type = ?
+        FROM animal
+        WHERE animal.id_animal = ?
         ';
         $res = $this->execReqPrep($req, array($idAnimal));
 
         return $res;
     }
 
-    public function editAnimal($libelle, $idAnimal){
+    public function editAnimal($nom, $age, $taille, $poid, $handicape, $type, $spa, $idAnimal){
         $req = ' 
-        UPDATE type 
-        SET libelle = ?
-        WHERE type.id_type = ?
+        UPDATE animal 
+        SET nom = ?, age = ?, taille = ?, poid = ?, handicape = ?, id_spa = ?, id_type = ?
+        WHERE animal.id_animal = ?
         ';
-        $res = $this->execReqPrep($req, array($libelle, $idAnimal));
+        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $spa, $type, $idAnimal));
         
         return $res;
     }
+
 }

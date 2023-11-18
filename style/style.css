@@ -1,5 +1,22 @@
-.type {
+body{
+    padding: 0;
+    margin: 0;
+}
+
+header a {
+    display: block;
+    width: max-content;
+}
+
+.table-admin {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-direction: column;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }

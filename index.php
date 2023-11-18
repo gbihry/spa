@@ -13,6 +13,9 @@ try {
             case "login":
                 login();
                 break;
+
+            //TYPE
+
             case "ajouterType":
                 createType();
                 break;
@@ -22,9 +25,31 @@ try {
             case "modifierType":
                 editType($_GET['idType']);
                 break;
+
+            //ANIMAL
+
             case "ajouterAnimal":
                 createAnimal();
                 break;
+            case "supprimerAnimal":
+                removeAnimal($_GET['idAnimal']);
+                break;
+            case "modifierAnimal":
+                editAnimal($_GET['idAnimal']);
+                break;
+
+            // SPA
+
+            case "ajouterSPA":
+                createSPA();
+                break;
+            case "supprimerSPA":
+                removeSPA($_GET['idSPA']);
+                break;
+            case "modifierSPA":
+                editSPA($_GET['idSPA']);
+                break;
+            
             case "admin":
                 admin();
                 break;

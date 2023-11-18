@@ -55,7 +55,6 @@ class Type extends database {
         ';
         $res = $this->execReqPrep($req, array($libelle, $idType));
 
-        var_dump($res);
         return $res;
     }
 }
