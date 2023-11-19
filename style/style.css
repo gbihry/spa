@@ -20,3 +20,28 @@ header a {
     justify-content: space-around;
     flex-direction: row;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.imgAnimal {
+    width: 150px;
+}
+
+.editImg{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 10px;
+    margin: 25px 0px;
+}
+
+.editImg input {
+    width: 50px;
+}
+
+.editOrdre {
+    display: flex;
+    gap: 30px;
+}

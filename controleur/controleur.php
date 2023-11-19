@@ -109,6 +109,15 @@ function removeAnimal($idAnimal){
     
 }
 
+function removeImage($idImage, $idAnimal){
+    $animal = new Animal();
+
+    $animal->removeImage($idImage, $idAnimal);
+    $animals = $animal->getAnimals();
+    
+    header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
+}
+
 function editAnimal($idAnimal){
     if ($_POST){
         $animal = new Animal();
@@ -126,18 +135,57 @@ function editAnimal($idAnimal){
 
         header('Location: index.php?action=admin');
     }else{
-        $animal = new Animal();
+        $ObjectAnimal = new Animal();
         $type = new Type();
         $spa = new Spa();
 
         $types = $type->getTypes();
         $AllSPA = $spa->getAllSPA();
 
-        $animal = $animal->getAnimal($idAnimal);
+        $animal = $ObjectAnimal->getAnimal($idAnimal);
+        $AllImgAnimal = $ObjectAnimal->getImagesAnimal($idAnimal);
 
         require "vue/animal/edit.php";
     }
 }
+
+function editOrdre($idAnimal){
+    if($_POST){
+        $ObjectAnimal = new Animal();
+
+
+        for($i = 1; $i <= (count($_POST) - 1) / 2; $i++){
+            $ordre = "ordre".$i;
+            $idImage = "idImage".$i;
+
+            $ObjectAnimal->updateRole($_POST[$ordre], $_POST[$idImage]);
+        }
+    }
+
+    header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
+}
+
+function addImage($idAnimal){
+    if ($_POST){
+        $ObjectAnimal = new Animal();
+        $animal = $ObjectAnimal->addImage($idAnimal);
+
+        header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
+    }else{
+        $ObjectAnimal = new Animal();
+        $type = new Type();
+        $spa = new Spa();
+
+        $types = $type->getTypes();
+        $AllSPA = $spa->getAllSPA();
+
+        $animal = $ObjectAnimal->getAnimal($idAnimal);
+        $AllImgAnimal = $ObjectAnimal->getImagesAnimal($idAnimal);
+
+        require "vue/animal/edit.php";
+    }
+}
+
 
 //SPA
 function createSPA(){
@@ -255,4 +303,3 @@ function delog() {
 function erreur($message) {
     require "vue/vueErreur.php";
 }
-

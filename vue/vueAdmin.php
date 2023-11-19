@@ -69,6 +69,7 @@ ob_start();
         <table border="1">
             <thead>
                 <tr>
+                    <th class="hidden"></th>
                     <th>Nom</th>
                     <th>Âge</th>
                     <th>Taille</th>
@@ -85,6 +86,7 @@ ob_start();
                     foreach($animals as $animal){
                         ?>
                         <tr>
+                            <td><img class="imgAnimal" src='photoAnimal/<?= $animal['nomImg'] ?>' alt=""></td>
                             <td><?= $animal['nom'] ?></td>
                             <td><?= $animal['age'] ?></td>
                             <td><?= $animal['taille'] ?> m</td>

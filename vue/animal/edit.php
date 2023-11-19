@@ -73,7 +73,40 @@ if(isset($_SESSION['USER'])){
         </div>
         <input type="submit" class="valid" name="ok" value="valider">
     </form>
-
+    <p>Photo :</p>
+    <form action=<?=$_SERVER['PHP_SELF']."?action=modifierOrdre&&idAnimal=".$_GET['idAnimal'].""?> method="POST">
+        <div class="editOrdre">
+            <?php
+                $ordre = 1;
+                $max = count($AllImgAnimal);
+                foreach($AllImgAnimal as $imgAnimal){
+                    ?>
+                    <div class="editImg">
+                        <a href="index.php?action=supprimerImage&&idAnimal=<?=$_GET['idAnimal']?>&&idImage=<?=$imgAnimal['id_image']?>">Supprimer</a>
+                        <img class="imgAnimal" src="photoAnimal/<?=$imgAnimal['nomImg']?>" alt="">
+                        <input type="hidden" name="idImage<?= $ordre ?>" value="<?= $imgAnimal['id_image'] ?>">
+                        <label for="">
+                            <span>Ordre</span>
+                            <input type="number" max=<?= $max ?>  min="1" value="<?= $imgAnimal['ordre'] ?>" class="texte" name="ordre<?= $ordre ?>">
+                        </label>
+                    </div>
+                    <?php
+                    $ordre ++;
+                }
+            ?>     
+        </div>           
+        <input type="submit" class="valid" name="ok" value="valider"> 
+    </form>
+    
+    <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterImage&&idAnimal=".$_GET['idAnimal'].""?> method="POST" enctype="multipart/form-data">
+        <div class="form_elt">
+            <p>Ajouter photo</p>
+            <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+            <input type="file" class="texte" name="photoAnimal" required>
+        </div>
+        <input type="submit" class="valid" name="ok" value="valider">
+    </form>
+                        
     <?php
 }
 

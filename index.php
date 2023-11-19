@@ -37,6 +37,15 @@ try {
             case "modifierAnimal":
                 editAnimal($_GET['idAnimal']);
                 break;
+            case "ajouterImage":
+                addImage($_GET['idAnimal']);
+                break;
+            case "supprimerImage":
+                removeImage($_GET['idImage'], $_GET['idAnimal']);
+                break;
+            case "modifierOrdre":
+                editOrdre($_GET['idAnimal']);
+                break;
 
             // SPA
 
