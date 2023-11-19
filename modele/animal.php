@@ -239,6 +239,69 @@ class Animal extends database {
         $res = $this->execReqPrep($req, array($idAnimal));
     }
 
+
+    public function getAllAnimalByType($idType){ 
+        $req = ' 
+            SELECT *
+            FROM animal
+            JOIN type ON animal.id_type = type.id_type
+            WHERE animal.id_type = ?
+        ';
+            
+        $res = $this->execReqPrep($req, array($idType));
+    
+        return $res;
+    }
+
+    public function getAllAnimalBySPA($idSPA){ 
+        $req = ' 
+            SELECT *
+            FROM animal
+            JOIN spa ON animal.id_spa = spa.id_spa
+            WHERE animal.id_spa = ?
+        ';
+            
+        $res = $this->execReqPrep($req, array($idSPA));
+    
+        return $res;
+    }
+
+    public function removeAllAnimalByType($idType){
+        $allAnimals = $this->getAllAnimalByType($idType);
+        if ($allAnimals){
+            foreach ($allAnimals as $animal){
+                $this->removeAllImageAnimal($animal['id_animal']);
+    
+                $req = ' 
+                    DELETE 
+                    FROM animal
+                    WHERE animal.id_animal = ?
+                ';
+            
+                $res = $this->execReqPrep($req, array($animal['id_animal']));
+            }
+            return $res;
+        }
+    }
+
+    public function removeAllAnimalBySPA($idSPA){
+        $allAnimals = $this->getAllAnimalBySPA($idSPA);
+        if ($allAnimals){
+            foreach ($allAnimals as $animal){
+                $this->removeAllImageAnimal($animal['id_animal']);
+    
+                $req = ' 
+                    DELETE 
+                    FROM animal
+                    WHERE animal.id_animal = ?
+                ';
+            
+                $res = $this->execReqPrep($req, array($animal['id_animal']));
+            }
+            return $res;
+        }
+    }
+
     public function removeAnimal($idAnimal){
         $this->removeAllImageAnimal($idAnimal);
         

@@ -1,6 +1,7 @@
 <?php
 
 require_once "modele/modele.php";
+require_once "modele/animal.php";
 
 class Type extends database {
 
@@ -37,6 +38,9 @@ class Type extends database {
     }
 
     public function removeType($idType){
+        $ObjectAnimal = new Animal();
+        $ObjectAnimal->removeAllAnimalByType($idType);
+        
         $req = ' 
         DELETE 
         FROM type
@@ -45,6 +49,7 @@ class Type extends database {
         $res = $this->execReqPrep($req, array($idType));
 
         return $res;
+        
     }
 
     public function editType($libelle, $idType ){

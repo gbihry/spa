@@ -1,6 +1,7 @@
 <?php
 
 require_once "modele/modele.php";
+require_once "modele/animal.php";
 
 class Spa extends database {
 
@@ -37,6 +38,9 @@ class Spa extends database {
     }
 
     public function removeSPA($idSpa){
+        $ObjectAnimal = new Animal();
+        $ObjectAnimal->removeAllAnimalBySPA($idSpa);
+
         $req = ' 
         DELETE 
         FROM spa
