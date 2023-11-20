@@ -5,7 +5,7 @@ require_once "modele/modele.php";
 class Favoris extends database {
 
     public function switchFavoris($idUser, $idAnimal) {
-        if ($this->getFavorisByAnimal($idAnimal)){
+        if ($this->getFavorisByAnimal($idAnimal, $idUser)){
             $req = ' 
             DELETE FROM favoris
             WHERE id_utilisateur = ?
@@ -40,14 +40,15 @@ class Favoris extends database {
         return $res;
     }
 
-    public function getFavorisByAnimal($idAnimal){
+    public function getFavorisByAnimal($idAnimal, $idUser){
         $req = ' 
         SELECT id_animal
         FROM favoris
         where favoris.id_animal = ?
+        AND favoris.id_utilisateur = ?
         ';
 
-        $res = $this->execReqPrep($req, array($idAnimal));
+        $res = $this->execReqPrep($req, array($idAnimal, $idUser));
 
         return $res;
     }
