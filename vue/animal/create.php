@@ -12,25 +12,25 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
-                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom">
+                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom" require>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Age</span>
-                <input type="number" name="age" class="texte" id="" placeholder="indiquez age">
+                <input type="number" name="age" class="texte" id="" placeholder="indiquez age" require>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Taille</span>
-                <input type="text" name="taille" class="texte" id="" placeholder="indiquez taille">
+                <input type="text" name="taille" class="texte" id="" placeholder="indiquez taille" require>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Poid</span>
-                <input type="text" name="poid" class="texte" id="" placeholder="indiquez poid">
+                <input type="text" name="poid" class="texte" id="" placeholder="indiquez poid" require>
             </label>
         </div>
         <div class="form_elt">
@@ -39,7 +39,7 @@ if(isset($_SESSION['USER'])){
                 <input type="radio" id="contactChoice1" name="handicape" value="1"/>
                 <label for="contactChoice1">Oui</label>
 
-                <input type="radio" id="contactChoice2" name="handicape" value="0"/>
+                <input type="radio" id="contactChoice2" name="handicape" value="0" checked/>
                 <label for="contactChoice2">Non</label>
             </label>
         </div>

@@ -45,3 +45,47 @@ header a {
     display: flex;
     gap: 30px;
 }
+
+/* ANIMAUX READ*/
+
+.animals{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card h2, p {
+    margin: 0;
+}
+
+.card {
+    text-align: center;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    position: relative;
+    border-radius: 25px;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.card .image {
+    position: relative;
+    height: max-content;
+}
+
+.card .image img{
+    width: 250px;
+
+}
+
+
+
+.card .image a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    color: white;
+}

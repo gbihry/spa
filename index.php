@@ -14,7 +14,9 @@ try {
                 login();
                 break;
 
-            //TYPE
+            /************************************************
+            *************** TYPE ****************************
+            *************************************************/
 
             case "ajouterType":
                 createType();
@@ -26,8 +28,27 @@ try {
                 editType($_GET['idType']);
                 break;
 
-            //ANIMAL
+            /************************************************
+            *************** FAVORIS *************************
+            *************************************************/
 
+            case "favoris":
+                favoris($_GET['idUser'], $_GET['idAnimal']);
+                break;
+
+            case "voirFavoris":
+                userFavoris($_SESSION['IDUSER']);
+                break;
+            case "supprimerFavoris":
+                removeFavoris($_GET['idUser'], $_GET['idAnimal']);
+                break;
+
+            /************************************************
+            *************** ANIMAL **************************
+            *************************************************/
+            case "animaux":
+                animals();
+                break;
             case "ajouterAnimal":
                 createAnimal();
                 break;
@@ -47,7 +68,9 @@ try {
                 editOrdre($_GET['idAnimal']);
                 break;
 
-            // SPA
+            /************************************************
+            *************** SPA *****************************
+            *************************************************/
 
             case "ajouterSPA":
                 createSPA();

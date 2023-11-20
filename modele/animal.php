@@ -302,9 +302,23 @@ class Animal extends database {
         }
     }
 
+    public function removeAnimalFavoris($idAnimal){
+
+        $req = ' 
+        DELETE 
+        FROM favoris
+        WHERE favoris.id_animal = ?
+        ';
+        
+        $res = $this->execReqPrep($req, array($idAnimal));
+
+        return $res;
+    }
+
     public function removeAnimal($idAnimal){
         $this->removeAllImageAnimal($idAnimal);
-        
+        $this->removeAnimalFavoris($idAnimal);
+
         $req = ' 
         DELETE 
         FROM animal

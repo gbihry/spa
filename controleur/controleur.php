@@ -5,6 +5,7 @@ require_once "modele/utilisateur.php";
 require_once "modele/type.php";
 require_once "modele/animal.php";
 require_once "modele/spa.php";
+require_once "modele/favoris.php";
 
 function accueil() {
     setcookie('page', '', time()-1);
@@ -23,7 +24,11 @@ function admin(){
     require "vue/vueAdmin.php";
 }
 
-// TYPE
+/************************************************
+*************************************************
+*************** TYPE ****************************
+*************************************************
+*************************************************/
 
 function createType(){
     if($_POST){
@@ -70,7 +75,46 @@ function editType($idType){
     }
 }
 
-// ANIMAL
+/************************************************
+*************************************************
+*************** FAVORIS **************************
+*************************************************
+*************************************************/
+
+function favoris($idUser, $idAnimal){
+    $ObjectFavoris = new Favoris();
+    $ObjectFavoris->switchFavoris($idUser, $idAnimal);
+    
+    header('Location: index.php?action=animaux');
+}
+
+function userFavoris($idUser){
+    $ObjectFavoris = new Favoris();
+    $favoris = $ObjectFavoris->getFavoris($idUser);
+    
+    require "vue/favoris/read.php";
+}
+
+function removeFavoris($idUser, $idAnimal){
+    $ObjectFavoris = new Favoris();
+    $ObjectFavoris->switchFavoris($idUser, $idAnimal);
+    
+    header('Location: index.php?action=voirFavoris');
+}
+
+/************************************************
+*************************************************
+*************** ANIMAL **************************
+*************************************************
+*************************************************/
+
+function animals(){
+    $ObjectAnimal = new Animal();
+    $ObjectFavoris = new Favoris();
+    $animals = $ObjectAnimal->getAnimals();
+    $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+    require "vue/animal/read.php";
+}
 
 function createAnimal(){
     if($_POST){
@@ -186,8 +230,12 @@ function addImage($idAnimal){
     }
 }
 
+/************************************************
+*************************************************
+*************** SPA *****************************
+*************************************************
+*************************************************/
 
-//SPA
 function createSPA(){
     if($_POST){
         $spa = new Spa();
@@ -235,7 +283,11 @@ function editSPA($idSpa){
     }
 }
 
-
+/************************************************
+*************************************************
+*************** CONNEXION ***********************
+*************************************************
+*************************************************/
 
 function login() {
     if ($_POST){
@@ -247,6 +299,7 @@ function login() {
         $user = $utilisateur->getUtilisateurByPseudo($pseudo);
 
         if (crypt($mdp, $user['motDePasse'])){
+            $_SESSION['IDUSER'] = $user['id_utilisateur'];
             $_SESSION['USER'] = $user['pseudo'];
             $_SESSION['ROLE'] = $user['role'];
             $_SESSiON['LOC'] = $user['localisation'];
