@@ -77,6 +77,74 @@ function editType($idType){
 
 /************************************************
 *************************************************
+*************** PROFIL **************************
+*************************************************
+*************************************************/
+
+function profil($idUser){
+    $ObjectUtilisateur = new Utilisateur();
+    $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
+    
+    require "vue/utilisateur/read.php";
+}
+
+function editProfil($idUser){
+    if ($_POST){
+        $ObjectUtilisateur = new Utilisateur();
+
+        $ObjectUtilisateur->editProfil(
+            $_POST['nom'], 
+            $_POST['prenom'], 
+            $_POST['pseudo'], 
+            $_POST['localisation'],
+            $idUser
+        );
+        $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
+
+        header('Location: index.php?action=profil');
+    }else{
+        $ObjectUtilisateur = new Utilisateur();
+        $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
+        
+        require "vue/utilisateur/edit.php";
+    }
+    
+}
+
+function editMDP($idUser){
+    if ($_POST){
+        $verifActuelMdp = false;
+        $verifConfirmMdp = false;
+        $ObjectUtilisateur = new Utilisateur();
+        $utilisateur = $ObjectUtilisateur->getUtilisateurMDP($idUser);
+
+        if(password_verify($_POST['mdpActuel'], $utilisateur['mdp'])){
+            $verifActuelMdp = true;
+        }
+        if ($_POST['newMdp'] == $_POST['confNewMdp']){
+            $verifConfirmMdp = true;
+        }
+
+        if ($verifActuelMdp === true && $verifConfirmMdp === true){
+            $mdp = password_hash($_POST['newMdp'], PASSWORD_BCRYPT);
+            $ObjectUtilisateur->editMDP($mdp, $idUser);
+
+            header('Location: index.php?action=profil');
+        }else{
+            require "vue/utilisateur/editMdp.php";
+        }
+    }else{
+        $ObjectUtilisateur = new Utilisateur();
+        $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
+        
+        require "vue/utilisateur/editMdp.php";
+    }
+    
+}
+
+
+/************************************************
+*************************************************
 *************** FAVORIS **************************
 *************************************************
 *************************************************/
@@ -297,8 +365,8 @@ function login() {
         $mdp = $_POST['mdp'];
 
         $user = $utilisateur->getUtilisateurByPseudo($pseudo);
-
-        if (crypt($mdp, $user['motDePasse'])){
+        
+        if (password_verify($mdp, $user['motDePasse'])){
             $_SESSION['IDUSER'] = $user['id_utilisateur'];
             $_SESSION['USER'] = $user['pseudo'];
             $_SESSION['ROLE'] = $user['role'];

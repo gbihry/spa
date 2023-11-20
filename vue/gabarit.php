@@ -22,6 +22,7 @@
                 }
                 echo('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
                 echo('<a class="lien" href="index.php?action=voirFavoris">Voir favoris</a>');
+                echo('<a class="lien" href="index.php?action=profil"><i class="fa-solid fa-user"></i></a>');
                 echo('<a class="lien" href="index.php?action=delog">Quitter</a>');
             }
             ?>

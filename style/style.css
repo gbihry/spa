@@ -80,12 +80,20 @@ header a {
 
 }
 
-
-
 .card .image a{
     position: absolute;
     top: 0;
     right: 0;
     font-size: 2rem;
     color: white;
+}
+
+.error{
+    border-radius: 25px;
+    padding: 5px;
+    background-color: rgb(157, 68, 68);
+    color: white;
+    font-weight: 600;
+    margin: 25px 0px;
+    width: max-content;
 }
