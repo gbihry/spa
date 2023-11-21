@@ -177,7 +177,6 @@ function removeFavoris($idUser, $idAnimal){
 *************************************************/
 
 function animals(){
-
     if ($_POST){
         $ObjectAnimal = new Animal();
         $ObjectFavoris = new Favoris();
@@ -223,6 +222,15 @@ function animals(){
 
         require "vue/animal/read.php";
     }
+}
+
+function animal($idAnimal){
+    $ObjectAnimal = new Animal();
+
+    $animal = $ObjectAnimal->getAnimal($idAnimal);
+    $imagesAnimal = $ObjectAnimal->getImagesAnimal($idAnimal);
+
+    require "vue/animal/detail.php";
 }
 
 function createAnimal(){

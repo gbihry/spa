@@ -63,6 +63,9 @@ try {
             case "animaux":
                 animals();
                 break;
+            case "animal":
+                animal($_GET['idAnimal']);
+                break;
             case "ajouterAnimal":
                 createAnimal();
                 break;

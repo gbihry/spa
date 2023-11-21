@@ -108,3 +108,9 @@ header a {
 .title {
     text-align: center;
 }
+
+/* DETAIL ANIMAL */
+
+.detail img {
+    width: 150px;
+}

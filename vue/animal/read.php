@@ -86,7 +86,9 @@ if (isset($titleTrie) && $titleTrie != null){
                             ?>
                         </a>
                     </div>
+                    <a href="index.php?action=animal&&idAnimal=<?=$animal['id_animal']?>">détail</a>
                 </div>
+            
             <?php
         }
         ?>
