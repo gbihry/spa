@@ -351,4 +351,32 @@ class Animal extends database {
         
         return $res;
     }
+
+    // FILTER //
+
+    public function filter($type, $value){
+        $req = ' 
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", base64_img AS "nomImg", image.ordre
+        FROM `animal` 
+        JOIN type ON animal.id_type = type.id_type
+        JOIN spa ON animal.id_spa = spa.id_spa
+        JOIN image on animal.id_animal = image.id_animal
+        WHERE image.ordre = 1
+        ';
+        switch($type){
+            case "type":
+                $req = $req . 'AND animal.id_type = ?';
+                break;
+            case "spa":
+                $req = $req .  'AND animal.id_spa = ?';
+                break;
+            case "localisation":
+                $req = $req . 'AND spa.localisation = ?';
+                break;
+        }
+
+        $res = $this->execReqPrep($req, array($value));
+
+        return $res;
+    }
 }

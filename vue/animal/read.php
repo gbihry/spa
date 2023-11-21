@@ -5,7 +5,57 @@ $titre = "Animaux";
 $menu = MENU;
 
 ob_start();
+
+if (isset($titleTrie) && $titleTrie != null){
+    echo('<h2 class="title">'.$titleTrie.'</h2>');
+}else{
+    echo('<h2 class="title">Trie</h2>');
+}
 ?>
+    
+    <form class="trie" action=<?=$_SERVER['PHP_SELF']."?action=animaux"?> method="POST">
+        <div class="form_elt">
+            <label for="">
+                <span>Type</span>
+                <select name="type" id="pet-select">   
+                    <?php
+                        echo("<option value='0'>--Séléctionner type--</option>");
+                        foreach($types as $type){
+                            echo("<option value=".$type['id_type']." ".$verif.">".$type['libelle']."</option>");
+                        }
+                    ?> 
+                </select>
+            </label>
+        </div>
+        <div class="form_elt">
+            <label for="">
+                <span>SPA</span>
+                <select name="spa" id="pet-select">   
+                    <?php
+                        echo("<option value='0'>--Séléctionner spa--</option>");
+                        foreach($allSPA as $spa){
+                            echo("<option value=".$spa['id_spa']." ".$verif.">".$spa['nom']."</option>");
+                        }
+                    ?> 
+                </select>
+            </label>
+        </div>
+        <div class="form_elt">
+            <label for="">
+                <span>Localisations</span>
+                <select name="localisation" id="pet-select">   
+                    <?php
+                        echo("<option value='0'>--Séléctionner localisation--</option>");
+                        foreach($localisations as $localisation){
+                            echo("<option value=".$localisation['localisation']." ".$verif.">".$localisation['localisation']."</option>");
+                        }
+                    ?> 
+                </select>
+            </label>
+        </div>
+        <input type="submit" class="valid" name="ok" value="valider">
+        <a href='index.php?action=animaux'>Enlever filtre</a>
+    </form>
     <div class="animals">
         <?php
         foreach($animals as $animal){

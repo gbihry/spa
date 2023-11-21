@@ -97,3 +97,14 @@ header a {
     margin: 25px 0px;
     width: max-content;
 }
+
+.trie {
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    margin: 25px;
+}
+
+.title {
+    text-align: center;
+}

@@ -26,6 +26,16 @@ class Spa extends database {
         return $res;
     }
 
+    public function getLocalisations(){
+        $req = ' 
+        SELECT localisation
+        FROM `spa` 
+        ';
+        $res = $this->execReq($req);
+
+        return $res;
+    }
+
     public function createSPA($nom, $localisation){
         $req = ' 
         INSERT INTO

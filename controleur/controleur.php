@@ -177,11 +177,52 @@ function removeFavoris($idUser, $idAnimal){
 *************************************************/
 
 function animals(){
-    $ObjectAnimal = new Animal();
-    $ObjectFavoris = new Favoris();
-    $animals = $ObjectAnimal->getAnimals();
-    $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
-    require "vue/animal/read.php";
+
+    if ($_POST){
+        $ObjectAnimal = new Animal();
+        $ObjectFavoris = new Favoris();
+        $ObjectType = new Type();
+        $ObjectSPA = new Spa();
+        $titleTrie = null;
+        if ($_POST['type'] != 0){
+            $animals = $ObjectAnimal->filter("type", $_POST['type'] );
+            $type = $ObjectType->getType($_POST['type'])['libelle'];
+            $titleTrie = "Trie par type : " . $type;
+        }
+        if ($_POST['spa'] != 0){
+            $animals = $ObjectAnimal->filter("spa", $_POST['spa']);
+            $SPA = $ObjectSPA->getSPA($_POST['spa'])['nom'];
+            $titleTrie = "Trie par spa : " . $SPA;
+        }
+        if ($_POST['localisation'] != 0){
+            $animals = $ObjectAnimal->filter("localisation", $_POST['localisation']);
+            $titleTrie = "Trie par localisation : " . $_POST['localisation'];
+        }
+
+        if ($_POST['type'] == 0 && $_POST['spa'] == 0 && $_POST['localisation'] == 0){
+            $animals = $ObjectAnimal->getAnimals(); 
+        };
+        
+        $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        $types = $ObjectType->getTypes();
+        $allSPA = $ObjectSPA->getAllSPA();
+        $localisations = $ObjectSPA->getLocalisations();
+
+        require "vue/animal/read.php";
+    }else{
+        $ObjectAnimal = new Animal();
+        $ObjectFavoris = new Favoris();
+        $ObjectType = new Type();
+        $ObjectSPA = new Spa();
+
+        $animals = $ObjectAnimal->getAnimals();
+        $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        $types = $ObjectType->getTypes();
+        $allSPA = $ObjectSPA->getAllSPA();
+        $localisations = $ObjectSPA->getLocalisations();
+
+        require "vue/animal/read.php";
+    }
 }
 
 function createAnimal(){
