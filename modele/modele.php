@@ -28,28 +28,4 @@ abstract class database {
     }
 }
 
-/* 
-
-Listez la propriété et les méthodes de la classe database :
-
-- propriété bdd
-- execReq 
-- execReqPrep
-- connexionBDD
-
-ce test sert à vérifier que la variable $bdd existe bien, puisqu'elle est protégé, elle n'existe que dans ce fichier donc
-cela permet de vérifier qu'on a bien les droits d'accès à ce fichier pour accéder à la bdd et pour éviter d'instancier à chaque fois
-la variable bdd
-
-si on enlevait ce test on aurait des problèmes d'optimisation vu qu'a chaque fois on se reconnecte à la bdd
-
-elles sont privées car connexionBDD sert à initialiser la variable bdd qui sont privée et qui sont utilisé que pour les fonctions
-de ce fichier
-
-ces méthodes sont protégé car elles seront utilisé que par les enfants, les méthodes protected sont des méthodes pour les héritages
-
-
-
-*/
-
 
