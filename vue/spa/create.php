@@ -12,13 +12,13 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
-                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom spa">
+                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom spa" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Localisation</span>
-                <input type="text" name="localisation" class="texte" id="" placeholder="indiquez localisation spa">
+                <input type="text" name="localisation" class="texte" id="" placeholder="indiquez localisation spa" required>
             </label>
         </div>
         <input type="submit" class="valid" name="ok" value="valider">

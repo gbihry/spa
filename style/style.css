@@ -46,6 +46,10 @@ header a {
     gap: 30px;
 }
 
+.valid {
+    margin: 25px 0px;
+}
+
 /* ANIMAUX READ*/
 
 .animals{

@@ -7,30 +7,33 @@ $menu = MENU;
 ob_start();
 
 if(isset($_SESSION['USER'])){
+    if (isset($verifChamp) && $verifChamp == false){
+        echo('<p class="error">Veuillez remplir tous les champs</p>');
+    }
     ?>
     <form enctype="multipart/form-data" action="index.php?action=ajouterAnimal" method="POST">
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
-                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom" require>
+                <input type="text" name="nom" class="texte" id="" placeholder="indiquez nom" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Age</span>
-                <input type="number" name="age" class="texte" id="" placeholder="indiquez age" require>
+                <input type="number" name="age" class="texte" id="" placeholder="indiquez age" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Taille</span>
-                <input type="text" name="taille" class="texte" id="" placeholder="indiquez taille" require>
+                <input type="text" name="taille" class="texte" id="" placeholder="indiquez taille" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Poid</span>
-                <input type="text" name="poid" class="texte" id="" placeholder="indiquez poid" require>
+                <input type="text" name="poid" class="texte" id="" placeholder="indiquez poid" required>
             </label>
         </div>
         <div class="form_elt">

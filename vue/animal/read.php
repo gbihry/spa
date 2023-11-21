@@ -68,23 +68,30 @@ if (isset($titleTrie) && $titleTrie != null){
                         <p><?= $animal['age'] ?> ans</p>
                     </div>
                     <div class="image">
+                        
                         <img src="photoAnimal/<?=$animal['nomImg']?>" alt="">
-                        <a href="index.php?action=favoris&&idAnimal=<?=$animal['id_animal']?>&&idUser=<?=$_SESSION['IDUSER']?>">
-                            <?php
-                                $afficher = false;
-                                foreach($favoris as $favori){
-                                    if ($favori['id_animal'] == $animal['id_animal']){
-                                        $afficher = true;
-                                    }
-                                }
-                                if ($afficher){
-                                    echo('<i class="fa-solid fa-heart"></i>');
-                                }else{
-                                    echo('<i class="fa-regular fa-heart"></i>');
-                                }
-                                
+                        <?php 
+                        if (isset($_SESSION['USER'])){
                             ?>
-                        </a>
+                            <a href="index.php?action=favoris&&idAnimal=<?=$animal['id_animal']?>&&idUser=<?=$_SESSION['IDUSER']?>">
+                                <?php
+                                    $afficher = false;
+                                    foreach($favoris as $favori){
+                                        if ($favori['id_animal'] == $animal['id_animal']){
+                                            $afficher = true;
+                                        }
+                                    }
+                                    if ($afficher){
+                                        echo('<i class="fa-solid fa-heart"></i>');
+                                    }else{
+                                        echo('<i class="fa-regular fa-heart"></i>');
+                                    }
+                                    
+                                ?>
+                            </a>
+                            <?php 
+                        }
+                        ?>
                     </div>
                     <a href="index.php?action=animal&&idAnimal=<?=$animal['id_animal']?>">détail</a>
                 </div>

@@ -8,7 +8,6 @@ require_once "modele/spa.php";
 require_once "modele/favoris.php";
 
 function accueil() {
-    setcookie('page', '', time()-1);
     require "vue/vueAccueil.php";
 }
 
@@ -202,7 +201,10 @@ function animals(){
             $animals = $ObjectAnimal->getAnimals(); 
         };
         
-        $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        if (isset($_SESSION['USER'])){
+            $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        }
+
         $types = $ObjectType->getTypes();
         $allSPA = $ObjectSPA->getAllSPA();
         $localisations = $ObjectSPA->getLocalisations();
@@ -215,7 +217,11 @@ function animals(){
         $ObjectSPA = new Spa();
 
         $animals = $ObjectAnimal->getAnimals();
-        $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        
+        if (isset($_SESSION['USER'])){
+            $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
+        }
+
         $types = $ObjectType->getTypes();
         $allSPA = $ObjectSPA->getAllSPA();
         $localisations = $ObjectSPA->getLocalisations();
@@ -235,21 +241,38 @@ function animal($idAnimal){
 
 function createAnimal(){
     if($_POST){
-        $animal = new Animal();
-        $type = new Type();
-        
-        $animal->createAnimal(
-            $_POST['nom'], 
-            $_POST['age'], 
-            $_POST['taille'],
-            $_POST['poid'],
-            $_POST['handicape'],
-            $_POST['spa'],
-            $_POST['type']
-        );
-        $types = $type->getTypes();
+        if ($_POST['nom'] != '' &&
+            $_POST['age'] != '' &&
+            $_POST['taille'] != '' &&
+            $_POST['poid'] != '' &&
+            $_POST['handicape'] != '' &&
+            $_POST['spa'] != '' &&
+            $_POST['type'] != '' 
+        ){
+            $animal = new Animal();
+            $type = new Type();
+            
+            $animal->createAnimal(
+                $_POST['nom'], 
+                $_POST['age'], 
+                $_POST['taille'],
+                $_POST['poid'],
+                $_POST['handicape'],
+                $_POST['spa'],
+                $_POST['type']
+            );
+            $types = $type->getTypes();
 
-        header('Location: index.php?action=admin');
+            header('Location: index.php?action=admin');
+        }else{
+            $type = new Type();
+            $spa = new Spa();
+    
+            $types = $type->getTypes();
+            $AllSPA = $spa->getAllSPA();
+            $verifChamp = false;
+            require "vue/animal/create.php";
+        }
     }else{
         $type = new Type();
         $spa = new Spa();
@@ -291,7 +314,7 @@ function editAnimal($idAnimal){
             $_POST['type'], 
             $_POST['spa'], 
             $idAnimal
-        );
+        );  
         $animals = $animal->getAnimals();
 
         header('Location: index.php?action=admin');
@@ -408,26 +431,33 @@ function editSPA($idSpa){
 
 function login() {
     if ($_POST){
-        $utilisateur = new Utilisateur();
+        if ($_POST['pseudo'] != '' &&
+            $_POST['mdp'] != '' 
+        ){
+            $utilisateur = new Utilisateur();
 
-        $pseudo = $_POST['pseudo'];
-        $mdp = $_POST['mdp'];
+            $pseudo = $_POST['pseudo'];
+            $mdp = $_POST['mdp'];
 
-        $user = $utilisateur->getUtilisateurByPseudo($pseudo);
-        
-        if (password_verify($mdp, $user['motDePasse'])){
-            $_SESSION['IDUSER'] = $user['id_utilisateur'];
-            $_SESSION['USER'] = $user['pseudo'];
-            $_SESSION['ROLE'] = $user['role'];
-            $_SESSiON['LOC'] = $user['localisation'];
+            $user = $utilisateur->getUtilisateurByPseudo($pseudo);
+
+            if ($user){
+                $user = $user[0];
+                if (password_verify($mdp, $user['motDePasse'])){
+                    $_SESSION['IDUSER'] = $user['id_utilisateur'];
+                    $_SESSION['USER'] = $user['pseudo'];
+                    $_SESSION['ROLE'] = $user['role'];
+                    $_SESSiON['LOC'] = $user['localisation'];
+                }
+            }else{
+                $verifLogin = false;
+            }
+        }else{
+            $verifChamp = false;
         }
     }
     if(isset($_SESSION['USER'])){
-        if (isset($_COOKIE['page'])){
-            header('Location: index.php'.$_COOKIE['page']);
-        }else{
-            require "vue/vueAccueil.php";
-        }
+        require "vue/vueAccueil.php";
     }else{
         require "vue/vuectlAcces.php";
     }
@@ -435,29 +465,43 @@ function login() {
 
 function signup() {
     if ($_POST){
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $pseudo = $_POST['pseudo'];
-        $localisation = $_POST['localisation'];
+        if ($_POST['nom'] != '' &&
+            $_POST['prenom'] != '' &&
+            $_POST['pseudo'] != '' &&
+            $_POST['localisation'] != '' &&
+            $_POST['mdp'] != '' &&
+            $_POST['mdp_verif'] != ''
+        ){
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+            $pseudo = $_POST['pseudo'];
+            $localisation = $_POST['localisation'];
+            $mdp = $_POST['mdp'];
+            $mdp_verif = $_POST['mdp_verif'];
+            if ($mdp === $mdp_verif){
+                $mdp = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
+                $mdp_verif = password_hash($_POST['mdp_verif'], PASSWORD_BCRYPT);
 
-        $mdp = $_POST['mdp'];
-        $mdp_verif = $_POST['mdp_verif'];
-        if ($mdp === $mdp_verif){
-            $mdp = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
-            $mdp_verif = password_hash($_POST['mdp_verif'], PASSWORD_BCRYPT);
+                $ObjectUtilisateur = new Utilisateur();
+                
+                $utilisateur = $ObjectUtilisateur->getUtilisateurByPseudo($pseudo);
 
-            $utilisateur = new Utilisateur();
-
-            $utilisateur->createUser($nom, $prenom, $pseudo, $localisation, $mdp);
+                if(isset($utilisateur[0])){
+                    $verifPseudo = false;
+                }else{
+                    $ObjectUtilisateur->createUser($nom, $prenom, $pseudo, $localisation, $mdp);
+                    header('Location: index.php?action=login');
+                }
+            }else{
+                $verifMDP = false;
+            }
+        }else{
+            $verifChamp = false;
         }
-        header('Location: index.php?action=login');
+        
     }
     if(isset($_SESSION['acces'])){
-        if (isset($_COOKIE['page'])){
-            header('Location: index.php'.$_COOKIE['page']);
-        }else{
             require "vue/vueAccueil.php";
-        }
     }else{
         require "vue/vueSignUp.php";
     }

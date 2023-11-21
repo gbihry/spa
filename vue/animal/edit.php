@@ -12,25 +12,25 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>Nom</span>
-                <input type="text" name="nom" value="<?= $animal['nom'] ?>" class="texte" id="" placeholder="indiquez nom">
+                <input type="text" name="nom" value="<?= $animal['nom'] ?>" class="texte" id="" placeholder="indiquez nom" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Age</span>
-                <input type="number" name="age" value="<?= $animal['age'] ?>" class="texte" id="" placeholder="indiquez age">
+                <input type="number" name="age" value="<?= $animal['age'] ?>" class="texte" id="" placeholder="indiquez age" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Taille</span>
-                <input type="text" name="taille" value="<?= $animal['taille'] ?>" class="texte" id="" placeholder="indiquez taille">
+                <input type="text" name="taille" value="<?= $animal['taille'] ?>" class="texte" id="" placeholder="indiquez taille" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Poid</span>
-                <input type="text" name="poid" value="<?= $animal['poid'] ?>" class="texte" id="" placeholder="indiquez poid">
+                <input type="text" name="poid" value="<?= $animal['poid'] ?>" class="texte" id="" placeholder="indiquez poid" required>
             </label>
         </div>
         <div class="form_elt">
@@ -71,7 +71,7 @@ if(isset($_SESSION['USER'])){
                 </select>
             </label>
         </div>
-        <input type="submit" class="valid" name="ok" value="valider">
+        <input type="submit" class="valid" name="ok" value="Valider informations">
     </form>
     <p>Photo :</p>
     <form action=<?=$_SERVER['PHP_SELF']."?action=modifierOrdre&&idAnimal=".$_GET['idAnimal'].""?> method="POST">
@@ -95,7 +95,7 @@ if(isset($_SESSION['USER'])){
                 }
             ?>     
         </div>           
-        <input type="submit" class="valid" name="ok" value="valider"> 
+        <input type="submit" class="valid" name="ok" value="Valider ordre"> 
     </form>
     
     <form action=<?=$_SERVER['PHP_SELF']."?action=ajouterImage&&idAnimal=".$_GET['idAnimal'].""?> method="POST" enctype="multipart/form-data">
@@ -104,7 +104,7 @@ if(isset($_SESSION['USER'])){
             <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
             <input type="file" class="texte" name="photoAnimal" required>
         </div>
-        <input type="submit" class="valid" name="ok" value="valider">
+        <input type="submit" class="valid" name="ok" value="ajouter photo">
     </form>
                         
     <?php

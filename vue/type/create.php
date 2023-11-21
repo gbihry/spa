@@ -12,7 +12,7 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>libelle</span>
-                <input type="text" name="libelle" class="texte" id="" placeholder="indiquez nom type">
+                <input type="text" name="libelle" class="texte" id="" placeholder="indiquez nom type" required>
             </label>
         </div>
         <input type="submit" class="valid" name="ok" value="valider">

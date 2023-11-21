@@ -25,7 +25,7 @@ class Favoris extends database {
 
     public function getFavoris($idUser){
         $req = ' 
-        SELECT favoris.id_animal, animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", base64_img AS "nomImg", image.ordre
+        SELECT favoris.id_animal, animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
         FROM `animal` 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa

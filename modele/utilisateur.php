@@ -10,9 +10,10 @@ class Utilisateur extends database {
         FROM `utilisateur` 
         WHERE utilisateur.pseudo = ?
         ';
-        $res = $this->execReqPrep($req, array($pseudo))[0];
+        $res = $this->execReqPrep($req, array($pseudo));
 
         return $res;
+
     }
 
     public function getUtilisateurByID($idUser) {

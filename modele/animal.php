@@ -6,7 +6,7 @@ class Animal extends database {
 
     public function getAnimals(){
         $req = ' 
-        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", base64_img AS "nomImg", image.ordre
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
         FROM `animal` 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
@@ -33,7 +33,7 @@ class Animal extends database {
 
     public function getImagesAnimal($idAnimal){
         $req = ' 
-        SELECT id_image,base64_img AS "nomImg", ordre
+        SELECT id_image,uniqid_img AS "nomImg", ordre
         FROM `image` 
         JOIN animal ON image.id_animal = animal.id_animal
         WHERE image.id_animal = ?
@@ -72,7 +72,8 @@ class Animal extends database {
                     $dir = dirname($_SERVER['SCRIPT_FILENAME']);
                     if (in_array($extension_upload, $extensions_autorisees))
                     {
-                        $nomFichier = base64_encode($_FILES['photoAnimal']['name']).".".$extension_upload;
+                        $uniqid = uniqid();
+                        $nomFichier = $uniqid.".".$extension_upload;
                         // Stockage définitif du fichier photo dans le dossier uploads
                         if (is_dir($dir."/photoAnimal")){
                             move_uploaded_file($_FILES['photoAnimal']['tmp_name'], "photoAnimal/".$nomFichier);
@@ -100,7 +101,7 @@ class Animal extends database {
         if($allImage[0]['nomImg'] == "default.jpg"){
             $req = ' 
                 UPDATE image 
-                SET base64_img = ?
+                SET uniqid_img = ?
                 WHERE image.id_animal = ?
             ';
 
@@ -135,7 +136,8 @@ class Animal extends database {
                     $dir = dirname($_SERVER['SCRIPT_FILENAME']);
                     if (in_array($extension_upload, $extensions_autorisees))
                     {
-                        $nomFichier = base64_encode($_FILES['photoAnimal']['name']).".".$extension_upload;
+                        $uniqid = uniqid();
+                        $nomFichier = $uniqid.".".$extension_upload;
                         // Stockage définitif du fichier photo dans le dossier uploads
                         if (is_dir($dir."/photoAnimal")){
                             move_uploaded_file($_FILES['photoAnimal']['tmp_name'], "photoAnimal/".$nomFichier);
@@ -174,7 +176,7 @@ class Animal extends database {
 
     public function getFileName($idAnimal){
         $req = ' 
-        SELECT base64_img AS "nomImg"
+        SELECT uniqid_img AS "nomImg"
         FROM `image` 
         WHERE image.id_animal = ?
         ';
@@ -186,7 +188,7 @@ class Animal extends database {
 
     public function getFileNameByIdImg($idImage){
         $req = ' 
-        SELECT base64_img AS "nomImg"
+        SELECT uniqid_img AS "nomImg"
         FROM `image` 
         WHERE image.id_image = ?
         ';
@@ -207,7 +209,7 @@ class Animal extends database {
         if (count($allImg) == 1){
             $req = ' 
             UPDATE image
-            SET base64_img = "default.jpg"
+            SET uniqid_img = "default.jpg"
             WHERE image.id_image = ?
             ';
         }else{
@@ -356,7 +358,7 @@ class Animal extends database {
 
     public function filter($type, $value){
         $req = ' 
-        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", base64_img AS "nomImg", image.ordre
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
         FROM `animal` 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
