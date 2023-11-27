@@ -40,7 +40,8 @@ class Spa extends database {
         $req = ' 
         INSERT INTO
         spa
-        VALUES ("", ?, ?)
+        (nom, localisation)
+        VALUES (?, ?)
         ';
         $res = $this->execReqPrep($req, array($nom, $localisation));
 

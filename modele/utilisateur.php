@@ -64,8 +64,9 @@ class Utilisateur extends database {
         $req = ' 
         INSERT INTO 
         utilisateur
+        (nom, prenom, pseudo, motDePasse, localisation, role)
         VALUES 
-        ("" ,?, ?, ?, ?, ?, "USER")
+        (?, ?, ?, ?, ?, "USER")
         ';
         $res = $this->execReqPrep($req, array($nom, $prenom, $pseudo, $mdp, $localisation));
 

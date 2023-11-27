@@ -103,6 +103,7 @@ header a {
 }
 
 .trie {
+    align-items: center;
     justify-content: center;
     display: flex;
     gap: 30px;

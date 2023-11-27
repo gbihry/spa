@@ -110,7 +110,8 @@ class Animal extends database {
             $req = ' 
             INSERT INTO
             image
-            VALUES ("", ?, ?, ?)
+            (uniqid_img, ordre, id_animal)
+            VALUES (?, ?, ?)
             ';
 
             $res = $this->execReqPrep($req, array($nomFichier, $ordre, $idAnimal));
@@ -158,7 +159,8 @@ class Animal extends database {
         $req = ' 
         INSERT INTO
         animal
-        VALUES ("", ?, ?, ?, ?, ?, ?, ?)
+        (nom, age, taille, poid, handicape, id_spa, id_type)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
         ';
         $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $idSPA, $idType));
 
@@ -167,7 +169,8 @@ class Animal extends database {
         $req = ' 
         INSERT INTO
         image
-        VALUES ("", ?, 1, ?)
+        (uniqid_img, ordre, id_animal)
+        VALUES (?, 1, ?)
         ';
         $res = $this->execReqPrep($req, array($nomFichier, $idAnimal));
 

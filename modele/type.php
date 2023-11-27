@@ -30,7 +30,8 @@ class Type extends database {
         $req = ' 
         INSERT INTO
         type
-        VALUES ("", ?)
+        (libelle)
+        VALUES (?)
         ';
         $res = $this->execReqPrep($req, array($libelle));
 

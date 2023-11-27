@@ -508,7 +508,6 @@ function signup() {
 } 
 
 function delog() {
-    setcookie(session_name(), '', time()-1);
     session_destroy();
     session_start();
     require "vue/vuectlAcces.php";
