@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Détail de l'animal " . $animal['nom'];
-$menu = MENU;
 
 ob_start();
 ?>

@@ -3,7 +3,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Bienvenue à la spa";
-$menu = MENU;
 
 ob_start();
 if(isset($_SESSION['USER'])){

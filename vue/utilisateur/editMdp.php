@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Modifier mot de passe";
-$menu = MENU;
 
 ob_start();
 

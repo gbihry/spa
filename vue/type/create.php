@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Créer type";
-$menu = MENU;
 
 ob_start();
 

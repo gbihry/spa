@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Modifier animal";
-$menu = MENU;
 
 ob_start();
 

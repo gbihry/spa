@@ -3,7 +3,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Administration";
-$menu = MENU;
 
 ob_start();
 

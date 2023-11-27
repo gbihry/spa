@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Vos favoris";
-$menu = MENU;
 
 ob_start();
 ?>

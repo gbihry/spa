@@ -12,7 +12,6 @@
         <div><a href="index.php"><h1><?= $header ?></h1></a></div>
         <div class="menu">
             <?php
-            echo($menu);
             if(!isset($_SESSION['USER'])){
                 echo('<a class="lien" href="index.php?action=login">Connexion</a>');
                 echo('<a class="lien" href="index.php?action=signup">S\'inscrire</a>');

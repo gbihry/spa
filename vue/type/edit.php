@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Modifier type";
-$menu = MENU;
 
 ob_start();
 

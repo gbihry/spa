@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Créer SPA";
-$menu = MENU;
 
 ob_start();
 

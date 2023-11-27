@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "S'inscrire";
-$menu = MENU;
 
 ob_start();
 

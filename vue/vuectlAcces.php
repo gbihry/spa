@@ -2,7 +2,6 @@
 $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "Demande d'authentification";
-$menu = MENU;
 
 ob_start();
 
