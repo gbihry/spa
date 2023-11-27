@@ -11,14 +11,17 @@ function accueil() {
     require "vue/vueAccueil.php";
 }
 
+//Affichage de la page admin 
 function admin(){
-    $type = new Type();
-    $spa = new Spa();
-    $animal = new Animal();
+    //Initialisation des objets
+    $ObjectType = new Type();
+    $ObjectSPA = new Spa();
+    $ObjectAnimal = new Animal();
 
-    $types = $type->getTypes();
-    $AllSPA = $spa->getAllSPA();
-    $animals = $animal->getAnimals();
+    //Initialisation des ressources nécessaires à l'affichage
+    $types = $ObjectType->getTypes();
+    $AllSPA = $ObjectSPA->getAllSPA();
+    $animals = $ObjectAnimal->getAnimals();
 
     require "vue/vueAdmin.php";
 }
@@ -31,13 +34,18 @@ function admin(){
 
 function createType(){
     if($_POST){
-        $type = new Type();
+        //Initialisation des objets
+        $ObjectType = new Type();
 
-        $type->createType(
+        $ObjectType->createType(
             $_POST['libelle']
         );
-        $types = $type->getTypes();
 
+        //Ne venons de créer un type donc nous récupérons à nouveau les types 
+        //pour avoir les dernières modifications
+        $types = $ObjectType->getTypes();
+
+        //Redirection de l'utilisateur à la page admin
         header('Location: index.php?action=admin');
     }else{
         require "vue/type/create.php";
@@ -46,10 +54,10 @@ function createType(){
 }
 
 function removeType($idType){
-    $type = new Type();
+    $ObjectType = new Type();
 
-    $type->removeType($idType);
-    $types = $type->getTypes();
+    $ObjectType->removeType($idType);
+    $types = $ObjectType->getTypes();
     
     header('Location: index.php?action=admin');
     
@@ -57,13 +65,13 @@ function removeType($idType){
 
 function editType($idType){
     if ($_POST){
-        $type = new Type();
+        $ObjectType = new Type();
 
-        $type->editType(
+        $ObjectType->editType(
             $_POST['libelle'], 
             $idType
         );
-        $types = $type->getTypes();
+        $types = $ObjectType->getTypes();
         
         header('Location: index.php?action=admin');
     }else{
@@ -265,47 +273,47 @@ function createAnimal(){
 
             header('Location: index.php?action=admin');
         }else{
-            $type = new Type();
-            $spa = new Spa();
+            $ObjectType = new Type();
+            $ObjectSPA = new Spa();
     
-            $types = $type->getTypes();
-            $AllSPA = $spa->getAllSPA();
+            $types = $ObjectType->getTypes();
+            $AllSPA = $ObjectSPA->getAllSPA();
             $verifChamp = false;
             require "vue/animal/create.php";
         }
     }else{
-        $type = new Type();
-        $spa = new Spa();
+        $ObjectType = new Type();
+        $ObjectSPA = new Spa();
 
-        $types = $type->getTypes();
-        $AllSPA = $spa->getAllSPA();
+        $types = $ObjectType->getTypes();
+        $AllSPA = $ObjectSPA->getAllSPA();
         require "vue/animal/create.php";
     }
 }
 
 function removeAnimal($idAnimal){
-    $animal = new Animal();
+    $ObjectAnimal = new Animal();
 
-    $animal->removeAnimal($idAnimal);
-    $animals = $animal->getAnimals();
+    $ObjectAnimal->removeAnimal($idAnimal);
+    $animals = $ObjectAnimal->getAnimals();
     
     header('Location: index.php?action=admin');
     
 }
 
 function removeImage($idImage, $idAnimal){
-    $animal = new Animal();
+    $ObjectAnimal = new Animal();
 
-    $animal->removeImage($idImage, $idAnimal);
-    $animals = $animal->getAnimals();
+    $ObjectAnimal->removeImage($idImage, $idAnimal);
+    $animals = $ObjectAnimal->getAnimals();
     
     header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
 }
 
 function editAnimal($idAnimal){
     if ($_POST){
-        $animal = new Animal();
-        $animal->editAnimal(
+        $ObjectAnimal = new Animal();
+        $ObjectAnimal->editAnimal(
             $_POST['nom'], 
             $_POST['age'], 
             $_POST['taille'], 
@@ -315,16 +323,16 @@ function editAnimal($idAnimal){
             $_POST['spa'], 
             $idAnimal
         );  
-        $animals = $animal->getAnimals();
+        $animals = $ObjectAnimal->getAnimals();
 
         header('Location: index.php?action=admin');
     }else{
         $ObjectAnimal = new Animal();
-        $type = new Type();
-        $spa = new Spa();
+        $ObjectType = new Type();
+        $ObjectSPA = new Spa();
 
-        $types = $type->getTypes();
-        $AllSPA = $spa->getAllSPA();
+        $types = $ObjectType->getTypes();
+        $AllSPA = $ObjectSPA->getAllSPA();
 
         $animal = $ObjectAnimal->getAnimal($idAnimal);
         $AllImgAnimal = $ObjectAnimal->getImagesAnimal($idAnimal);
@@ -357,11 +365,11 @@ function addImage($idAnimal){
         header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
     }else{
         $ObjectAnimal = new Animal();
-        $type = new Type();
-        $spa = new Spa();
+        $ObjectType = new Type();
+        $ObjectSPA = new Spa();
 
-        $types = $type->getTypes();
-        $AllSPA = $spa->getAllSPA();
+        $types = $ObjectType->getTypes();
+        $AllSPA = $ObjectSPA->getAllSPA();
 
         $animal = $ObjectAnimal->getAnimal($idAnimal);
         $AllImgAnimal = $ObjectAnimal->getImagesAnimal($idAnimal);
@@ -378,13 +386,13 @@ function addImage($idAnimal){
 
 function createSPA(){
     if($_POST){
-        $spa = new Spa();
+        $ObjectSPA = new Spa();
 
-        $spa->createSPA(
+        $ObjectSPA->createSPA(
             $_POST['nom'], 
             $_POST['localisation']
         );
-        $AllSPA = $spa->getAllSPA();
+        $AllSPA = $ObjectSPA->getAllSPA();
 
         header('Location: index.php?action=admin');
     }else{
@@ -394,10 +402,10 @@ function createSPA(){
 }
 
 function removeSPA($idSpa){
-    $spa = new Spa();
+    $ObjectSPA = new Spa();
 
-    $spa->removeSPA($idSpa);
-    $AllSPA = $spa->getAllSPA();
+    $ObjectSPA->removeSPA($idSpa);
+    $AllSPA = $ObjectSPA->getAllSPA();
     
     header('Location: index.php?action=admin');
     
@@ -405,20 +413,20 @@ function removeSPA($idSpa){
 
 function editSPA($idSpa){
     if ($_POST){
-        $spa = new Spa();
+        $ObjectSPA = new Spa();
 
-        $spa->editSPA(
+        $ObjectSPA->editSPA(
             $_POST['nom'], 
             $_POST['localisation'], 
             $idSpa
         );
-        $AllSPA = $spa->getAllSPA();
+        $AllSPA = $ObjectSPA->getAllSPA();
         
         header('Location: index.php?action=admin');
     }else{
-        $spa = new Spa();
+        $ObjectSPA = new Spa();
 
-        $spa = $spa->getSPA($idSpa);
+        $spa = $ObjectSPA->getSPA($idSpa);
         require "vue/spa/edit.php";
     }
 }
@@ -434,12 +442,12 @@ function login() {
         if ($_POST['pseudo'] != '' &&
             $_POST['mdp'] != '' 
         ){
-            $utilisateur = new Utilisateur();
+            $ObjectUtilisateur = new Utilisateur();
 
             $pseudo = $_POST['pseudo'];
             $mdp = $_POST['mdp'];
 
-            $user = $utilisateur->getUtilisateurByPseudo($pseudo);
+            $user = $ObjectUtilisateur->getUtilisateurByPseudo($pseudo);
 
             if ($user){
                 $user = $user[0];
