@@ -23,9 +23,10 @@ ob_start();
                 <?php
                     foreach($types as $type){
                         ?>
+                        <!--href="index.php?action=supprimerType&&idType="-->
                         <tr>   
                             <td><?= $type['libelle'] ?></td>
-                            <td><a href="index.php?action=supprimerType&&idType=<?=$type['id_type']?>">Supprimer</a></td>
+                            <td><a onclick="modalVerif(this,'type', <?=$type['id_type']?>)">Supprimer</a></td>
                             <td><a href="index.php?action=modifierType&&idType=<?=$type['id_type']?>">Modifier</a></td>
                         </tr>
                         <?php

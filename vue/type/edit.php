@@ -7,7 +7,7 @@ ob_start();
 
 if(isset($_SESSION['USER'])){
     ?>
-    <form action=<?=$_SERVER['PHP_SELF']."?action=modifierType&&idType=".$_GET['idT']?> method="POST">
+    <form action=<?=$_SERVER['PHP_SELF']."?action=modifierType&&idType=".$_GET['idType']?> method="POST">
         <div class="form_elt">
             <label for="">
                 <span>libelle</span>
