@@ -2,6 +2,7 @@
 
 require_once "modele/modele.php";
 require_once "modele/animal.php";
+require_once "modele/favoris.php";
 
 class Type extends database {
 
@@ -40,6 +41,9 @@ class Type extends database {
 
     public function removeType($idType){
         $ObjectAnimal = new Animal();
+        $ObjectFavoris = new Favoris();
+
+        $ObjectFavoris->removeAllFavorisByType($idType);
         $ObjectAnimal->removeAllAnimalByType($idType);
         
         $req = ' 

@@ -294,7 +294,7 @@ class Animal extends database {
         if ($allAnimals){
             foreach ($allAnimals as $animal){
                 $this->removeAllImageAnimal($animal['id_animal']);
-    
+                
                 $req = ' 
                     DELETE 
                     FROM animal

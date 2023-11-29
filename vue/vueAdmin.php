@@ -23,10 +23,10 @@ ob_start();
                 <?php
                     foreach($types as $type){
                         ?>
-                        <!--href="index.php?action=supprimerType&&idType="-->
+                        
                         <tr>   
                             <td><?= $type['libelle'] ?></td>
-                            <td><a onclick="modalVerif(this,'type', <?=$type['id_type']?>)">Supprimer</a></td>
+                            <td><a onclick="modalVerif(this, '<?=$type['libelle']?>', 'type', <?=$type['id_type']?>)">Supprimer</a></td>
                             <td><a href="index.php?action=modifierType&&idType=<?=$type['id_type']?>">Modifier</a></td>
                         </tr>
                         <?php
@@ -54,7 +54,7 @@ ob_start();
                         <tr>
                             <td><?= $spa['nom'] ?></td>
                             <td><?= $spa['localisation'] ?></td>
-                            <td><a href="index.php?action=supprimerSPA&&idSPA=<?=$spa['id_spa']?>">Supprimer</a></td>
+                            <td><a onclick="modalVerif(this, '<?=$spa['nom']?>', 'SPA', <?=$spa['id_spa']?>)">Supprimer</a></td>
                             <td><a href="index.php?action=modifierSPA&&idSPA=<?=$spa['id_spa']?>">Modifier</a></td>
                         </tr>
                         <?php
@@ -96,7 +96,7 @@ ob_start();
                             <td><?= $animal['type'] ?></td>
                             
 
-                            <td><a href="index.php?action=supprimerAnimal&&idAnimal=<?=$animal['id_animal']?>">Supprimer</a></td>
+                            <td><a onclick="modalVerif(this, '<?=$animal['nom']?>', 'animal', <?=$animal['id_animal']?>)">Supprimer</a></td>
                             <td><a href="index.php?action=modifierAnimal&&idAnimal=<?=$animal['id_animal']?>">Modifier</a></td>
                         </tr>
                         <?php

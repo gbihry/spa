@@ -1,6 +1,7 @@
 <?php
 
 require_once "modele/modele.php";
+require_once "modele/animal.php";
 
 class Favoris extends database {
 
@@ -51,6 +52,38 @@ class Favoris extends database {
         $res = $this->execReqPrep($req, array($idAnimal, $idUser));
 
         return $res;
+    }
+
+    public function removeAllFavorisByAnimal($idAnimal){
+        $req = ' 
+        DELETE 
+        FROM favoris
+        WHERE favoris.id_animal = ?
+        ';
+
+        $res = $this->execReqPrep($req, array($idAnimal));
+
+        return $res;
+    }
+
+    public function removeAllFavorisBySPA($idSPA){
+        $ObjectAnimal = new Animal();
+        $allAnimals = $ObjectAnimal->getAllAnimalBySPA($idSPA);
+        if ($allAnimals){
+            foreach ($allAnimals as $animal){
+                $this->removeAllFavorisByAnimal($animal['id_animal']);
+            }
+        }
+    }
+
+    public function removeAllFavorisByType($idType){
+        $ObjectAnimal = new Animal();
+        $allAnimals = $ObjectAnimal->getAllAnimalByType($idType);
+        if ($allAnimals){
+            foreach ($allAnimals as $animal){
+                $this->removeAllFavorisByAnimal($animal['id_animal']);
+            }
+        }
     }
 
 }
