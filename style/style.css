@@ -131,8 +131,10 @@ header a {
     height: 100%; 
     overflow: auto; 
     background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    animation: 0.5s forwards move-in ease-in-out;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .accept .modal {
@@ -143,10 +145,7 @@ header a {
     width: 500px;
     height: 250px;
     background-color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    animation: 0.5s forwards move-in ease-in-out;
 }
 
 .modal .content {
