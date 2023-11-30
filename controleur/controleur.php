@@ -400,7 +400,7 @@ function editOrdre($idAnimal){
         }
     }
 
-    //header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
+    header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
 }
 
 function addImage($idAnimal){
