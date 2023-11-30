@@ -31,6 +31,9 @@ function modalVerif (el, value, typeAction, id){
         case "animal":
             text.innerHTML = "Êtes-vous sur de vouloir supprimer l'animal " + VALUE + "?";
             break;
+        case "image":
+            text.innerHTML = "Êtes-vous sur de vouloir supprimer cette image ?";
+            break;
         default:
             text.innerHTML = "Êtes-vous sur de vouloir supprimer ?";
             break;
@@ -51,7 +54,14 @@ function modalVerif (el, value, typeAction, id){
 
     buttonAnnuler.addEventListener("click", function() {
         redirect = document.createElement('a');
-        redirect.href = "index.php?action=admin";
+        switch (TYPEACTION){
+            case 'image':
+                redirect.href = "index.php?action=modifierAnimal&&idAnimal=" + ID[0]
+                break;
+            default:
+                redirect.href = "index.php?action=admin";
+                break;
+        }
         redirect.click();
     })
 
@@ -68,6 +78,9 @@ function modalVerif (el, value, typeAction, id){
                 break;
             case 'animal':
                 redirect.href = "index.php?action=supprimerAnimal&&idAnimal=" + ID;
+                break;
+            case 'image':
+                redirect.href = "index.php?action=supprimerImage&&idAnimal=" + ID[0] + "&&idImage=" + ID[1];
                 break;
             default:
                 redirect.href = "index.php?action=admin";

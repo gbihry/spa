@@ -1,1 +1,2 @@
-- Faire la sécurité
+- Faire la sécurité (faille XSS, htmlspacialchars)
+- Faire les commentaires

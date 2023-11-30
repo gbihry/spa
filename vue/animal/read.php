@@ -8,7 +8,7 @@ ob_start();
 if (isset($titleTrie) && $titleTrie != null){
     echo('<h2 class="title">'.$titleTrie.'</h2>');
 }else{
-    echo('<h2 class="title">Trie</h2>');
+    echo('<h2 class="title">Tri</h2>');
 }
 ?>
     

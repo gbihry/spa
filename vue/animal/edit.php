@@ -81,7 +81,7 @@ if(isset($_SESSION['USER'])){
                 foreach($AllImgAnimal as $imgAnimal){
                     ?>
                     <div class="editImg">
-                        <a href="index.php?action=supprimerImage&&idAnimal=<?=$_GET['idAnimal']?>&&idImage=<?=$imgAnimal['id_image']?>">Supprimer</a>
+                        <a onclick="modalVerif(this, '<?=$type['libelle']?>', 'image', [<?=$_GET['idAnimal']?>,<?=$imgAnimal['id_image']?>])">Supprimer</a>
                         <img class="imgAnimal" src="photoAnimal/<?=$imgAnimal['nomImg']?>" alt="">
                         <input type="hidden" name="idImage<?= $ordre ?>" value="<?= $imgAnimal['id_image'] ?>">
                         <label for="">
