@@ -1,6 +1,6 @@
 <?php
 $title = TITREONGLET;
-$header = NOMSITE;
+$showHeader = true;
 $titre = "Demande d'authentification";
 
 ob_start();
