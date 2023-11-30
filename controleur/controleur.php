@@ -37,8 +37,10 @@ function createType(){
         //Initialisation des objets
         $ObjectType = new Type();
 
+        $libelle = htmlspecialchars($_POST['libelle']);
+
         $ObjectType->createType(
-            $_POST['libelle']
+            $libelle
         );
 
         //Ne venons de créer un type donc nous récupérons à nouveau les types 
@@ -67,8 +69,10 @@ function editType($idType){
     if ($_POST){
         $ObjectType = new Type();
 
+        $libelle = htmlspecialchars($_POST['libelle']);
+
         $ObjectType->editType(
-            $_POST['libelle'], 
+            $libelle,
             $idType
         );
         $types = $ObjectType->getTypes();
@@ -99,11 +103,16 @@ function editProfil($idUser){
     if ($_POST){
         $ObjectUtilisateur = new Utilisateur();
 
+        $nom = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $pseudo = htmlspecialchars($_POST['pseudo']);
+        $localisation = htmlspecialchars($_POST['localisation']);
+
         $ObjectUtilisateur->editProfil(
-            $_POST['nom'], 
-            $_POST['prenom'], 
-            $_POST['pseudo'], 
-            $_POST['localisation'],
+            $nom,
+            $prenom,
+            $pseudo,
+            $localisation,
             $idUser
         );
         $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
@@ -257,19 +266,27 @@ function createAnimal(){
             $_POST['spa'] != '' &&
             $_POST['type'] != '' 
         ){
-            $animal = new Animal();
-            $type = new Type();
-            
-            $animal->createAnimal(
-                $_POST['nom'], 
-                $_POST['age'], 
-                $_POST['taille'],
-                $_POST['poid'],
-                $_POST['handicape'],
-                $_POST['spa'],
-                $_POST['type']
+            $ObjectAnimal = new Animal();
+            $ObjectType = new Type();
+
+            $nom = htmlspecialchars($_POST['nom']);
+            $age = htmlspecialchars($_POST['age']);
+            $taille = htmlspecialchars($_POST['taille']);
+            $poid = htmlspecialchars($_POST['poid']);
+            $handicape = htmlspecialchars($_POST['handicape']);
+            $spa = htmlspecialchars($_POST['spa']);
+            $type = htmlspecialchars($_POST['type']);
+
+            $ObjectAnimal->createAnimal(
+                $nom,
+                $age,
+                $taille,
+                $poid,
+                $handicape,
+                $spa,
+                $type
             );
-            $types = $type->getTypes();
+            $types = $ObjectType->getTypes();
 
             header('Location: index.php?action=admin');
         }else{
@@ -313,14 +330,23 @@ function removeImage($idImage, $idAnimal){
 function editAnimal($idAnimal){
     if ($_POST){
         $ObjectAnimal = new Animal();
+
+        $nom = htmlspecialchars($_POST['nom']);
+        $age = htmlspecialchars($_POST['age']);
+        $taille = htmlspecialchars($_POST['taille']);
+        $poid = htmlspecialchars($_POST['poid']);
+        $handicape = htmlspecialchars($_POST['handicape']);
+        $spa = htmlspecialchars($_POST['spa']);
+        $type = htmlspecialchars($_POST['type']);
+
         $ObjectAnimal->editAnimal(
-            $_POST['nom'], 
-            $_POST['age'], 
-            $_POST['taille'], 
-            $_POST['poid'], 
-            $_POST['handicape'], 
-            $_POST['type'], 
-            $_POST['spa'], 
+            $nom,
+            $age,
+            $taille,
+            $poid,
+            $handicape,
+            $spa,
+            $type,
             $idAnimal
         );  
         $animals = $ObjectAnimal->getAnimals();
@@ -345,8 +371,28 @@ function editOrdre($idAnimal){
     if($_POST){
         $ObjectAnimal = new Animal();
 
+        var_dump($_POST);
+
+        /*
+         * var_dump($_POST) =
+         * 'idImage1' => string '104' (length=3)
+         * 'ordre1' => string '2' (length=1)
+         * 'idImage2' => string '108' (length=3)
+         * 'ordre2' => string '1' (length=1)
+         * 'ok' => string 'Valider ordre' (length=13)
+         *
+         * $_POST = idImage, ordre et submit
+         * Pour chaque image nous avons idImage + 1 et ordre + 1
+         * - 1 pour enlever le submit et faire en sort que count($_POST) soit un nombre pair
+         * /2 car par exemple nous avons deux images ça nous fera deux idImage et deux ordre donc 4 / 2 = 2
+         * On fait aussi diviser /2 car on modifie l'ordre de 2 images et non 4
+         * $i = 1 car l'ordre commence par 1
+         */
 
         for($i = 1; $i <= (count($_POST) - 1) / 2; $i++){
+            /*
+             * nous sommes dans une boucle donc nous allons récupérer l'index des images dans les POST
+             */
             $ordre = "ordre".$i;
             $idImage = "idImage".$i;
 
@@ -354,7 +400,7 @@ function editOrdre($idAnimal){
         }
     }
 
-    header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
+    //header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
 }
 
 function addImage($idAnimal){
@@ -388,9 +434,12 @@ function createSPA(){
     if($_POST){
         $ObjectSPA = new Spa();
 
+        $nom = htmlspecialchars($_POST['nom']);
+        $localisation = htmlspecialchars($_POST['localisation']);
+
         $ObjectSPA->createSPA(
-            $_POST['nom'], 
-            $_POST['localisation']
+            $nom,
+            $localisation
         );
         $AllSPA = $ObjectSPA->getAllSPA();
 
@@ -415,9 +464,12 @@ function editSPA($idSpa){
     if ($_POST){
         $ObjectSPA = new Spa();
 
+        $nom = htmlspecialchars($_POST['nom']);
+        $localisation = htmlspecialchars($_POST['localisation']);
+
         $ObjectSPA->editSPA(
-            $_POST['nom'], 
-            $_POST['localisation'], 
+            $nom,
+            $localisation,
             $idSpa
         );
         $AllSPA = $ObjectSPA->getAllSPA();
@@ -480,10 +532,10 @@ function signup() {
             $_POST['mdp'] != '' &&
             $_POST['mdp_verif'] != ''
         ){
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $pseudo = $_POST['pseudo'];
-            $localisation = $_POST['localisation'];
+            $nom = htmlspecialchars($_POST['nom']);
+            $prenom = htmlspecialchars($_POST['prenom']);
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $localisation = htmlspecialchars($_POST['localisation']);
             $mdp = $_POST['mdp'];
             $mdp_verif = $_POST['mdp_verif'];
             if ($mdp === $mdp_verif){
