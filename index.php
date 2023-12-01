@@ -2,6 +2,12 @@
     session_start();
 require "config/config.php";
 require "controleur/controleur.php";
+require "controleur/type.php";
+require "controleur/utilisateur.php";
+require "controleur/favoris.php";
+require "controleur/animal.php";
+require "controleur/spa.php";
+require "controleur/connexion.php";
 
 
 try {
