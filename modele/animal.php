@@ -329,7 +329,7 @@ class Animal extends database {
         return $res;
     }
 
-    public function editAnimal($nom, $age, $taille, $poid, $handicape, $type, $spa, $idAnimal){
+    public function editAnimal($nom, $age, $taille, $poid, $handicape, $spa, $type, $idAnimal){
         $req = ' 
         UPDATE animal 
         SET nom = ?, age = ?, taille = ?, poid = ?, handicape = ?, id_spa = ?, id_type = ?

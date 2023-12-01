@@ -26,6 +26,8 @@ function editProfil($idUser){
         );
         $utilisateur = $ObjectUtilisateur->getUtilisateurByID($idUser);
 
+        $_SESSION["USER"] = $pseudo;
+
         header('Location: index.php?action=profil');
     }else{
         $ObjectUtilisateur = new Utilisateur();

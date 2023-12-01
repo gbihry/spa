@@ -47,6 +47,7 @@ function animals(){
 
         $animals = $ObjectAnimal->getAnimals();
 
+
         if (isset($_SESSION['USER'])){
             $favoris = $ObjectFavoris->getFavoris($_SESSION['IDUSER']);
         }

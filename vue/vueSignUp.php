@@ -3,6 +3,8 @@ $title = TITREONGLET;
 $header = NOMSITE;
 $titre = "S'inscrire";
 
+$showHeader = false;
+
 ob_start();
 
 if(!isset($_SESSION['acces'])){
@@ -54,6 +56,7 @@ if(!isset($_SESSION['acces'])){
         <input type="submit" class="valid" name="ok" value="valider">
     </form>
 
+    <p>Vous avez déjà un compte ? <a class="lien" href="index.php?action=login">Se connecter</a></p>
     <?php
 }
 
