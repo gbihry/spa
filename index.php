@@ -7,6 +7,7 @@ require "controleur/utilisateur.php";
 require "controleur/favoris.php";
 require "controleur/animal.php";
 require "controleur/spa.php";
+require "controleur/blog.php";
 require "controleur/connexion.php";
 
 
@@ -106,6 +107,14 @@ try {
                     case "modifierSPA":
                         editSPA($_GET['idSPA']);
                         break;
+
+                    /************************************************
+                     *************** BLOG **************************
+                     *************************************************/
+
+                    case "blogs":
+                        blogs();
+                        break;
                     
                     case "admin":
                         admin();
@@ -165,6 +174,10 @@ try {
                         throw new Exception("Action non valide");
                         break;
                 }
+
+                /************************************************
+                 *************** BLOG **************************
+                 *************************************************/
             }
             
         /************************************************
@@ -172,18 +185,28 @@ try {
         *************************************************/
         }else{
             switch($_GET["action"]){
+
+                /************************************************
+                 *************** ANIMAL **************************
+                 *************************************************/
                 case "animaux":
                     animals();
                     break;
                 case "animal":
                     animal($_GET['idAnimal']);
                     break;
+                /************************************************
+                 *************** CONNEXION **************************
+                 *************************************************/
                 case "signup":
                     signup();
                     break;
                 case "login":
                     login();
                     break;
+                /************************************************
+                 *************** BLOG **************************
+                 *************************************************/
                 default: 
                     header("Location: index.php");
                     break;

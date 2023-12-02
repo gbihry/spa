@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 21 nov. 2023 à 14:45
+-- Généré le : ven. 01 déc. 2023 à 23:51
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -40,7 +40,24 @@ CREATE TABLE IF NOT EXISTS `animal` (
   PRIMARY KEY (`id_animal`),
   KEY `id_spa` (`id_spa`),
   KEY `id_type` (`id_type`)
-) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `blog`
+--
+
+DROP TABLE IF EXISTS `blog`;
+CREATE TABLE IF NOT EXISTS `blog` (
+  `id_blog` int NOT NULL AUTO_INCREMENT,
+  `titre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `sousTitre` text COLLATE utf8mb4_general_ci NOT NULL,
+  `contenu` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `dateCreation` date NOT NULL,
+  PRIMARY KEY (`id_blog`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -70,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id_animal` int NOT NULL,
   PRIMARY KEY (`id_image`),
   KEY `id_animal` (`id_animal`)
-) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,15 +101,14 @@ CREATE TABLE IF NOT EXISTS `spa` (
   `nom` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `localisation` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_spa`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `spa`
 --
 
 INSERT INTO `spa` (`id_spa`, `nom`, `localisation`) VALUES
-(12, 'SPA 57', 'Colmar'),
-(10, 'SPA 56', 'Mulhouse');
+(16, 'SPA 57', 'Colmar');
 
 -- --------------------------------------------------------
 
@@ -105,15 +121,14 @@ CREATE TABLE IF NOT EXISTS `type` (
   `id_type` int NOT NULL AUTO_INCREMENT,
   `libelle` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_type`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `type`
 --
 
 INSERT INTO `type` (`id_type`, `libelle`) VALUES
-(14, 'Chien'),
-(5, 'Chat');
+(16, 'Chien');
 
 -- --------------------------------------------------------
 
@@ -131,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `localisation` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `role` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
