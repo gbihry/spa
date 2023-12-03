@@ -34,6 +34,9 @@ function modalVerif (el, value, typeAction, id){
         case "image":
             text.innerHTML = "Êtes-vous sur de vouloir supprimer cette image ?";
             break;
+        case "blog":
+            text.innerHTML = "Êtes-vous sur de vouloir supprimer le blog " + VALUE + "?";
+            break;
         default:
             text.innerHTML = "Êtes-vous sur de vouloir supprimer ?";
             break;
@@ -56,7 +59,10 @@ function modalVerif (el, value, typeAction, id){
         redirect = document.createElement('a');
         switch (TYPEACTION){
             case 'image':
-                redirect.href = "index.php?action=modifierAnimal&&idAnimal=" + ID[0]
+                redirect.href = "index.php?action=modifierAnimal&&idAnimal=" + ID[0];
+                break;
+            case 'blog':
+                redirect.href = "index.php?action=blogs";
                 break;
             default:
                 redirect.href = "index.php?action=admin";
@@ -81,6 +87,9 @@ function modalVerif (el, value, typeAction, id){
                 break;
             case 'image':
                 redirect.href = "index.php?action=supprimerImage&&idAnimal=" + ID[0] + "&&idImage=" + ID[1];
+                break;
+            case 'blog':
+                redirect.href = "index.php?action=supprimerBlog&&idBlog=" + ID;
                 break;
             default:
                 redirect.href = "index.php?action=admin";

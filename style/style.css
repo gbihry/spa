@@ -163,3 +163,9 @@ header a {
         transform: translateY(0%);
     }
 }
+
+/* BLOG */
+
+.detailBlog span {
+    font-weight: 900;
+}

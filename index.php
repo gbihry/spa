@@ -115,6 +115,15 @@ try {
                     case "blogs":
                         blogs();
                         break;
+                    case "blog":
+                        blog($_GET['idBlog']);
+                        break;
+                    case "ajouterBlog":
+                        createBlog();
+                        break;
+                    case "supprimerBlog":
+                        removeBlog($_GET['idBlog']);
+                    break;
                     
                     case "admin":
                         admin();
@@ -170,16 +179,22 @@ try {
                     case "animal":
                         animal($_GET['idAnimal']);
                         break;
+                    /************************************************
+                     *************** BLOG **************************
+                     *************************************************/
+
+                    case "blogs":
+                        blogs();
+                        break;
+                    case "blog":
+                        blog($_GET['idBlog']);
+                        break;
+
                     default : 
                         throw new Exception("Action non valide");
                         break;
                 }
-
-                /************************************************
-                 *************** BLOG **************************
-                 *************************************************/
             }
-            
         /************************************************
         *************** SANS SESSION ********************
         *************************************************/
@@ -207,6 +222,12 @@ try {
                 /************************************************
                  *************** BLOG **************************
                  *************************************************/
+                case "blogs":
+                    blogs();
+                    break;
+                case "blog":
+                    blog($_GET['idBlog']);
+                    break;
                 default: 
                     header("Location: index.php");
                     break;

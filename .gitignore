@@ -1,2 +1,4 @@
 photoanimal/*
+photoblog/*
 !photoanimal/default.jpg
+!photoblog/default.jpg

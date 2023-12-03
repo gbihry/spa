@@ -80,7 +80,6 @@ function createAnimal(){
             $_POST['type'] != ''
         ){
             $ObjectAnimal = new Animal();
-            $ObjectType = new Type();
 
             $nom = htmlspecialchars($_POST['nom']);
             $age = htmlspecialchars($_POST['age']);
@@ -99,7 +98,6 @@ function createAnimal(){
                 $spa,
                 $type
             );
-            $types = $ObjectType->getTypes();
 
             header('Location: index.php?action=admin');
         }else{
@@ -109,6 +107,7 @@ function createAnimal(){
             $types = $ObjectType->getTypes();
             $AllSPA = $ObjectSPA->getAllSPA();
             $verifChamp = false;
+
             require "vue/animal/create.php";
         }
     }else{
@@ -125,7 +124,6 @@ function removeAnimal($idAnimal){
     $ObjectAnimal = new Animal();
 
     $ObjectAnimal->removeAnimal($idAnimal);
-    $animals = $ObjectAnimal->getAnimals();
 
     header('Location: index.php?action=admin');
 
@@ -135,7 +133,6 @@ function removeImage($idImage, $idAnimal){
     $ObjectAnimal = new Animal();
 
     $ObjectAnimal->removeImage($idImage, $idAnimal);
-    $animals = $ObjectAnimal->getAnimals();
 
     header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
 }
@@ -162,7 +159,6 @@ function editAnimal($idAnimal){
             $type,
             $idAnimal
         );
-        $animals = $ObjectAnimal->getAnimals();
 
         header('Location: index.php?action=admin');
     }else{
