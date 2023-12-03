@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 01 déc. 2023 à 23:51
+-- Généré le : dim. 03 déc. 2023 à 20:06
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `animal` (
   PRIMARY KEY (`id_animal`),
   KEY `id_spa` (`id_spa`),
   KEY `id_type` (`id_type`)
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -55,9 +55,16 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `sousTitre` text COLLATE utf8mb4_general_ci NOT NULL,
   `contenu` longtext COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `dateCreation` date NOT NULL,
+  `dateCreation` datetime NOT NULL,
   PRIMARY KEY (`id_blog`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `blog`
+--
+
+INSERT INTO `blog` (`id_blog`, `titre`, `sousTitre`, `contenu`, `image`, `dateCreation`) VALUES
+(8, 'L\'abandon des animaux', 'C\'est les abandons', 'Salut aujourd\'hui je vais vous présenter l\'abandon des / animaux /, ce n\'est pas bien en vrai non ? *\r\nje sais c\'est peut être con mais voilà, il faut / pas / abandonner les / animaux / ', 'default.jpg', '2023-12-03 20:42:16');
 
 -- --------------------------------------------------------
 
@@ -87,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `image` (
   `id_animal` int NOT NULL,
   PRIMARY KEY (`id_image`),
   KEY `id_animal` (`id_animal`)
-) ENGINE=MyISAM AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
