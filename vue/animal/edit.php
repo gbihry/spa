@@ -17,19 +17,19 @@ if(isset($_SESSION['USER'])){
         <div class="form_elt">
             <label for="">
                 <span>Age</span>
-                <input type="number" name="age" value="<?= $animal['age'] ?>" class="texte" id="" placeholder="indiquez age" required>
+                <input type="number" name="age" min="0"  value="<?= $animal['age'] ?>" class="texte" id="" placeholder="indiquez age" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
-                <span>Taille</span>
-                <input type="text" name="taille" value="<?= $animal['taille'] ?>" class="texte" id="" placeholder="indiquez taille" required>
+                <span>Taille (cm)</span>
+                <input type="number" name="taille" min="0"  value="<?= $animal['taille'] ?>" class="texte" id="" placeholder="indiquez taille" required>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
-                <span>Poid</span>
-                <input type="text" name="poid" value="<?= $animal['poid'] ?>" class="texte" id="" placeholder="indiquez poid" required>
+                <span>Poid (kg)</span>
+                <input type="number" name="poid" min="0" value="<?= $animal['poid'] ?>" class="texte" id="" placeholder="indiquez poid" required>
             </label>
         </div>
         <div class="form_elt">

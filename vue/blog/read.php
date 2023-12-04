@@ -28,18 +28,19 @@ ob_start();
             $time = $hours . "h" . $minutes . "m" . $seconds . "s";
 
             ?>
-            <div class="">
+            <div class=""><?php
+                if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN") {
+                    ?>
+                    <a onclick="modalVerif(this, `<?=$blog['titre']?>`, 'blog', <?=$blog['id_blog']?>)">Supprimer</a>
+                    <a href="index.php?action=modifierBlog&&idBlog=<?=$blog['id_blog']?>">Modifier</a>
+                    <?php
+                }
+                ?>
+
                 <p>Titre : <?= $blog['titre'] ?></p>
                 <p>Sous titre : <?= $blog['sousTitre'] ?></p>
                 <img src="photoBlog/<?= $blog['image'] ?>" alt="">
                 <p>Fait le <?= $date ?> à <?= $time ?> </p>
-                <?php
-                    if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN") {
-                ?>
-                        <a onclick="modalVerif(this, '<?=$blog['titre']?>', 'blog', <?=$blog['id_blog']?>)">Supprimer</a>
-                <?php
-                    }
-                ?>
                 <a href="index.php?action=blog&&idBlog=<?= $blog['id_blog'] ?>">Voir le blog</a>
             </div>
             <?php

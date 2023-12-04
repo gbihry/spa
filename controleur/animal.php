@@ -160,7 +160,7 @@ function editAnimal($idAnimal){
             $idAnimal
         );
 
-        header('Location: index.php?action=admin');
+        header('Location: index.php?action=modifierAnimal&&idAnimal='.$idAnimal.'');
     }else{
         $ObjectAnimal = new Animal();
         $ObjectType = new Type();

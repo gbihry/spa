@@ -123,7 +123,10 @@ try {
                         break;
                     case "supprimerBlog":
                         removeBlog($_GET['idBlog']);
-                    break;
+                        break;
+                    case "modifierBlog":
+                        editBlog($_GET['idBlog']);
+                        break;
                     
                     case "admin":
                         admin();

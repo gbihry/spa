@@ -68,6 +68,30 @@ function createBlog(){
     }
 }
 
+function editBlog($idBlog){
+    if ($_POST){
+        $ObjectBlog = new Blog();
+
+        $titre = htmlspecialchars($_POST['titre']);
+        $sousTitre = htmlspecialchars($_POST['sousTitre']);
+        $contenu = htmlspecialchars($_POST['contenu']);
+
+        $ObjectBlog->editBlog(
+            $titre,
+            $sousTitre,
+            $contenu,
+            $idBlog
+        );
+
+        header('Location: index.php?action=blogs');
+    }else{
+        $ObjectBlog = new Blog();
+
+        $blog = $ObjectBlog->getBlog($idBlog);
+        require "vue/blog/edit.php";
+    }
+}
+
 function removeBlog($idBlog){
     $ObjectBlog = new Blog();
 

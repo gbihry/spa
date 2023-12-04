@@ -11,7 +11,6 @@ function createSPA(){
             $nom,
             $localisation
         );
-        $AllSPA = $ObjectSPA->getAllSPA();
 
         header('Location: index.php?action=admin');
     }else{
@@ -24,7 +23,6 @@ function removeSPA($idSpa){
     $ObjectSPA = new Spa();
 
     $ObjectSPA->removeSPA($idSpa);
-    $AllSPA = $ObjectSPA->getAllSPA();
 
     header('Location: index.php?action=admin');
 
@@ -42,7 +40,6 @@ function editSPA($idSpa){
             $localisation,
             $idSpa
         );
-        $AllSPA = $ObjectSPA->getAllSPA();
 
         header('Location: index.php?action=admin');
     }else{
