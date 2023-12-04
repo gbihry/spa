@@ -125,7 +125,7 @@ class Blog extends database
         return $res;
     }
 
-    public function getDate($dateAction){
+    public function getDateTime($dateAction){
 
         $date = explode("-", explode(" ", $dateAction)[0]);
         $year = $date[0];

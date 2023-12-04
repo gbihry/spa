@@ -5,9 +5,9 @@ $titre = " Blog :  " . $blog['titre'];
 
 ob_start();
 
-$dateCreation = $ObjectBlog->getDate($blog['dateCreation']);
+$dateCreation = $ObjectBlog->getDateTime($blog['dateCreation']);
 if ($blog['dateModification'] != null){
-    $dateModification = $ObjectBlog->getDate($blog['dateModification']);
+    $dateModification = $ObjectBlog->getDateTime($blog['dateModification']);
 }
 
 ?>

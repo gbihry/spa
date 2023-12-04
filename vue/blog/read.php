@@ -13,9 +13,9 @@ ob_start();
     <div class="blogs">
         <?php
         foreach($blogs as $blog){
-            $dateCreation = $ObjectBlog->getDate($blog['dateCreation']);
+            $dateCreation = $ObjectBlog->getDateTime($blog['dateCreation']);
             if ($blog['dateModification'] != null){
-                $dateModification = $ObjectBlog->getDate($blog['dateModification']);
+                $dateModification = $ObjectBlog->getDateTime($blog['dateModification']);
             }
             ?>
             <div class=""><?php

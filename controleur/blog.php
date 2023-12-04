@@ -19,7 +19,7 @@ function blog($idBlog){
     $contenu = "";
 
     foreach ($paragraphes as $paragraphe) {
-        $contenu .= "<p>";
+        $contenu.= "<p>";
         $texteGras = explode("/", $paragraphe);
         for ($i = 0; $i < count($texteGras); $i++){
             if (($i % 2) == 0){
@@ -30,20 +30,6 @@ function blog($idBlog){
         }
         $contenu .= "</p>";
     }
-
-    $dateTime = $blog['dateCreation'];
-
-    $date = explode("-", explode(" ", $dateTime)[0]);
-    $year = $date[0];
-    $month = $date[1];
-    $day = $date[2];
-    $date = $day . "/" . $month . "/" . $year;
-
-    $time = explode(":", explode(" ", $dateTime)[1]);
-    $hours = $time[0];
-    $minutes = $time[1];
-    $seconds = $time[2];
-    $time = $hours . "h" . $minutes . "m" . $seconds . "s";
 
     require "vue/blog/detail.php";
 }
