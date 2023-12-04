@@ -4,13 +4,20 @@ $header = NOMSITE;
 $titre = " Blog :  " . $blog['titre'];
 
 ob_start();
+
+$dateCreation = $ObjectBlog->getDate($blog['dateCreation']);
+if ($blog['dateModification'] != null){
+    $dateModification = $ObjectBlog->getDate($blog['dateModification']);
+}
+
 ?>
     <div class="detailBlog">
         <h1> <?=$blog['titre']?> </h1>
         <h2> <?=$blog['sousTitre']?> </h2>
         <?=$contenu?>
         <img src="photoBlog/<?= $blog['image'] ?>" alt="">
-        <p>Créer le <?= $date ?> à <?= $time ?></p>
+        <p>Fait le <?= $dateCreation[0] ?> à <?= $dateCreation[1] ?> </p>
+        <p><?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?></p>
     </div>
 <?php
 $contenu = ob_get_clean();

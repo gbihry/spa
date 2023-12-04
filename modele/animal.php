@@ -6,7 +6,7 @@ class Animal extends database {
 
     public function getAnimals(){
         $req = ' 
-        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, dateArrivee, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
         FROM `animal` 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
@@ -20,7 +20,7 @@ class Animal extends database {
 
     public function getAnimal($idAnimal){
         $req = ' 
-        SELECT id_animal, animal.nom, age, taille, poid, handicape, spa.id_spa, type.id_type
+        SELECT id_animal, animal.nom, age, taille, poid, handicape,dateArrivee, spa.id_spa, type.id_type
         FROM `animal` 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
@@ -123,6 +123,7 @@ class Animal extends database {
     public function createAnimal($nom, $age, $taille, $poid, $handicape, $idSPA, $idType){
         // Test s'il n'y a pas d'erreur
         $nomFichier = "default.jpg";
+        $dateArrivee = date("Y-m-d H:i:s");
         if ($_FILES['photoAnimal']['tmp_name']) {
             if (!$_FILES['photoAnimal']['error'] == 0) {
                 throw new Exception("Erreur de transfert");
@@ -153,10 +154,10 @@ class Animal extends database {
         $req = ' 
         INSERT INTO
         animal
-        (nom, age, taille, poid, handicape, id_spa, id_type)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        (nom, age, taille, poid, handicape, dateArrivee, id_spa, id_type)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ';
-        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $idSPA, $idType));
+        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $dateArrivee, $idSPA, $idType));
 
         $idAnimal = $this->getAnimalByName($nom)['id_animal'];
 
@@ -330,12 +331,13 @@ class Animal extends database {
     }
 
     public function editAnimal($nom, $age, $taille, $poid, $handicape, $spa, $type, $idAnimal){
+        $dateArrivee = $this->getAnimal($idAnimal)['dateArrivee'];
         $req = ' 
         UPDATE animal 
-        SET nom = ?, age = ?, taille = ?, poid = ?, handicape = ?, id_spa = ?, id_type = ?
+        SET nom = ?, age = ?, taille = ?, poid = ?, handicape = ?, dateArrivee = ?, id_spa = ?, id_type = ?
         WHERE animal.id_animal = ?
         ';
-        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $spa, $type, $idAnimal));
+        $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $dateArrivee, $spa, $type, $idAnimal));
         
         return $res;
     }
@@ -377,5 +379,15 @@ class Animal extends database {
         $res = $this->execReqPrep($req, array($value));
 
         return $res;
+    }
+
+    public function getDate($date){
+        $dateArrivee = explode("-",$date);
+        $year = $dateArrivee[0];
+        $month = $dateArrivee[1];
+        $day = $dateArrivee[2];
+        $dateArrivee = $day . "/" . $month . "/" . $year;
+
+        return $dateArrivee;
     }
 }

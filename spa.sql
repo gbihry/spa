@@ -32,9 +32,10 @@ CREATE TABLE IF NOT EXISTS `animal` (
   `id_animal` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `age` int NOT NULL,
-  `taille` decimal(15,2) NOT NULL,
-  `poid` decimal(15,2) NOT NULL,
+  `taille` decimal(15,0) NOT NULL,
+  `poid` decimal(15,1) NOT NULL,
   `handicape` tinyint NOT NULL,
+  `dateArrivee` date NOT NULL,
   `id_spa` int NOT NULL,
   `id_type` int NOT NULL,
   PRIMARY KEY (`id_animal`),
@@ -56,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `contenu` longtext COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `dateCreation` datetime NOT NULL,
+  `dateModification` datetime,
   PRIMARY KEY (`id_blog`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

@@ -44,6 +44,7 @@ class Blog extends database
     public function editBlog($titre, $sousTitre, $contenu, $idBlog){
         $nomFichier = "default.jpg";
         $dateCreation = $this->getBlog($idBlog)['dateCreation'];
+        $dateModification = date("Y-m-d H:i:s");
         if ($_FILES['photoBlog']['tmp_name']) {
             if (!$_FILES['photoBlog']['error'] == 0) {
                 throw new Exception("Erreur de transfert");
@@ -73,11 +74,11 @@ class Blog extends database
 
         $req = ' 
         UPDATE blog 
-        SET titre = ?, sousTitre = ?, contenu = ?, image = ?, dateCreation = ?
+        SET titre = ?, sousTitre = ?, contenu = ?, image = ?, dateCreation = ?, dateModification = ?
         WHERE blog.id_blog = ?
         ';
 
-        $res = $this->execReqPrep($req, array($titre, $sousTitre, $contenu, $nomFichier, $dateCreation, $idBlog));
+        $res = $this->execReqPrep($req, array($titre, $sousTitre, $contenu, $nomFichier, $dateCreation, $dateModification, $idBlog));
 
         return $res;
 
@@ -122,5 +123,22 @@ class Blog extends database
         $res = $this->execReqPrep($req, array($titre, $sousTitre, $contenu, $nomFichier, $dateCreation));
 
         return $res;
+    }
+
+    public function getDate($dateAction){
+
+        $date = explode("-", explode(" ", $dateAction)[0]);
+        $year = $date[0];
+        $month = $date[1];
+        $day = $date[2];
+        $date = $day . "/" . $month . "/" . $year;
+
+        $time = explode(":", explode(" ", $dateAction)[1]);
+        $hours = $time[0];
+        $minutes = $time[1];
+        $seconds = $time[2];
+        $time = $hours . "h" . $minutes . "m" . $seconds . "s";
+
+        return [$date, $time];
     }
 }

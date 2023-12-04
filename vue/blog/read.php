@@ -13,20 +13,10 @@ ob_start();
     <div class="blogs">
         <?php
         foreach($blogs as $blog){
-            $dateTime = $blog['dateCreation'];
-
-            $date = explode("-", explode(" ", $dateTime)[0]);
-            $year = $date[0];
-            $month = $date[1];
-            $day = $date[2];
-            $date = $day . "/" . $month . "/" . $year;
-
-            $time = explode(":", explode(" ", $dateTime)[1]);
-            $hours = $time[0];
-            $minutes = $time[1];
-            $seconds = $time[2];
-            $time = $hours . "h" . $minutes . "m" . $seconds . "s";
-
+            $dateCreation = $ObjectBlog->getDate($blog['dateCreation']);
+            if ($blog['dateModification'] != null){
+                $dateModification = $ObjectBlog->getDate($blog['dateModification']);
+            }
             ?>
             <div class=""><?php
                 if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN") {
@@ -40,7 +30,8 @@ ob_start();
                 <p>Titre : <?= $blog['titre'] ?></p>
                 <p>Sous titre : <?= $blog['sousTitre'] ?></p>
                 <img src="photoBlog/<?= $blog['image'] ?>" alt="">
-                <p>Fait le <?= $date ?> à <?= $time ?> </p>
+                <p>Fait le <?= $dateCreation[0] ?> à <?= $dateCreation[1] ?> </p>
+                <p><?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?></p>
                 <a href="index.php?action=blog&&idBlog=<?= $blog['id_blog'] ?>">Voir le blog</a>
             </div>
             <?php

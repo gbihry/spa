@@ -77,6 +77,7 @@ ob_start();
                     <th>Handicape</th>
                     <th>SPA</th>
                     <th>Type</th>
+                    <th>Arrivé le</th>
                     <th>Supprimer</th>
                     <th>Modifier</th>
                 </tr>
@@ -84,6 +85,7 @@ ob_start();
             <tbody>
                 <?php
                     foreach($animals as $animal){
+                        $animal['dateArrivee'] = $ObjectAnimal->getDate($animal['dateArrivee']);
                         ?>
                         <tr>
                             <td><img class="imgAnimal" src='photoAnimal/<?= $animal['nomImg'] ?>' alt=""></td>
@@ -94,7 +96,7 @@ ob_start();
                             <td><?= $animal['handicape'] == 1 ? "Oui" : "Non" ?></td>
                             <td><?= $animal['spaNom'] ?></td>
                             <td><?= $animal['type'] ?></td>
-                            
+                            <td><?= $animal['dateArrivee'] ?></td>
 
                             <td><a onclick="modalVerif(this, '<?=$animal['nom']?>', 'animal', <?=$animal['id_animal']?>)">Supprimer</a></td>
                             <td><a href="index.php?action=modifierAnimal&&idAnimal=<?=$animal['id_animal']?>">Modifier</a></td>

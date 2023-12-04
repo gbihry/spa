@@ -4,6 +4,8 @@ $header = NOMSITE;
 $titre = "Détail de l'animal " . $animal['nom'];
 
 ob_start();
+
+$dateArrivee = $ObjectAnimal->getDate($animal['dateArrivee']);
 ?>
     <div class="detail">
         <p>Nom : <?=$animal['nom']?></p>
@@ -11,6 +13,7 @@ ob_start();
         <p>Taille : <?=$animal['taille']?></p>
         <p>Poid : <?=$animal['poid']?></p>
         <p>Handicapé : <?= $animal['handicape'] == 1 ? "Oui" : "Non" ?></p>
+        <p>Arrivée le <?= $dateArrivee ?></p>
         <h2>Photo :</h2>
         <?php
             foreach($imagesAnimal as $imageAnimal){
