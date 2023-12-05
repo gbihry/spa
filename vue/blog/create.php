@@ -20,8 +20,8 @@ if(isset($_SESSION['USER'])){
                 <input type="text" name="sousTitre" class="texte" id="" placeholder="Sous titre" required>
             </label>
         </div>
-        <p>Pour mettre du texte en gras : mettre votre partie en gras entre deux slash ( / ), exemple : / je suis en gras /</p>
-        <p>Pour faire un autre paragraphe : mettre une étoile à la fin de votre ligne, exemple : ce texte sera la fin de mon paragraphe *</p>
+        <p>Pour mettre du texte en gras : mettre votre partie en gras entre deux étoiles ( ** ), exemple : **je suis en gras**</p>
+        <p>Pour faire un autre paragraphe : mettre un slash à la fin de votre ligne ( / ), exemple : ce texte sera la fin de mon paragraphe /</p>
         <div class="form_elt">
             <label for="">
                 <span>Contenu</span>

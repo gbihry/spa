@@ -57,6 +57,7 @@ if(!isset($_SESSION['acces'])){
     </form>
 
     <p>Vous avez déjà un compte ? <a class="lien" href="index.php?action=login">Se connecter</a></p>
+    <a class="lien" href="index.php">Retour</a>
     <?php
 }
 

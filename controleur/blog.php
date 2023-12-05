@@ -14,13 +14,13 @@ function blog($idBlog){
     $ObjectBlog = new Blog();
 
     $blog = $ObjectBlog->getBlog($idBlog);
-    $paragraphes = explode("*", $blog['contenu']);
+    $paragraphes = explode("/", $blog['contenu']);
 
     $contenu = "";
 
     foreach ($paragraphes as $paragraphe) {
         $contenu.= "<p>";
-        $texteGras = explode("/", $paragraphe);
+        $texteGras = explode("**", $paragraphe);
         for ($i = 0; $i < count($texteGras); $i++){
             if (($i % 2) == 0){
                 $contenu .= $texteGras[$i];

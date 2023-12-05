@@ -28,6 +28,7 @@ if(!isset($_SESSION['acces'])){
         <input type="submit" class="valid" name="ok" value="valider">
     </form>
     <p>Pas de compte ? <a class="lien" href="index.php?action=signup">S'inscrire</a></p>
+    <a class="lien" href="index.php">Retour</a>
     <?php
 }
 

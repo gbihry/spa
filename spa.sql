@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 03 déc. 2023 à 20:06
+-- Généré le : mar. 05 déc. 2023 à 11:59
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -52,12 +52,12 @@ CREATE TABLE IF NOT EXISTS `animal` (
 DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id_blog` int NOT NULL AUTO_INCREMENT,
-  `titre` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `sousTitre` text COLLATE utf8mb4_general_ci NOT NULL,
-  `contenu` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `titre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sousTitre` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `contenu` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `dateCreation` datetime NOT NULL,
-  `dateModification` datetime,
+  `dateModification` datetime DEFAULT NULL,
   PRIMARY KEY (`id_blog`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `blog` (
 -- Déchargement des données de la table `blog`
 --
 
-INSERT INTO `blog` (`id_blog`, `titre`, `sousTitre`, `contenu`, `image`, `dateCreation`) VALUES
-(8, 'L\'abandon des animaux', 'C\'est les abandons', 'Salut aujourd\'hui je vais vous présenter l\'abandon des / animaux /, ce n\'est pas bien en vrai non ? *\r\nje sais c\'est peut être con mais voilà, il faut / pas / abandonner les / animaux / ', 'default.jpg', '2023-12-03 20:42:16');
+INSERT INTO `blog` (`id_blog`, `titre`, `sousTitre`, `contenu`, `image`, `dateCreation`, `dateModification`) VALUES
+(8, 'La triste réalité de l\'abandon des animaux en Fran', 'C\'est les abandons', 'En France, la question de l\'abandon des animaux de compagnie demeure un problème majeur. Selon les dernières statistiques, le nombre d\'animaux abandonnés chaque année atteint des chiffres alarmants. Cette problématique souligne l\'urgence d\'une meilleure sensibilisation et de mesures concrètes pour protéger nos amis à quatre pattes, notamment ceux qui sont âgés ou handicapés. /\r\n\r\nEn France, environ 100 000 animaux sont abandonnés chaque année, selon les rapports de la Société Protectrice des Animaux (SPA). Parmi ces animaux, une proportion notable concerne des animaux plus âgés ou présentant des handicaps, rendant leur prise en charge plus délicate. Les raisons principales de ces abandons sont souvent liées à des problèmes économiques, des déménagements, ou encore des difficultés à assumer les besoins spécifiques de ces compagnons particuliers. /\r\n\r\nLa SPA et d\'autres organisations dévouées travaillent sans relâche pour sensibiliser le public, offrir des solutions d\'adoption responsable et promouvoir la stérilisation pour limiter la surpopulation animale. En tant que SPA spécialisée dans les animaux âgés et handicapés, notre engagement se renforce pour offrir une seconde chance à ces compagnons vulnérables et les aider à trouver des foyers aimants. /\r\n\r\nNotre SPA se consacre spécifiquement aux animaux âgés et handicapés, offrant un refuge, des soins spécialisés et des programmes d\'adoption adaptés. Pour en savoir plus sur notre engagement et sur la façon dont vous pouvez soutenir notre cause, explorez notre site et découvrez nos pensionnaires en attente d\'adoption. /\r\n', 'default.jpg', '2023-12-03 20:42:16', '2023-12-05 12:33:07');
 
 -- --------------------------------------------------------
 
