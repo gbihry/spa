@@ -20,7 +20,7 @@ function login() {
                     $_SESSION['IDUSER'] = $user['id_utilisateur'];
                     $_SESSION['USER'] = $user['pseudo'];
                     $_SESSION['ROLE'] = $user['role'];
-                    $_SESSiON['LOC'] = $user['localisation'];
+                    $_SESSION['LOC'] = $user['localisation'];
                 }
             }else{
                 $verifLogin = false;

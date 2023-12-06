@@ -20,7 +20,7 @@ if (isset($titleTrie) && $titleTrie != null){
                     <?php
                         echo("<option value='0'>--Séléctionner type--</option>");
                         foreach($types as $type){
-                            echo("<option value=".$type['id_type']." ".$verif.">".$type['libelle']."</option>");
+                            echo("<option value=".$type['id_type'].">".$type['libelle']."</option>");
                         }
                     ?> 
                 </select>
@@ -33,7 +33,7 @@ if (isset($titleTrie) && $titleTrie != null){
                     <?php
                         echo("<option value='0'>--Séléctionner spa--</option>");
                         foreach($allSPA as $spa){
-                            echo("<option value=".$spa['id_spa']." ".$verif.">".$spa['nom']."</option>");
+                            echo("<option value=".$spa['id_spa'].">".$spa['nom']."</option>");
                         }
                     ?> 
                 </select>
@@ -45,8 +45,11 @@ if (isset($titleTrie) && $titleTrie != null){
                 <select name="localisation" id="pet-select">   
                     <?php
                         echo("<option value='0'>--Séléctionner localisation--</option>");
+                        if(isset($_SESSION['USER'])){
+                            echo("<option value=".$_SESSION['LOC'].">--Dans votre ville--</option>");
+                        }
                         foreach($localisations as $localisation){
-                            echo("<option value=".$localisation['localisation']." ".$verif.">".$localisation['localisation']."</option>");
+                            echo("<option value=".$localisation['localisation'].">".$localisation['localisation']."</option>");
                         }
                     ?> 
                 </select>
