@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title><?= $title ?></title>
     <link href="style/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/assets.css">
     <script src="https://kit.fontawesome.com/f460dffe13.js" crossorigin="anonymous"></script>
 </head>
 <body>

@@ -1,0 +1,62 @@
+:root{
+    --secondary: #F7567C;
+    --secondary-75: rgba(247, 86, 124, 0.75);
+    --secondary-50: rgba(247, 86, 124, 0.50);
+    --secondary-25: rgba(247, 86, 124, 0.25);
+    --secondary-10: rgba(247, 86, 124, 0.10);
+
+    --primary: #111;
+    --primary-75: rgba(17, 17, 17, 0.75);
+    --primary-50: rgba(17, 17, 17, 0.50);
+    --primary-25: rgba(17, 17, 17, 0.25);
+    --primary-10: rgba(17, 17, 17, 0.10);
+
+    --body_bg: #FFF;
+}
+
+/* Assets fonts */
+
+/* Titre et sous titre */
+h1{
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+h2{
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+h3{
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+/* Texte */
+span{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
+
+p{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.p_italic{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal; 
+}
