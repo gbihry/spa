@@ -45,7 +45,28 @@
         <?= $contenu ?>
     </main>
     <footer>
-        <?= $footer ?>
+    <div><a href="index.php"><h1><?= $header ?></h1></a></div>
+                <div class="menu">
+                    <?php
+                    if(!isset($_SESSION['USER'])){
+                        echo('<a class="lien" href="index.php">home</a>');
+                        echo('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
+                        echo('<a class="lien" href="index.php?action=blogs">Blogs</a>');
+                        echo('<a class="lien connexion_link" href="index.php?action=login">Connexion</a>');
+                        echo('<a class="lien inscription_link" href="index.php?action=signup">S\'inscrire</a>');
+                        
+                    }else{
+                        if ($_SESSION['ROLE'] == "ADMIN"){
+                            echo('<a class="lien" href="index.php?action=admin">Administration</a>');
+                        }
+                        echo('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
+                        echo('<a class="lien" href="index.php?action=voirFavoris">Voir favoris</a>');
+                        echo('<a class="lien" href="index.php?action=blogs">Blogs</a>');
+                        echo('<a class="lien" href="index.php?action=profil"><i class="fa-solid fa-user"></i></a>');
+                        echo('<a class="lien" href="index.php?action=delog">Quitter</a>');
+                    }
+                    ?>
+                </div>
     </footer>
     <script src="js/script.js"></script>
 </body>
