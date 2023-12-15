@@ -319,6 +319,12 @@ header .menu {
     margin-top: 10px;
 }
 
+.about_section .left img{
+  background-size: cover;
+  min-height: 150%;
+  object-fit: cover;
+}
+
 .about_section .right{
     display: flex;
     flex-direction: column;
@@ -381,7 +387,7 @@ header .menu {
 .animaux_section button{
   width: fit-content;
   padding: 10px;
-  font-size: 24px;
+  font-size: 20px;
   background: var(--secondary-50);
   border: none;
   border-radius: 10px;
@@ -412,13 +418,61 @@ header .menu {
   color: white;
 }
 
-.blogs_container button{
+.blogs_section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blogs_section button{
   width: fit-content;
   padding: 10px;
-  font-size: 24px;
+  font-size: 20px;
   background: var(--secondary-50);
   border: none;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.blogs_container{
+  display: flex; 
+  gap: 20px;
+}
+
+.blog_right{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog_right .blogs{
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom: solid 1px var(--primary);
+}
+
+.blog_right button{
+  background: none;
+  display: flex;
+  align-items: center;
+ gap: 10px; 
+}
+
+.blog_left{
+  background-image: url(/assets/about_manoir.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:end ;
+}
+
+.blog_left .text{
+  width: fit-content;
+  background: var(--primary-75);
+  color: white;
+  padding: 10px;
 }
