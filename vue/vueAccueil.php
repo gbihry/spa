@@ -78,6 +78,53 @@ ob_start();
 
 </section>
 
+<section class="about_section">
+    <div class="left">
+        <img src="./assets/about_manoir.png" alt="" srcset="">
+    </div>
+
+    <div class="right">
+        <h2>Notre association, une <span>vocation</span></h2>
+
+        <p>Nous existons depuis 2023, 3 personnes unis pour le bien être animak </p>
+
+        <div class="achievements">
+            <div>
+                <h3>
+                    100 +
+                </h3>
+                <p>Animaux sauvés</p>
+            </div>
+            <div>
+                <h3>
+                    3
+                </h3>
+                <p>Refuges à travers l'Alsace</p>
+            </div>
+            <div>
+                <h3>
+                    990 +
+                </h3>
+                <p>Adoptions par ans</p>
+            </div>
+        </div>
+
+        <div class="citation">
+            <span>"Un refuge de fou furieux sérieux"</span>
+            <div class="chuck_norris">
+                <div class="profil_picture">
+                    <img src="./assets/chuck_norris.svg" alt="" srcset="">
+                </div>
+                <div class="chuck_profil">
+                    <p>Chuck Norris</p>
+                    <p class="p_italic">Le GOAT</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <?php
 $contenu = ob_get_clean();
 $footer = "&copy; SAE 3D01";
