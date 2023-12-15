@@ -25,7 +25,7 @@ body {
 
 section {
   max-width: 1024px;
-  min-height: 80svh;
+  min-height: 90svh;
   margin-left: auto;
   margin-right: auto;
 }
@@ -176,15 +176,6 @@ p {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-}
-
-@keyframes move-in {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
 }
 
 /* BLOG */
@@ -346,11 +337,20 @@ header .menu {
     padding-top:20px ;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--primary);
+    gap: 20px;
 }
 
 .achievements h3{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.achievements>div{
+  max-width: 80%;
+}
+
+.achievements :nth-child(2){
+  text-align: center;
 }
 
 .about_section .citation{
@@ -371,4 +371,54 @@ header .menu {
 .chuck_profil{
     display: flex;
     flex-direction: column;
+}
+.animaux_section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.animaux_section button{
+  width: fit-content;
+  padding: 10px;
+  font-size: 24px;
+  background: var(--secondary-50);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.animaux_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.animaux_container .animaux{
+  background-color: red;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.animaux >div{
+  padding: 10px;
+}
+
+.animaux_description{
+  background: var(--primary-50);
+  color: white;
+}
+
+.blogs_container button{
+  width: fit-content;
+  padding: 10px;
+  font-size: 24px;
+  background: var(--secondary-50);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }

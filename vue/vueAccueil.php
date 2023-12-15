@@ -125,6 +125,47 @@ ob_start();
     </div>
 </section>
 
+<section class="animaux_section">
+    <h3>Quelques un de nos pensionnaires</h3>
+    <p>Voici les derniers arrivant du refuges</p>
+
+    <div class="animaux_container">
+        <div class="animaux">
+            <div class="animaux_description">
+                <span class="name">Stefano</span>
+                <p class="age">12 ans</p>
+            </div>
+        </div>
+        <div class="animaux">
+            <div class="animaux_description">
+                <span class="name">Chuck Borris</span>
+                <p class="age">230 ans</p>
+            </div>
+        </div>
+        <div class="animaux">
+            <div class="animaux_description">
+                <span class="name">Alfredo</span>
+                <p class="age">40 ans</p>
+            </div>
+        </div>
+    </div>
+
+    <button>
+        Voir plus d'animaux 
+    </button>
+</section>
+
+<section class="blogs_section">
+    <h3>Blogs de notre refuge</h3>
+
+    <div class="blogs_container">
+
+    </div>
+
+    <button>Voir plus de Blogs</button>
+
+</section>
+
 <?php
 $contenu = ob_get_clean();
 $footer = "&copy; SAE 3D01";
