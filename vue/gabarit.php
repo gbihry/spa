@@ -17,10 +17,12 @@
                 <div class="menu">
                     <?php
                     if(!isset($_SESSION['USER'])){
-                        echo('<a class="lien" href="index.php?action=login">Connexion</a>');
-                        echo('<a class="lien" href="index.php?action=signup">S\'inscrire</a>');
+                        echo('<a class="lien" href="index.php">home</a>');
                         echo('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
                         echo('<a class="lien" href="index.php?action=blogs">Blogs</a>');
+                        echo('<a class="lien connexion_link" href="index.php?action=login">Connexion</a>');
+                        echo('<a class="lien inscription_link" href="index.php?action=signup">S\'inscrire</a>');
+                        
                     }else{
                         if ($_SESSION['ROLE'] == "ADMIN"){
                             echo('<a class="lien" href="index.php?action=admin">Administration</a>');
