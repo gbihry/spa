@@ -244,7 +244,7 @@ ob_start();
 
 <?php
 $contenu = ob_get_clean();
-$footer = "&copy; SAE 3D01";
+$footer = "Sp-Hess";
 
 
 require "gabarit.php";

@@ -58,7 +58,7 @@
         <nav>
         <div><a href="index.php">
                 <h1>
-                    <?= $header ?>
+                    <?= $footer ?>
                 </h1>
             </a></div>
         <div class="menu">

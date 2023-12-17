@@ -33,5 +33,5 @@ if(!isset($_SESSION['acces'])){
 }
 
 $contenu = ob_get_clean();
-$footer = "&copy; SAE 3D01";
+$footer = "Sp-Hess";
 require "gabarit.php";

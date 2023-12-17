@@ -25,5 +25,5 @@ $dateArrivee = $ObjectAnimal->getDate($animal['dateArrivee']);
     </div>
 <?php
 $contenu = ob_get_clean();
-$footer = "&copy; SAE 3D01";
+$footer = "Sp-Hess";
 require "vue/gabarit.php";
