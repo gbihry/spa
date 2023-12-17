@@ -476,3 +476,57 @@ header .menu {
   color: white;
   padding: 10px;
 }
+
+footer{
+  background: var(--primary-75);
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+footer .menu{
+  display: flex;
+  gap: 20px;
+}
+
+footer nav{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid white;
+  padding-bottom: 30px;
+  align-items: center;
+}
+
+footer a{
+  color: white;
+  text-decoration: none;
+}
+
+footer .contact{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: end;
+  padding: 20px;
+}
+
+.contact .social_icons{
+  display: flex;
+  gap: 20px;
+}
+
+.social_icons svg{
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.social_icons svg:hover{
+  transform: scale(1.2);
+}
+
+.credit{
+  color: white;
+}

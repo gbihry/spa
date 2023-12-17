@@ -1,7 +1,7 @@
 <?php
 
 $title = TITREONGLET;
-$header = NOMSITE;
+$header = "Sp-Hess";
 $titre = "";
 
 ob_start();
@@ -25,7 +25,7 @@ ob_start();
                         </g>
                     </g>
                 </svg>
-                <p>Voir nos ptits potes</p>
+                <p>Voir nos p'tits potes</p>
 
             </button>
 
