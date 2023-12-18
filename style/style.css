@@ -258,6 +258,10 @@ header .menu {
   color: white;
 }
 
+.button_container a {
+  text-decoration: none;
+}
+
 .button_container button {
   display: flex;
   align-items: center;
@@ -309,82 +313,81 @@ header .menu {
   width: 100%;
 }
 
-.about_section{
-    display: flex;
-    align-items: center;
-    gap: 10%;
+.about_section {
+  display: flex;
+  align-items: center;
+  gap: 10%;
 }
 
-.about_section h2{
-    margin-top: 10px;
+.about_section h2 {
+  margin-top: 10px;
 }
 
-.about_section .left img{
+.about_section .left img {
   background-size: cover;
   min-height: 150%;
   object-fit: cover;
 }
 
-.about_section .right{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.about_section .right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.right span{
-    font-size: 54px;
-    color: var(--secondary);
+.right span {
+  font-size: 54px;
+  color: var(--secondary);
 }
 
-
-.achievements{
-    display: flex;
-    justify-content: space-between;
-    padding-top:20px ;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--primary);
-    gap: 20px;
+.achievements {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+  gap: 20px;
 }
 
-.achievements h3{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.achievements h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.achievements>div{
+.achievements > div {
   max-width: 80%;
 }
 
-.achievements :nth-child(2){
+.achievements :nth-child(2) {
   text-align: center;
 }
 
-.about_section .citation{
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    gap: 10px;
+.about_section .citation {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
 }
 
-.citation span{
-    font-size: 20px;
+.citation span {
+  font-size: 20px;
 }
 
-.chuck_norris{
-    display: flex;
+.chuck_norris {
+  display: flex;
 }
 
-.chuck_profil{
-    display: flex;
-    flex-direction: column;
+.chuck_profil {
+  display: flex;
+  flex-direction: column;
 }
-.animaux_section{
+.animaux_section {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.animaux_section button{
+.animaux_section button {
   width: fit-content;
   padding: 10px;
   font-size: 20px;
@@ -395,12 +398,12 @@ header .menu {
   cursor: pointer;
 }
 
-.animaux_container{
+.animaux_container {
   display: flex;
   justify-content: space-between;
 }
 
-.animaux_container .animaux{
+.animaux_container .animaux {
   background-color: red;
   height: 400px;
   width: 300px;
@@ -409,22 +412,22 @@ header .menu {
   justify-content: end;
 }
 
-.animaux >div{
+.animaux > div {
   padding: 10px;
 }
 
-.animaux_description{
+.animaux_description {
   background: var(--primary-50);
   color: white;
 }
 
-.blogs_section{
+.blogs_section {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.blogs_section button{
+.blogs_section button {
   width: fit-content;
   padding: 10px;
   font-size: 20px;
@@ -435,18 +438,18 @@ header .menu {
   cursor: pointer;
 }
 
-.blogs_container{
-  display: flex; 
+.blogs_container {
+  display: flex;
   gap: 20px;
 }
 
-.blog_right{
+.blog_right {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.blog_right .blogs{
+.blog_right .blogs {
   display: flex;
   gap: 20px;
   align-items: start;
@@ -454,30 +457,30 @@ header .menu {
   border-bottom: solid 1px var(--primary);
 }
 
-.blog_right button{
+.blog_right button {
   background: none;
   display: flex;
   align-items: center;
- gap: 10px; 
+  gap: 10px;
 }
 
-.blog_left{
+.blog_left {
   background-image: url(/assets/about_manoir.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:end ;
+  justify-content: end;
 }
 
-.blog_left .text{
+.blog_left .text {
   width: fit-content;
   background: var(--primary-75);
   color: white;
   padding: 10px;
 }
 
-footer{
+footer {
   background: var(--primary-75);
   display: flex;
   flex-direction: column;
@@ -487,12 +490,12 @@ footer{
   padding-right: 60px;
 }
 
-footer .menu{
+footer .menu {
   display: flex;
   gap: 20px;
 }
 
-footer nav{
+footer nav {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid white;
@@ -500,12 +503,12 @@ footer nav{
   align-items: center;
 }
 
-footer a{
+footer a {
   color: white;
   text-decoration: none;
 }
 
-footer .contact{
+footer .contact {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -513,20 +516,64 @@ footer .contact{
   padding: 20px;
 }
 
-.contact .social_icons{
+.contact .social_icons {
   display: flex;
   gap: 20px;
 }
 
-.social_icons svg{
+.social_icons svg {
   cursor: pointer;
   transition: 0.5s;
 }
 
-.social_icons svg:hover{
+.social_icons svg:hover {
   transform: scale(1.2);
 }
 
-.credit{
+.credit {
   color: white;
+}
+
+/* LOGIN STYLE */
+.login_section {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.login_section h2 {
+  display: none;
+  margin: 0;
+}
+
+.login_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  width: 150%;
+}
+
+.halo_div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: blur(90px);
+}
+
+.halo_div2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  position: absolute;
+  z-index: -10;
+  bottom: 0;
+  right: 40%;
+  filter: blur(90px);
 }
