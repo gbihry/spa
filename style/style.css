@@ -539,7 +539,8 @@ footer .contact {
 }
 
 /* LOGIN STYLE */
-.login_section {
+.login_section,
+.signup_section {
   display: flex;
   padding: 0;
   margin: 0;
@@ -547,11 +548,13 @@ footer .contact {
   overflow-y: hidden;
 }
 
-.login_section h1 {
+.login_section h1,
+.right_signup h1 {
   color: var(--secondary);
 }
 
-.login_right {
+.login_right,
+.right_signup {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -561,13 +564,15 @@ footer .contact {
 }
 
 
-.login_right label{
+.login_right label,
+.right_signup label{
   display: flex;
   flex-direction: column;
   width: 400px;
 }
 
-.login_right input{
+.login_right input,
+.right_signup input{
   background-color: var(--secondary-50);
   padding: 10px;
   border: none;
@@ -582,7 +587,7 @@ footer .contact {
   font-weight: 600;
 }
 
-.login_right .button_valid{
+.button_valid{
   color: white;
   font-size: 20px;
   border: var(--secondary) solid 2px;
