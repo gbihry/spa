@@ -54,6 +54,9 @@
         <?= $contenu ?>
     </main>
 
+    <?php
+    if (!isset($showFooter)) { 
+        ?>
     <footer>
         <nav>
         <div><a href="index.php">
@@ -150,6 +153,9 @@
                 <p>SAE_301-Blaser Marvin/Reitzer Thibaud/Bihry Guillaume</p>
             </div>
     </footer>
+        <?php
+    }
+    ?>
     <script src="js/script.js"></script>
 </body>
 
