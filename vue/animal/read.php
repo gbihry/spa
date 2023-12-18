@@ -1,17 +1,28 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Animaux";
+$titre = "";
 
 ob_start();
 
-if (isset($titleTrie) && $titleTrie != null){
-    echo('<h2 class="title">'.$titleTrie.'</h2>');
-}else{
-    echo('<h2 class="title">Tri</h2>');
-}
+// if (isset($titleTrie) && $titleTrie != null){
+//     echo('<h2 class="title">'.$titleTrie.'</h2>');
+// }else{
+//     echo('<h2 class="title">Tri</h2>');
+// }
 ?>
+    <img class="chat_background" src="./assets/animaux_page/background_animaux.png" alt="">
     
+    <section class="animaux_hero">
+
+    <div class="hero">
+        <h1>Choisissez votre compagnon</h1>
+        <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
+    </div>
+    </section>
+
+
+    <section class="animaux_trie">
     <form class="trie" action=<?=$_SERVER['PHP_SELF']."?action=animaux"?> method="POST">
         <div class="form_elt">
             <label for="">
@@ -102,6 +113,8 @@ if (isset($titleTrie) && $titleTrie != null){
         }
         ?>
     </div>
+    </section>
+    
 <?php
 $contenu = ob_get_clean();
 $footer = "Sp-Hess";

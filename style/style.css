@@ -627,3 +627,20 @@ input::placeholder{
   right: 40%;
   filter: blur(90px);
 }
+
+
+/* ANIMAUX PAGE */
+
+.chat_background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.animaux_hero{
+  margin-top: 5%;
+}
