@@ -13,22 +13,29 @@ ob_start();
         <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
 
         <div class="button_container">
-            <button>
-                <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="Group 8">
-                        <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                            transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)" fill="#F7567C" />
-                        <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
-                            <path id="Vector"
-                                d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                fill="white" />
+        <?php
+            echo('
+            <a href="index.php?action=animaux">
+                <button>
+                    <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Group 8">
+                            <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
+                                transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
+                                fill="#F7567C" />
+                            <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
+                                <path id="Vector"
+                                    d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
+                                    fill="white" />
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                <p>Voir nos p'tits potes</p>
+                    </svg>
+                    <p>Voir nos petits potes</p>
+                </button>
+            </a>');
 
-            </button>
-
+            
+            echo ('
+            <a href="index.php?action=login">
             <button>
                 <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="Group 8">
@@ -44,6 +51,8 @@ ob_start();
                 <p>Se connecter</p>
 
             </button>
+            <a/>');
+            ?>
         </div>
     </div>
 
