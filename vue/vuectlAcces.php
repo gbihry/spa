@@ -34,9 +34,11 @@ if (!isset($_SESSION['acces'])) {
                         <input type="password" name="mdp" class="texte" required>
                     </label>
                 </div>
-                <input type="submit" class="valid" name="ok" value="valider">
+                <input type="submit" class="valid button_valid" name="ok" value="Valider">
             </form>
+            <div class="lien_signup">
             <p>Pas de compte ? <a class="lien" href="index.php?action=signup">S'inscrire</a></p>
+            </div>
             <a class="lien" href="index.php">Retour</a>
         </div>
     </main>
