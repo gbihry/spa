@@ -23,6 +23,7 @@ ob_start();
 
 
     <section class="animaux_trie">
+        <h1>Voici tous nos pensionnaires</h1>
     <form class="trie" action=<?=$_SERVER['PHP_SELF']."?action=animaux"?> method="POST">
         <div class="form_elt">
             <label for="">
@@ -66,8 +67,8 @@ ob_start();
                 </select>
             </label>
         </div>
-        <input type="submit" class="valid" name="ok" value="valider">
-        <a href='index.php?action=animaux'>Enlever filtre</a>
+        <input type="submit" class="valid valid_button" name="ok" value="Valider">
+        <a class="remove_filter" href='index.php?action=animaux'>Enlever filtre</a>
     </form>
     <div class="animals">
         <?php
