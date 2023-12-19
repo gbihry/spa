@@ -265,7 +265,10 @@ header .menu {
   gap: 30px;
   width: 80%;
   color: white;
+  margin-top: 5%;
 }
+
+
 
 .button_container {
   display: flex;
@@ -789,4 +792,31 @@ input::placeholder{
 .admin_link_blog{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+/* FAVORIS PAGE */
+
+.favoris_background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.favoris_text{
+  border-bottom: solid 2px black;
+  padding-bottom: 30px;
+}
+
+.background_user_interface{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+  top: 0;
+  left: 0;
+  z-index: -10;
 }

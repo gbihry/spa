@@ -1,7 +1,8 @@
 <?php
 
 $title = TITREONGLET;
-$header = "Sp-Hess";
+$header = "SPA";
+
 $titre = "";
 
 ob_start();
