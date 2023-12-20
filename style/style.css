@@ -30,7 +30,7 @@ section {
   margin-right: auto;
 }
 
-main h2{
+main h2 {
   margin: 0;
 }
 
@@ -120,12 +120,15 @@ p {
 
 .error {
   border-radius: 25px;
-  padding: 5px;
-  background-color: rgb(157, 68, 68);
-  color: white;
+  padding: 10px;
+  font-weight: bold;
+  background-color: white;
+  color: red;
   font-weight: 600;
   margin: 25px 0px;
   width: max-content;
+  position: absolute;
+  left:40% ;
 }
 
 .trie {
@@ -161,10 +164,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.modal{
+.modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,12 +183,12 @@ p {
   gap: 20px;
   border-radius: 10px;
   justify-content: center;
-  
+
   position: absolute;
   background-color: white;
 }
 
-.content button{
+.content button {
   width: fit-content;
   padding: 10px;
   font-size: 15px;
@@ -196,8 +198,6 @@ p {
   font-weight: bold;
   cursor: pointer;
 }
-
-
 
 /* BLOG */
 
@@ -267,8 +267,6 @@ header .menu {
   color: white;
   margin-top: 5%;
 }
-
-
 
 .button_container {
   display: flex;
@@ -583,31 +581,30 @@ footer .contact {
   width: 150%;
 }
 
-
 .login_right label,
-.right_signup label{
+.right_signup label {
   display: flex;
   flex-direction: column;
   width: 400px;
 }
 
 .login_right input,
-.right_signup input{
+.right_signup input {
   background-color: var(--secondary-50);
   padding: 10px;
   border: none;
   border-radius: 10px;
 }
 
-.login_right .lien_signup{
+.login_right .lien_signup {
   padding-top: 50px;
 }
 
-.login_right .lien_signup p{
+.login_right .lien_signup p {
   font-weight: 600;
 }
 
-.button_valid{
+.button_valid {
   color: white;
   font-size: 20px;
   border: var(--secondary) solid 2px;
@@ -616,11 +613,11 @@ footer .contact {
   transition: 0.4s;
 }
 
-.login_right .button_valid:hover{
+.login_right .button_valid:hover {
   transform: scale(1.1);
 }
 
-input::placeholder{
+input::placeholder {
   color: black;
   font-weight: bold;
 }
@@ -648,10 +645,9 @@ input::placeholder{
   filter: blur(90px);
 }
 
-
 /* ANIMAUX PAGE */
 
-.chat_background{
+.chat_background {
   position: absolute;
   top: 0;
   left: 0;
@@ -661,11 +657,11 @@ input::placeholder{
   z-index: -10;
 }
 
-.animaux_hero{
+.animaux_hero {
   margin-top: 5%;
 }
 
-.trie{
+.trie {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--secondary-25);
@@ -674,20 +670,20 @@ input::placeholder{
   margin: 0;
 }
 
-.trie label{
+.trie label {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.trie select{
+.trie select {
   background-color: var(--secondary-75);
   padding: 10px;
   font-size: 12px;
   font-weight: bold;
 }
 
-.trie .valid_button{
+.trie .valid_button {
   background-color: var(--secondary-75);
   color: white;
   font-weight: bold;
@@ -698,17 +694,15 @@ input::placeholder{
   cursor: pointer;
 }
 
-.remove_filter{
+.remove_filter {
   background-color: var(--secondary-50);
   color: white;
   padding: 10px;
-  
 }
-
 
 /* BLOG SECTION */
 
-.blog_section .blog_background{
+.blog_section .blog_background {
   position: absolute;
   top: 0;
   left: 0;
@@ -718,37 +712,36 @@ input::placeholder{
   z-index: -10;
 }
 
-.blog_section .blog_read{
+.blog_section .blog_read {
   margin-top: 30%;
 }
 
-.blog_section h3{
+.blog_section h3 {
   margin: 0;
   color: var(--secondary);
 }
 
-
-.blog_info{
+.blog_info {
   display: flex;
 }
 
-.blog_info_text{
+.blog_info_text {
   margin-left: 10px;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
 }
 
-.blog_info_text :nth-child(3){
+.blog_info_text :nth-child(3) {
   grid-row: 4;
 }
 
-.blog_info_text span{
+.blog_info_text span {
   font-weight: 400;
   color: var(--secondary);
   font-size: large;
 }
 
-.blog_info_text a{
+.blog_info_text a {
   background-color: var(--secondary);
   padding-right: 10px;
   padding-left: 10px;
@@ -758,30 +751,30 @@ input::placeholder{
   justify-content: center;
   border-radius: 10px;
   font-weight: bold;
-  font-size: 24px; 
+  font-size: 24px;
   color: white;
   text-decoration: none;
 }
 
-.add_blog{
+.add_blog {
   display: flex;
   align-items: center;
   gap: 10px;
   border: none;
   background-color: none;
   text-decoration: none;
-  font-size: 20px;  
+  font-size: 20px;
   color: black;
   width: fit-content;
 }
 
-.supp_blog{
+.supp_blog {
   padding: 10px;
   background-color: var(--secondary-25);
   cursor: pointer;
 }
 
-.edit_blog{
+.edit_blog {
   padding: 10px;
   background-color: var(--secondary-75);
   cursor: pointer;
@@ -789,14 +782,14 @@ input::placeholder{
   color: white;
 }
 
-.admin_link_blog{
+.admin_link_blog {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
 /* FAVORIS PAGE */
 
-.favoris_background{
+.favoris_background {
   position: absolute;
   top: 0;
   left: 0;
@@ -806,12 +799,14 @@ input::placeholder{
   z-index: -10;
 }
 
-.favoris_text{
+.favoris_text {
   border-bottom: solid 2px black;
   padding-bottom: 30px;
 }
 
-.background_user_interface{
+/* USER PAGE */
+
+.background_user_interface {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -819,4 +814,82 @@ input::placeholder{
   top: 0;
   left: 0;
   z-index: -10;
+}
+
+.user_interface {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+.user_interface .hero {
+  width: fit-content;
+}
+
+.user_right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.59);
+  padding: 30px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.user_right label {
+  display: flex;
+  flex-direction: column;
+}
+.user_right label input {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.user_right form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user_right .valid_button {
+  background-color: rgba(255, 255, 255, 0.559);
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  color: var(--secondary);
+  border: none;
+  width: auto;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.user_infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.user_infos p {
+  color: var(--secondary);
+  font-weight: bold;
+
+}
+
+.user_infos span {
+  color: black;
+}
+
+.user_edit_link {
+  display: flex;
+  grid-column: 2 span;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user_edit_link a {
+  color: var(--secondary);
 }
