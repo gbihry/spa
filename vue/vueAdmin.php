@@ -7,6 +7,7 @@ $titre = "Administration";
 ob_start();
 
 ?>
+<img src="./assets/admin_img/Admin_background.png" alt="">
 <div class="admin">
     <div class="table-admin">
         <a href="index.php?action=ajouterType">Ajouter type</a>
