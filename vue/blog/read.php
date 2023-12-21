@@ -7,9 +7,9 @@ ob_start();
 ?>
 
 <section class="blog_section">
-    <img class="blog_background" src="./assets/blog_img/blog_background.png" alt="">
 
     <div class="hero">
+    <img src="./assets/blog_img/blog_background.png" alt="">
         <h1>Découvrez nos blogs sur la vie animal</h1>
         <span>Des informations sur le refuge ou plus généralement sur les SPA de France</span>
     </div>
