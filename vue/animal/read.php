@@ -11,59 +11,58 @@ ob_start();
 //     echo('<h2 class="title">Tri</h2>');
 // }
 ?>
-    <img class="chat_background" src="./assets/animaux_page/background_animaux.png" alt="">
-    
-    <section class="animaux_hero">
+<section class="animaux_hero">
 
     <div class="hero">
+        <img src="./assets/animaux_page/background_animaux.png" alt="">
         <h1>Choisissez votre compagnon</h1>
         <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
     </div>
-    </section>
+</section>
 
 
-    <section class="animaux_trie">
-        <h1>Voici tous nos pensionnaires</h1>
-    <form class="trie" action=<?=$_SERVER['PHP_SELF']."?action=animaux"?> method="POST">
+<section class="animaux_trie">
+    <h1>Voici tous nos pensionnaires</h1>
+    <form class="trie" action=<?= $_SERVER['PHP_SELF'] . "?action=animaux" ?> method="POST">
         <div class="form_elt">
             <label for="">
                 <span>Type</span>
-                <select name="type" id="pet-select">   
+                <select name="type" id="pet-select">
                     <?php
-                        echo("<option value='0'>--Séléctionner type--</option>");
-                        foreach($types as $type){
-                            echo("<option value=".$type['id_type'].">".$type['libelle']."</option>");
-                        }
-                    ?> 
+                    echo ("<option value='0'>--Séléctionner type--</option>");
+                    foreach ($types as $type) {
+                        echo ("<option value=" . $type['id_type'] . ">" . $type['libelle'] . "</option>");
+                    }
+                    ?>
                 </select>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>SPA</span>
-                <select name="spa" id="pet-select">   
+                <select name="spa" id="pet-select">
                     <?php
-                        echo("<option value='0'>--Séléctionner spa--</option>");
-                        foreach($allSPA as $spa){
-                            echo("<option value=".$spa['id_spa'].">".$spa['nom']."</option>");
-                        }
-                    ?> 
+                    echo ("<option value='0'>--Séléctionner spa--</option>");
+                    foreach ($allSPA as $spa) {
+                        echo ("<option value=" . $spa['id_spa'] . ">" . $spa['nom'] . "</option>");
+                    }
+                    ?>
                 </select>
             </label>
         </div>
         <div class="form_elt">
             <label for="">
                 <span>Localisations</span>
-                <select name="localisation" id="pet-select">   
+                <select name="localisation" id="pet-select">
                     <?php
-                        echo("<option value='0'>--Séléctionner localisation--</option>");
-                        if(isset($_SESSION['USER'])){
-                            echo("<option value=".$_SESSION['LOC'].">--Dans votre ville--</option>");
-                        }
-                        foreach($localisations as $localisation){
-                            echo("<option value=".$localisation['localisation'].">".$localisation['localisation']."</option>");
-                        }
-                    ?> 
+                    echo ("<option value='0'>--Séléctionner localisation--</option>");
+                    if (isset($_SESSION['USER'])) {
+                        echo ("<option value=" . $_SESSION['LOC'] . ">--Dans votre ville--</option>");
+                    }
+                    foreach ($localisations as $localisation) {
+                        echo ("<option value=" . $localisation['localisation'] . ">" . $localisation['localisation'] . "</option>");
+                    }
+                    ?>
                 </select>
             </label>
         </div>
@@ -72,50 +71,54 @@ ob_start();
     </form>
     <div class="animals">
         <?php
-        foreach($animals as $animal){
+        foreach ($animals as $animal) {
             ?>
-                <div class="card">
-                    <div class="nom">
-                        <h2><?= $animal['nom'] ?></h2>
-                    </div>
-                    <div class="age">
-                        <p><?= $animal['age'] ?> ans</p>
-                    </div>
-                    <div class="image">
-                        
-                        <img src="photoAnimal/<?=$animal['nomImg']?>" alt="">
-                        <?php 
-                        if (isset($_SESSION['USER'])){
-                            ?>
-                            <a href="index.php?action=favoris&&idAnimal=<?=$animal['id_animal']?>&&idUser=<?=$_SESSION['IDUSER']?>">
-                                <?php
-                                    $afficher = false;
-                                    foreach($favoris as $favori){
-                                        if ($favori['id_animal'] == $animal['id_animal']){
-                                            $afficher = true;
-                                        }
-                                    }
-                                    if ($afficher){
-                                        echo('<i class="fa-solid fa-heart"></i>');
-                                    }else{
-                                        echo('<i class="fa-regular fa-heart"></i>');
-                                    }
-                                    
-                                ?>
-                            </a>
-                            <?php 
-                        }
-                        ?>
-                    </div>
-                    <a href="index.php?action=animal&&idAnimal=<?=$animal['id_animal']?>">détail</a>
+            <div class="card">
+                <div class="nom">
+                    <h2>
+                        <?= $animal['nom'] ?>
+                    </h2>
                 </div>
-            
+                <div class="age">
+                    <p>
+                        <?= $animal['age'] ?> ans
+                    </p>
+                </div>
+                <div class="image">
+
+                    <img src="photoAnimal/<?= $animal['nomImg'] ?>" alt="">
+                    <?php
+                    if (isset($_SESSION['USER'])) {
+                        ?>
+                        <a href="index.php?action=favoris&&idAnimal=<?= $animal['id_animal'] ?>&&idUser=<?= $_SESSION['IDUSER'] ?>">
+                            <?php
+                            $afficher = false;
+                            foreach ($favoris as $favori) {
+                                if ($favori['id_animal'] == $animal['id_animal']) {
+                                    $afficher = true;
+                                }
+                            }
+                            if ($afficher) {
+                                echo ('<i class="fa-solid fa-heart"></i>');
+                            } else {
+                                echo ('<i class="fa-regular fa-heart"></i>');
+                            }
+
+                            ?>
+                        </a>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <a href="index.php?action=animal&&idAnimal=<?= $animal['id_animal'] ?>">détail</a>
+            </div>
+
             <?php
         }
         ?>
     </div>
-    </section>
-    
+</section>
+
 <?php
 $contenu = ob_get_clean();
 $footer = "Sp-Hess";
