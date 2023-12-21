@@ -1,22 +1,27 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Modifier type";
+
+$titre = "";
 
 ob_start();
 
 if(isset($_SESSION['USER'])){
     ?>
+    <div class="background_user_interface"></div>
+    <section class="edit_page_admin_section">
+    <h1>Modifier type</h1>
     <form action=<?=$_SERVER['PHP_SELF']."?action=modifierType&&idType=".$_GET['idType']?> method="POST">
         <div class="form_elt">
             <label for="">
-                <span>libelle</span>
+                <span>Libelle</span>
                 <input type="text" name="libelle" value="<?= $libelle ?>" class="texte" placeholder="indiquez nom type">
             </label>
         </div>
-        <input type="submit" class="valid" name="ok" value="valider">
+        <input type="submit" class="valid valid_button" name="ok" value="Valider">
+        
     </form>
-
+    </section>
     <?php
 }
 
