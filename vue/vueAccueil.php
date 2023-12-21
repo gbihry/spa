@@ -9,6 +9,7 @@ ob_start();
 ?>
 <section class="home">
     <div class="hero">
+    <img src="./assets/fond_home.png" alt="" srcset="">
         <h1>Adoptez sans compter</h1>
 
         <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
@@ -82,7 +83,7 @@ ob_start();
         </div>
     </div>
 
-    <img src="./assets/fond_home.png" alt="" srcset="">
+    
 </section>
 
 <section class="pourquoi_adopter">
