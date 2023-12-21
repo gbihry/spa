@@ -5,8 +5,9 @@ $titre = "";
 
 ob_start();
 ?>
-<img class="favoris_background" src="./assets/favoris_img/favoris_background.png" alt="">
+
 <section class="hero">
+<img src="./assets/favoris_img/favoris_background.png" alt="">
     <h1>Vos favoris</h1>
     <span>Ici vous trouvez tout vos chouchous mis en favoris</span>
 </section>
