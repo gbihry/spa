@@ -1,12 +1,15 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Modifier SPA";
+$titre = "";
 
 ob_start();
 
 if(isset($_SESSION['USER'])){
     ?>
+    <section class="edit_page_admin_section">
+    <div class="background_user_interface"></div>
+    <h1>Modifier la SPA</h1>
     <form action=<?=$_SERVER['PHP_SELF']."?action=modifierSPA&&idSPA=".$_GET['idSPA']?> method="POST">
         <div class="form_elt">
             <label for="">
@@ -20,8 +23,9 @@ if(isset($_SESSION['USER'])){
                 <input type="text" name="localisation" value="<?= $spa['localisation'] ?>" class="texte" placeholder="indiquez localisation SPA">
             </label>
         </div>
-        <input type="submit" class="valid" name="ok" value="valider">
+        <input type="submit" class="valid valid_button" name="ok" value="valider">
     </form>
+    </section>
 
     <?php
 }
