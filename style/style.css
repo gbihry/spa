@@ -34,13 +34,6 @@ main h2 {
   margin: 0;
 }
 
-.table-admin {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  flex-direction: column;
-}
-
 .admin {
   display: flex;
   justify-content: space-around;
@@ -128,7 +121,7 @@ p {
   margin: 25px 0px;
   width: max-content;
   position: absolute;
-  left:40% ;
+  left: 40%;
 }
 
 .trie {
@@ -249,7 +242,7 @@ header .menu {
   color: white;
 }
 
-.home img {
+.hero img {
   position: absolute;
   top: 0;
   left: 0;
@@ -588,6 +581,17 @@ footer .contact {
   width: 400px;
 }
 
+label{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
 .login_right input,
 .right_signup input {
   background-color: var(--secondary-50);
@@ -647,16 +651,6 @@ input::placeholder {
 
 /* ANIMAUX PAGE */
 
-.chat_background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-  object-fit: cover;
-  z-index: -10;
-}
-
 .animaux_hero {
   margin-top: 5%;
 }
@@ -694,6 +688,18 @@ input::placeholder {
   cursor: pointer;
 }
 
+.valid_button{
+  background-color: white;
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+}
+
 .remove_filter {
   background-color: var(--secondary-50);
   color: white;
@@ -701,16 +707,6 @@ input::placeholder {
 }
 
 /* BLOG SECTION */
-
-.blog_section .blog_background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-  object-fit: cover;
-  z-index: -10;
-}
 
 .blog_section .blog_read {
   margin-top: 30%;
@@ -789,16 +785,6 @@ input::placeholder {
 
 /* FAVORIS PAGE */
 
-.favoris_background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-  object-fit: cover;
-  z-index: -10;
-}
-
 .favoris_text {
   border-bottom: solid 2px black;
   padding-bottom: 30px;
@@ -846,7 +832,13 @@ input::placeholder {
   padding: 10px;
 }
 
-.user_right form{
+input{
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.user_right form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -876,7 +868,6 @@ input::placeholder {
 .user_infos p {
   color: var(--secondary);
   font-weight: bold;
-
 }
 
 .user_infos span {
@@ -892,4 +883,111 @@ input::placeholder {
 
 .user_edit_link a {
   color: var(--secondary);
+}
+
+/* ADMIN PAGES */
+.panel_admin {
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.admin_panel_text {
+  display: flex;
+  justify-content: space-between;
+  gap: 40%;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: solid 2px black;
+}
+
+.table-admin {
+  width: 100%;
+  border: solid 3px var(--secondary);
+  margin-top: 50px;
+  padding: 10px;
+  background-color: var(--primary-10);
+  border-radius: 10px;
+}
+
+.header_table_admin {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  width: 100%;
+  border-bottom: 2px solid black;
+  align-items: center;
+  color: var(--secondary);
+}
+
+.header_table_admin a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: white;
+  color: var(--secondary);
+  border: solid 1px var(--primary-50);
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  line-height: 50px;
+}
+
+thead {
+  width: 100%;
+}
+
+td {
+  width: fit-content;
+  align-items: center;
+}
+
+tr{
+  align-items: start;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.animals_container_admin{
+  background-color: var(--secondary-75);
+  margin-top:20px ;
+  margin-bottom: 20px;
+}
+
+.header_table_items {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.type_admin {
+  font-size: 24px;
+  color: var(--secondary);
+  font-weight: bolder;
+  width: 100px;
+}
+
+.delete_button_admin {
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+
+.change_button_admin {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 10px;
+  color: black;
+  background-color: var(--secondary-50);
+}
+
+
+.edit_page_admin_section{
+  min-height: fit-content;
 }
