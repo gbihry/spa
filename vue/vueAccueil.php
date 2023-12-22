@@ -9,7 +9,7 @@ ob_start();
 ?>
 <section class="home">
     <div class="hero">
-    <img src="./assets/fond_home.png" alt="" srcset="">
+        <img src="./assets/fond_home.png" alt="" srcset="">
         <h1>Adoptez sans compter</h1>
 
         <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
@@ -56,8 +56,8 @@ ob_start();
             </button>
             <a/>');
             } else {
-                
-                    echo ('
+
+                echo ('
                     <a href="index.php?action=animaux">
                         <button>
                             <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,15 +75,15 @@ ob_start();
                             <p>Voir nos petits potes</p>
                         </button>
                     </a>');
-                }
-            
+            }
+
             ;
 
-            ?>
+            ?>;
         </div>
     </div>
 
-    
+
 </section>
 
 <section class="pourquoi_adopter">
@@ -166,10 +166,10 @@ ob_start();
     <p>Voici les derniers arrivant du refuges</p>
 
     <div class="animaux_container">
-        <div class="animaux">
+    <div class="animaux">
             <div class="animaux_description">
-                <span class="name">Stefano</span>
-                <p class="age">12 ans</p>
+                <span class="name">Chuck Borris</span>
+                <p class="age">230 ans</p>
             </div>
         </div>
         <div class="animaux">

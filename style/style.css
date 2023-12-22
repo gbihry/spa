@@ -51,13 +51,18 @@ main h2 {
 .editImg {
   display: flex;
   flex-direction: column;
-  width: 150px;
   gap: 10px;
   margin: 25px 0px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px black;
 }
 
 .editImg input {
-  width: 50px;
+  width: min-content;
+  background-color: var(--primary-50);
+  color: white;
 }
 
 .editOrdre {
@@ -76,22 +81,31 @@ main h2 {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
-.card h2,
-p {
+.card h2{
+  margin: 0;
+  color: var(--secondary);
+}
+
+.card p{
   margin: 0;
 }
 
 .card {
-  text-align: center;
+  text-align: start;
   display: flex;
-  gap: 25px;
+  max-width: 200px;
   flex-direction: column;
-  position: relative;
   border-radius: 25px;
-  border: 2px solid black;
-  overflow: hidden;
+  border: 2px solid var(--secondary);
+  padding: 20px;
+  transition: 0.4s;
+}
+
+.card:hover{
+  box-shadow: 0px 5px 20px 5px;
 }
 
 .card .image {
@@ -100,7 +114,16 @@ p {
 }
 
 .card .image img {
-  width: 250px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.fa-heart{
+  color:  white;
+  background-color: var(--secondary);
+  padding: 5px;
+  border-radius: 50%;
 }
 
 .card .image a {
@@ -129,7 +152,8 @@ p {
   justify-content: center;
   display: flex;
   gap: 30px;
-  margin: 25px;
+  margin: 40px;
+  border-radius: 10px;
 }
 
 .title {
@@ -402,6 +426,12 @@ header .menu {
   gap: 20px;
 }
 
+.animaux_trie{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .animaux_section button {
   width: fit-content;
   padding: 10px;
@@ -574,23 +604,19 @@ footer .contact {
   width: 150%;
 }
 
+.edit_page_admin_section label {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  gap: 30px;
+}
+
 .login_right label,
 .right_signup label {
   display: flex;
   flex-direction: column;
   width: 400px;
 }
-
-label{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  gap: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-
 
 .login_right input,
 .right_signup input {
@@ -688,7 +714,7 @@ input::placeholder {
   cursor: pointer;
 }
 
-.valid_button{
+.valid_button {
   background-color: white;
   color: var(--secondary);
   font-weight: bold;
@@ -832,7 +858,7 @@ input::placeholder {
   padding: 10px;
 }
 
-input{
+input {
   border-radius: 10px;
   border: none;
   padding: 10px;
@@ -944,17 +970,39 @@ td {
   align-items: center;
 }
 
-tr{
+tr {
   align-items: start;
   text-align: center;
   display: flex;
   justify-content: space-between;
 }
 
-.animals_container_admin{
+.animals_container_admin {
   background-color: var(--secondary-75);
-  margin-top:20px ;
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.create_animals {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.create_animals select {
+  background-color: var(--primary-50);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.files {
+  background-color: var(--primary-50);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .header_table_items {
@@ -987,7 +1035,37 @@ tr{
   background-color: var(--secondary-50);
 }
 
-
-.edit_page_admin_section{
+.edit_page_admin_section {
   min-height: fit-content;
+}
+
+.edit_animals_admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.edit_animals_admin input {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.edit_animals_admin .valid_button {
+  color: white;
+}
+
+.delete_img_animal {
+  background-color: var(--primary-75);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.detail span{
+  color: white;
 }
