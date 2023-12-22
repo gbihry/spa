@@ -13,7 +13,7 @@ if (isset($_SESSION['USER'])) {
     <div class="background_user_interface"></div>
     <section class="edit_page_admin_section">
         <h1>Créer animal</h1>
-        <form enctype="multipart/form-data" action="index.php?action=ajouterAnimal" method="POST">
+        <form enctype="multipart/form-data" class="create_animals" action="index.php?action=ajouterAnimal" method="POST">
             <div class="form_elt">
                 <label for="">
                     <span>Nom</span>
@@ -74,10 +74,10 @@ if (isset($_SESSION['USER'])) {
             </div>
             <div class="form_elt">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
-                <input type="file" class="texte" name="photoAnimal">
+                <input type="file" class="files" class="texte" name="photoAnimal">
             </div>
 
-            <input type="submit" class="valid valid_button" name="ok" value="valider">
+            <input type="submit" class="valid valid_button" name="ok" value="Valider">
         </form>
     </section>
 

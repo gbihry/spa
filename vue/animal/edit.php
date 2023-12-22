@@ -10,7 +10,7 @@ if (isset($_SESSION['USER'])) {
     <div class="background_user_interface"></div>
     <section class="edit_page_admin_section">
         <h1>Modifier animal</h1>
-        <form action=<?= $_SERVER['PHP_SELF'] . "?action=modifierAnimal&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST">
+        <form class="edit_animals_admin" action=<?= $_SERVER['PHP_SELF'] . "?action=modifierAnimal&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST">
             <div class="form_elt">
                 <label for="">
                     <span>Nom</span>
@@ -81,7 +81,7 @@ if (isset($_SESSION['USER'])) {
             </div>
             <input type="submit" class="valid valid_button" name="ok" value="Valider informations">
         </form>
-        <p>Photo :</p>
+        <h1>Modifier les photos Photos</h1>
         <form action=<?= $_SERVER['PHP_SELF'] . "?action=modifierOrdre&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST">
             <div class="editOrdre">
                 <?php
@@ -90,7 +90,7 @@ if (isset($_SESSION['USER'])) {
                 foreach ($AllImgAnimal as $imgAnimal) {
                     ?>
                     <div class="editImg">
-                        <a
+                        <a class="delete_img_animal"
                             onclick="modalVerif(this, '<?= $type['libelle'] ?>', 'image', [<?= $_GET['idAnimal'] ?>,<?= $imgAnimal['id_image'] ?>])">Supprimer</a>
                         <img class="imgAnimal" src="photoAnimal/<?= $imgAnimal['nomImg'] ?>" alt="">
                         <input type="hidden" name="idImage<?= $ordre ?>" value="<?= $imgAnimal['id_image'] ?>">
@@ -111,11 +111,11 @@ if (isset($_SESSION['USER'])) {
         <form action=<?= $_SERVER['PHP_SELF'] . "?action=ajouterImage&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST"
             enctype="multipart/form-data">
             <div class="form_elt">
-                <p>Ajouter photo</p>
+                <h1>Ajouter une photo</h1>
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
-                <input type="file" class="texte" name="photoAnimal" required>
+                <input type="file" class="texte files" name="photoAnimal" required>
             </div>
-            <input type="submit" class="valid valid_button" name="ok" value="ajouter photo">
+            <input type="submit" class="valid valid_button" name="ok" value="Ajouter photo">
         </form>
     </section>
     <?php

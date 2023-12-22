@@ -90,7 +90,8 @@ ob_start();
                     <?php
                     if (isset($_SESSION['USER'])) {
                         ?>
-                        <a href="index.php?action=favoris&&idAnimal=<?= $animal['id_animal'] ?>&&idUser=<?= $_SESSION['IDUSER'] ?>">
+                        <a
+                            href="index.php?action=favoris&&idAnimal=<?= $animal['id_animal'] ?>&&idUser=<?= $_SESSION['IDUSER'] ?>">
                             <?php
                             $afficher = false;
                             foreach ($favoris as $favori) {
@@ -106,7 +107,7 @@ ob_start();
 
                             ?>
                         </a>
-                    <?php
+                        <?php
                     }
                     ?>
                 </div>

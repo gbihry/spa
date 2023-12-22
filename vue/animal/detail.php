@@ -1,28 +1,44 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = "Détail de l'animal " . $animal['nom'];
+$titre = "";
 
 ob_start();
 
 $dateArrivee = $ObjectAnimal->getDate($animal['dateArrivee']);
 ?>
+<div class="background_user_interface"></div>
+<section class="edit_page_admin_section">
+    <h2><?="Plus d'infos sur :" . $animal['nom']?></h2>
     <div class="detail">
-        <p>Nom : <?=$animal['nom']?></p>
-        <p>Age : <?=$animal['age']?></p>
-        <p>Taille : <?=$animal['taille']?></p>
-        <p>Poid : <?=$animal['poid']?></p>
-        <p>Handicapé : <?= $animal['handicape'] == 1 ? "Oui" : "Non" ?></p>
-        <p>Arrivée le <?= $dateArrivee ?></p>
-        <h2>Photo :</h2>
+        <p>Nom :
+           <span> <?= $animal['nom'] ?> 
+        </p>
+        <p>Age :
+           <span> <?= $animal['age'] ?> </span>
+        </p>
+        <p>Taille :
+           <span> <?= $animal['taille'] ?></span>
+        </p>
+        <p>Poid :
+           <span> <?= $animal['poid'] ?></span>
+        </p>
+        <p>Handicapé :
+           <span> <?= $animal['handicape'] == 1 ? "Oui" : "Non" ?></span>
+        </p>
+        <p>Arrivée le
+           <span> <?= $dateArrivee ?></span>
+        </p>
+        <h2>Photo(s) :</h2>
         <?php
-            foreach($imagesAnimal as $imageAnimal){
-                ?>  
-                    <img src="photoAnimal/<?=$imageAnimal['nomImg']?>" alt="">
-                <?php
-            }
+        foreach ($imagesAnimal as $imageAnimal) {
+            ?>
+            <img src="photoAnimal/<?= $imageAnimal['nomImg'] ?>" alt="">
+            <?php
+        }
         ?>
     </div>
+</section>
 <?php
 $contenu = ob_get_clean();
 $footer = "Sp-Hess";
