@@ -4,8 +4,15 @@
 require_once "modele/type.php";
 require_once "modele/animal.php";
 require_once "modele/spa.php";
+require_once "modele/blog.php";
 
 function accueil() {
+    $ObjectAnimal = new Animal();
+    $ObjectBlog = new Blog();
+
+    $animals = $ObjectAnimal->getAnimalsHome();
+    $blogs = $ObjectBlog->getBlogsHome();
+
     require "vue/vueAccueil.php";
 }
 

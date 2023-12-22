@@ -166,24 +166,18 @@ ob_start();
     <p>Voici les derniers arrivant du refuges</p>
 
     <div class="animaux_container">
-    <div class="animaux">
-            <div class="animaux_description">
-                <span class="name">Chuck Borris</span>
-                <p class="age">230 ans</p>
-            </div>
-        </div>
-        <div class="animaux">
-            <div class="animaux_description">
-                <span class="name">Chuck Borris</span>
-                <p class="age">230 ans</p>
-            </div>
-        </div>
-        <div class="animaux">
-            <div class="animaux_description">
-                <span class="name">Alfredo</span>
-                <p class="age">40 ans</p>
-            </div>
-        </div>
+        <?php
+            foreach ($animals as $animal){
+        ?>
+                <div class="animaux">
+                    <div class="animaux_description">
+                        <span class="name"><?= $animal['nom'] ?></span>
+                        <p class="age"><?= $animal['age'] ?> ans</p>
+                    </div>
+                </div>
+        <?php
+            }
+        ?>
     </div>
 
     <button>
@@ -204,71 +198,34 @@ ob_start();
         </div>
 
         <div class="blog_right">
-            <div class="blogs">
-                <img src="./assets/blogs/blog1.png" alt="" srcset="">
-                <div class="text">
-                    <span>La création de la Sp-hess</span>
-                    <p>Nous retraçons l'histoire de notre association à travers ce blog</p>
-                    <button>
-                        <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Group 8">
-                                <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                                    transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
-                                    fill="#F7567C" />
-                                <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
-                                    <path id="Vector"
-                                        d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                        fill="white" />
+            <?php
+                foreach ($blogs as $blog){
+            ?>
+                <div class="blogs">
+                    <img src="./photoBlog/<?= $blog['image'] ?>" alt="" srcset="">
+                    <div class="text">
+                        <span><?= $blog['titre'] ?></span>
+                        <p><?= $blog['sousTitre'] ?></p>
+                        <button>
+                            <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="Group 8">
+                                    <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
+                                             transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
+                                             fill="#F7567C" />
+                                    <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
+                                        <path id="Vector"
+                                              d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
+                                              fill="white" />
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
-                        Voir plus
-                    </button>
+                            </svg>
+                            Voir plus
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="blogs">
-                <img src="./assets/blogs/blog2.png" alt="" srcset="">
-                <div class="text">
-                    <span>La création de la Sp-hess</span>
-                    <p>Nous retraçons l'histoire de notre association à travers ce blog</p>
-                    <button>
-                        <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Group 8">
-                                <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                                    transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
-                                    fill="#F7567C" />
-                                <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
-                                    <path id="Vector"
-                                        d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                        fill="white" />
-                                </g>
-                            </g>
-                        </svg>
-                        Voir plus
-                    </button>
-                </div>
-            </div>
-            <div class="blogs">
-                <img src="./assets/blogs/blog3.png" alt="" srcset="">
-                <div class="text">
-                    <span>La création de la Sp-hess</span>
-                    <p>Nous retraçons l'histoire de notre association à travers ce blog</p>
-                    <button>
-                        <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Group 8">
-                                <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                                    transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
-                                    fill="#F7567C" />
-                                <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
-                                    <path id="Vector"
-                                        d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                        fill="white" />
-                                </g>
-                            </g>
-                        </svg>
-                        Voir plus
-                    </button>
-                </div>
+            <?php
+                }
+            ?>
             </div>
         </div>
 

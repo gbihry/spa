@@ -12,6 +12,18 @@ class Blog extends database
         return $res;
     }
 
+    public function getBlogsHome(){
+        $req = ' 
+           SELECT *
+           FROM blog
+           ORDER BY dateCreation
+           LIMIT 3
+           ';
+        $res = $this->execReq($req);
+
+        return $res;
+    }
+
     public function getBlog($idBlog){
         $req = ' 
            SELECT *

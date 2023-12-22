@@ -18,6 +18,22 @@ class Animal extends database {
         return $res;
     }
 
+    public function getAnimalsHome(){
+        $req = ' 
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, dateArrivee, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
+        FROM `animal` 
+        JOIN type ON animal.id_type = type.id_type
+        JOIN spa ON animal.id_spa = spa.id_spa
+        JOIN image on animal.id_animal = image.id_animal
+        WHERE image.ordre = 1
+        ORDER BY dateArrivee DESC
+        LIMIT 3
+        ';
+        $res = $this->execReq($req);
+
+        return $res;
+    }
+
     public function getAnimal($idAnimal){
         $req = ' 
         SELECT id_animal, animal.nom, age, taille, poid, handicape,dateArrivee, spa.id_spa, type.id_type
