@@ -9,7 +9,7 @@ ob_start();
 <section class="blog_section">
 
     <div class="hero">
-    <img src="./assets/blog_img/blog_background.png" alt="">
+        <img src="./assets/blog_img/blog_background.png" alt="">
         <h1>Découvrez nos blogs sur la vie animal</h1>
         <span>Des informations sur le refuge ou plus généralement sur les SPA de France</span>
     </div>
@@ -23,13 +23,13 @@ ob_start();
                     $dateModification = $ObjectBlog->getDateTime($blog['dateModification']);
                 }
                 ?>
-                <div>
-                    <h2>
-                        <?= $blog['titre'] ?>
-                    </h2>
+                <div class="blog">
                     <h3>
-                        <?= $blog['sousTitre'] ?>
+                        <?= $blog['titre'] ?>
                     </h3>
+                    <span>
+                        <?= $blog['sousTitre'] ?>
+                    </span>
                     <div class="blog_info">
                         <img src="photoBlog/<?= $blog['image'] ?>" alt="">
                         <div class="blog_info_text">
@@ -47,22 +47,24 @@ ob_start();
                             <a href="index.php?action=blog&&idBlog=<?= $blog['id_blog'] ?>">Voir le blog</a>
                         </div>
                     </div>
+                    <?php
+                    if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN") {
+                        ?>
+                        <div class="admin_link_blog">
+                            <a class="supp_blog"
+                                onclick="modalVerif(this, `<?= $blog['titre'] ?>`, 'blog', <?= $blog['id_blog'] ?>)">Supprimer</a>
+                            <a class="edit_blog"
+                                href="index.php?action=modifierBlog&&idBlog=<?= $blog['id_blog'] ?>">Modifier</a>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <?php
             }
             ?>
         </div>
-        <?php
-        if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN") {
-            ?>
-            <div class="admin_link_blog">
-                <a class="supp_blog"
-                    onclick="modalVerif(this, `<?= $blog['titre'] ?>`, 'blog', <?= $blog['id_blog'] ?>)">Supprimer</a>
-                <a class="edit_blog" href="index.php?action=modifierBlog&&idBlog=<?= $blog['id_blog'] ?>">Modifier</a>
-            </div>
-            <?php
-        }
-        ?>
+
     </section>
     <?php
     if ($_SESSION['ROLE'] == "ADMIN")
