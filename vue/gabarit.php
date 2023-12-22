@@ -21,10 +21,11 @@
                         <?= $header ?>
                     </h1>
                 </a></div>
-            <div class="menu">
+            <nav>
+                <ul>
                 <?php
                 if (!isset($_SESSION['USER'])) {
-                    echo ('<a class="lien" href="index.php">home</a>');
+                    echo ('<a class="lien " href="index.php">home</a>');
                     echo ('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
                     echo ('<a class="lien" href="index.php?action=blogs">Blogs</a>');
                     echo ('<a class="lien connexion_link" href="index.php?action=login">Connexion</a>');
@@ -42,7 +43,8 @@
                     echo ('<a class="lien" href="index.php?action=delog">Quitter</a>');
                 }
                 ?>
-            </div>
+                </ul>
+            </nav>
         </header>
         <?php
     }

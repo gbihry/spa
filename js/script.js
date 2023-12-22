@@ -1,3 +1,4 @@
+//MODAL
 function modalVerif (el, value, typeAction, id){
     const ID = id;
     const TYPEACTION = typeAction;
