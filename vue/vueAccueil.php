@@ -152,7 +152,7 @@ ob_start();
                     <img src="./assets/chuck_norris.svg" alt="" srcset="">
                 </div>
                 <div class="chuck_profil">
-                    <p>Chuck Norris</p>
+                    <p>Chuck Norris /</p>
                     <p class="p_italic">Le GOAT</p>
                 </div>
             </div>
@@ -167,21 +167,24 @@ ob_start();
 
     <div class="animaux_container">
         <?php
-            foreach ($animals as $animal){
-        ?>
-                <div class="animaux">
-                    <div class="animaux_description">
-                        <span class="name"><?= $animal['nom'] ?></span>
-                        <p class="age"><?= $animal['age'] ?> ans</p>
-                    </div>
-                </div>
-        <?php
-            }
+        foreach ($animals as $animal) {
+            ?>
+            <div class="card">
+                <span class="name">
+                    <?= $animal['nom'] ?>
+                </span>
+                <p class="age">
+                    <?= $animal['age'] ?> ans
+                </p>
+                <img src="photoAnimal/<?= $animal['nomImg'] ?>" alt="">
+            </div>
+            <?php
+        }
         ?>
     </div>
 
     <button>
-        Voir plus d'animaux
+        <a href="index.php?action=animaux">Voir plus d'animaux</a>
     </button>
 </section>
 
@@ -199,23 +202,27 @@ ob_start();
 
         <div class="blog_right">
             <?php
-                foreach ($blogs as $blog){
-            ?>
+            foreach ($blogs as $blog) {
+                ?>
                 <div class="blogs">
                     <img src="./photoBlog/<?= $blog['image'] ?>" alt="" srcset="">
                     <div class="text">
-                        <span><?= $blog['titre'] ?></span>
-                        <p><?= $blog['sousTitre'] ?></p>
+                        <span>
+                            <?= $blog['titre'] ?>
+                        </span>
+                        <p>
+                            <?= $blog['sousTitre'] ?>
+                        </p>
                         <button>
                             <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="Group 8">
                                     <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                                             transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
-                                             fill="#F7567C" />
+                                        transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
+                                        fill="#F7567C" />
                                     <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
                                         <path id="Vector"
-                                              d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                              fill="white" />
+                                            d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
+                                            fill="white" />
                                     </g>
                                 </g>
                             </svg>
@@ -223,11 +230,11 @@ ob_start();
                         </button>
                     </div>
                 </div>
-            <?php
-                }
+                <?php
+            }
             ?>
-            </div>
         </div>
+    </div>
 
     </div>
 
@@ -237,7 +244,7 @@ ob_start();
 
 <?php
 $contenu = ob_get_clean();
-$footer = "Sp-Hess";
+$footer = "SPA";
 
 
 require "gabarit.php";
