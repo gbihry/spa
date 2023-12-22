@@ -35,8 +35,8 @@
                         echo ('<a class="lien" href="index.php?action=admin">Administration</a>');
                     }
                     echo ('<a class="lien" href="index.php">Home</a>');
-                    echo ('<a class="lien" href="index.php?action=animaux">Voir animaux</a>');
-                    echo ('<a class="lien" href="index.php?action=voirFavoris">Voir favoris</a>');
+                    echo ('<a class="lien inscription_link" href="index.php?action=animaux">Voir animaux</a>');
+                    echo ('<a class="lien connexion_link" href="index.php?action=voirFavoris">Voir favoris</a>');
                     echo ('<a class="lien" href="index.php?action=blogs">Blogs</a>');
                     echo ('<a class="lien" href="index.php?action=profil"><i class="fa-solid fa-user"></i></a>');
                     echo ('<a class="lien" href="index.php?action=delog">Quitter</a>');
