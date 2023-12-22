@@ -89,8 +89,28 @@ main h2 {
   color: var(--secondary);
 }
 
+.card span{
+  color: var(--secondary);
+}
+
 .card p{
   margin: 0;
+}
+
+.card .detail_link{
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 2px var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.card .detail_link:hover{
+  color: white;
+  background-color: var(--secondary);
 }
 
 .card {
@@ -216,7 +236,12 @@ main h2 {
   cursor: pointer;
 }
 
-/* BLOG */
+button a{
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .detailBlog span {
   font-weight: 900;
@@ -259,11 +284,30 @@ header a {
   padding: 5px;
 }
 
-header .menu {
+nav{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+header ul {
   display: flex;
   align-items: center;
   gap: 30px;
   color: white;
+}
+
+
+.active{
+  font-weight: bold;
+}
+
+.active::before{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  left: -10px ;
 }
 
 .hero img {
@@ -343,6 +387,8 @@ header .menu {
 .second_reason {
   color: white;
   background-image: url(/assets/fond_pourquoi_case.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .second_reason img {
@@ -414,11 +460,21 @@ header .menu {
 
 .chuck_norris {
   display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.chuck_profil .p_italic{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chuck_profil {
   display: flex;
-  flex-direction: column;
+  
 }
 .animaux_section {
   display: flex;
@@ -472,6 +528,14 @@ header .menu {
   gap: 20px;
 }
 
+.blog{
+  margin-top: 10%;
+  padding: 20px;
+  background-color: var(--primary-10);
+  border-radius: 20px;
+  border: solid 2px black;
+}
+
 .blogs_section button {
   width: fit-content;
   padding: 10px;
@@ -507,6 +571,10 @@ header .menu {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.blog_right img{
+  max-width: 250px;
 }
 
 .blog_left {
@@ -593,6 +661,8 @@ footer .contact {
 .right_signup h1 {
   color: var(--secondary);
 }
+
+
 
 .login_right,
 .right_signup {
@@ -735,7 +805,9 @@ input::placeholder {
 /* BLOG SECTION */
 
 .blog_section .blog_read {
-  margin-top: 30%;
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog_section h3 {
@@ -1068,4 +1140,23 @@ tr {
 
 .detail span{
   color: white;
+}
+
+.blog_edit,
+.add_blog_form{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+}
+
+.blog_edit label,
+.add_blog_form label{
+  background-color: var(--primary-25);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.blog_edit img{
+  max-width: 500px;
 }

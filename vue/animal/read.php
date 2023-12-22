@@ -85,7 +85,6 @@ ob_start();
                     </p>
                 </div>
                 <div class="image">
-
                     <img src="photoAnimal/<?= $animal['nomImg'] ?>" alt="">
                     <?php
                     if (isset($_SESSION['USER'])) {
@@ -111,9 +110,8 @@ ob_start();
                     }
                     ?>
                 </div>
-                <a href="index.php?action=animal&&idAnimal=<?= $animal['id_animal'] ?>">détail</a>
+                <a class="detail_link" href="index.php?action=animal&&idAnimal=<?= $animal['id_animal'] ?>">Détail</a>
             </div>
-
             <?php
         }
         ?>
