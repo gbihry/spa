@@ -241,7 +241,13 @@ button a{
   color: black;
 }
 
+.detailBlog h1{
+  color: white;
+}
 
+.detailBlog h2{
+  border-bottom: 2px solid black;
+}
 
 .detailBlog span {
   font-weight: 900;
@@ -320,6 +326,8 @@ header ul {
   z-index: -10;
 }
 
+
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -352,6 +360,12 @@ header ul {
   background: none;
   border: none;
   cursor: pointer;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.button_container button:hover{
+  background-color: var(--secondary-75);
 }
 
 .pourquoi_adopter span {
@@ -378,6 +392,11 @@ header ul {
   max-width: 300px;
   background-color: var(--primary-25);
   padding: 10px;
+  transition: 0.4s;
+}
+
+.reasons_container > div:hover{
+  transform: scale(1.1);
 }
 
 .reasons_container :nth-child(2) {
@@ -408,16 +427,15 @@ header ul {
   margin-top: 10px;
 }
 
+
 .about_section .left img {
-  background-size: cover;
-  min-height: 150%;
+  min-height: 100%;
   object-fit: cover;
 }
 
 .about_section .right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .right span {
@@ -444,7 +462,7 @@ header ul {
 }
 
 .achievements :nth-child(2) {
-  text-align: center;
+  text-align: start;
 }
 
 .about_section .citation {
@@ -534,6 +552,10 @@ header ul {
   background-color: var(--primary-10);
   border-radius: 20px;
   border: solid 2px black;
+}
+
+.blogs a{
+  text-decoration: none;
 }
 
 .blogs_section button {

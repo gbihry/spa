@@ -19,7 +19,7 @@ ob_start();
             if (!isset($_SESSION['USER'])) {
                 echo ('
             <a href="index.php?action=animaux">
-                <button>
+                <button class="home_button">
                     <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Group 8">
                             <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
@@ -39,7 +39,7 @@ ob_start();
 
                 echo ('
             <a href="index.php?action=login">
-            <button>
+            <button class="home_button">
                 <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="Group 8">
                         <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
@@ -76,10 +76,7 @@ ob_start();
                         </button>
                     </a>');
             }
-
-            ;
-
-            ?>;
+            ?>
         </div>
     </div>
 
@@ -213,21 +210,24 @@ ob_start();
                         <p>
                             <?= $blog['sousTitre'] ?>
                         </p>
-                        <button>
-                            <svg width="30" height="30" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="Group 8">
-                                    <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
-                                        transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
-                                        fill="#F7567C" />
-                                    <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
-                                        <path id="Vector"
-                                            d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
-                                            fill="white" />
+                        <a href="index.php?action=blog&&idBlog=<?= $blog['id_blog'] ?>">
+                            <button>
+                                <svg width="30" height="30" viewBox="0 0 41 43" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Group 8">
+                                        <ellipse id="Ellipse 12" cx="20.2741" cy="21.4003" rx="20.2741" ry="21.4003"
+                                            transform="matrix(0.999988 -0.00492757 0.00396583 0.999992 0 0.199768)"
+                                            fill="#F7567C" />
+                                        <g id="&#240;&#159;&#166;&#134; icon &#34;chevron right&#34;">
+                                            <path id="Vector"
+                                                d="M18.6747 10.3827L14.6528 14.6639L21.4095 21.729L14.7063 28.8642L18.7603 33.1033L29.4855 21.6869L18.6747 10.3827Z"
+                                                fill="white" />
+                                        </g>
                                     </g>
-                                </g>
-                            </svg>
-                            Voir plus
-                        </button>
+                                </svg>
+                                Voir le blog
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <?php
