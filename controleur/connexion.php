@@ -30,6 +30,12 @@ function login() {
         }
     }
     if(isset($_SESSION['USER'])){
+        $ObjectAnimal = new Animal();
+        $ObjectBlog = new Blog();
+
+        $animals = $ObjectAnimal->getAnimalsHome();
+        $blogs = $ObjectBlog->getBlogsHome();
+
         require "vue/vueAccueil.php";
     }else{
         require "vue/vuectlAcces.php";
@@ -75,6 +81,12 @@ function signup() {
 
     }
     if(isset($_SESSION['acces'])){
+        $ObjectAnimal = new Animal();
+        $ObjectBlog = new Blog();
+
+        $animals = $ObjectAnimal->getAnimalsHome();
+        $blogs = $ObjectBlog->getBlogsHome();
+
         require "vue/vueAccueil.php";
     }else{
         require "vue/vueSignUp.php";
