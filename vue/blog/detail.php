@@ -1,25 +1,34 @@
 <?php
 $title = TITREONGLET;
 $header = NOMSITE;
-$titre = " Blog :  " . $blog['titre'];
+$titre = "";
 
 ob_start();
 
 $dateCreation = $ObjectBlog->getDateTime($blog['dateCreation']);
-if ($blog['dateModification'] != null){
+if ($blog['dateModification'] != null) {
     $dateModification = $ObjectBlog->getDateTime($blog['dateModification']);
 }
 
 ?>
-  <div class="background_user_interface"></div>
-    <section class="edit_page_admin_section">
+<div class="background_user_interface"></div>
+<section class="edit_page_admin_section">
     <div class="detailBlog">
-        <h1> <?=$blog['titre']?> </h1>
-        <h2> <?=$blog['sousTitre']?> </h2>
-        <?=$contenu?>
+        <h1>
+            <?= $blog['titre'] ?>
+        </h1>
+        <h2>
+            <?= $blog['sousTitre'] ?>
+        </h2>
+        <?= $contenu ?>
         <img src="photoBlog/<?= $blog['image'] ?>" alt="">
-        <p>Fait le <?= $dateCreation[0] ?> à <?= $dateCreation[1] ?> </p>
-        <p><?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?></p>
+        <p>Fait le
+            <?= $dateCreation[0] ?> à
+            <?= $dateCreation[1] ?>
+        </p>
+        <p>
+            <?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?>
+        </p>
     </div>
 </section>
 <?php
