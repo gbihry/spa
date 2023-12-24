@@ -96,7 +96,7 @@ ob_start();
 
     <div class="reasons_container">
         <div>
-            <h3>1</h3>
+            <h3 class="h3_pink">1</h3>
             <p>Vous aidez un animal dans le besoin</p>
         </div>
         <div class="second_reason">
@@ -104,7 +104,7 @@ ob_start();
             <p>Vous trouvez un compagnons</p>
         </div>
         <div>
-            <h3>3</h3>
+            <h3 class="h3_pink">3</h3>
             <p>Vous lui offrez une belle vie, et lui fait de même</p>
         </div>
     </div>
@@ -188,14 +188,12 @@ ob_start();
     <h3>Blogs de notre refuge</h3>
 
     <div class="blogs_container">
-
         <div class="blog_left">
             <div class="text">
                 <span>La création de la Sp-Hess</span>
                 <p>Nous retraçons l'histoire de notre association à travers ce blog</p>
             </div>
         </div>
-
         <div class="blog_right">
             <?php
             foreach ($blogs as $blog) {

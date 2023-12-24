@@ -259,15 +259,21 @@ button a {
 
 header {
   display: flex;
+  position: sticky;
+  top: 0px;
   max-width: 1024px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
   position: sticky;
-  top: 10;
+  padding: 10px;
   color: white;
   text-decoration: none;
-  border-bottom: solid 2px white;
+  border: solid 2px rgba(255, 255, 255, 0.525);
+  border-radius: 20px;
+  z-index: 10;
+  background-color: var(--primary-50);
 }
 
 header a {
@@ -276,6 +282,10 @@ header a {
   color: white;
   text-decoration: none;
   font-size: 20px;
+}
+
+header h3 {
+  margin: 0;
 }
 
 .connexion_link {
@@ -385,9 +395,13 @@ header ul {
   justify-content: space-between;
 }
 
+.h3_pink{
+  color: var(--secondary);
+}
+
 .reasons_container > div {
   max-width: 300px;
-  background-color: var(--primary-25);
+  background-color: var(--primary-10);
   padding: 10px;
   transition: 0.4s;
 }
@@ -432,6 +446,10 @@ header ul {
 .about_section .right {
   display: flex;
   flex-direction: column;
+}
+
+.about_section .right p{
+  margin: 0;
 }
 
 .right span {
@@ -597,9 +615,6 @@ header ul {
 }
 
 .blog_left {
-  background-image: url(/assets/about_manoir.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: end;
