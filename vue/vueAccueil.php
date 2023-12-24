@@ -158,32 +158,31 @@ ob_start();
     </div>
 </section>
 
-<section class="animaux_section">
-    <h3>Quelques un de nos pensionnaires</h3>
-    <p>Voici les derniers arrivant du refuges</p>
-
-    <div class="animaux_container">
-        <?php
-        foreach ($animals as $animal) {
-            ?>
-            <div class="card">
-                <span class="name">
-                    <?= $animal['nom'] ?>
-                </span>
-                <p class="age">
-                    <?= $animal['age'] ?> ans
-                </p>
-                <img src="photoAnimal/<?= $animal['nomImg'] ?>" alt="">
-            </div>
+<div class="bg_animaux_section">
+    <section class="animaux_section">
+        <h3>Quelques un de nos pensionnaires</h3>
+        <div class="animaux_container">
             <?php
-        }
-        ?>
-    </div>
-
-    <button>
-        <a href="index.php?action=animaux">Voir plus d'animaux</a>
-    </button>
-</section>
+            foreach ($animals as $animal) {
+                ?>
+                <div class="card">
+                    <span class="name">
+                        <?= $animal['nom'] ?>
+                    </span>
+                    <p class="age">
+                        <?= $animal['age'] ?> ans
+                    </p>
+                    <img src="photoAnimal/<?= $animal['nomImg'] ?>" alt="">
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+        <button>
+            <a href="index.php?action=animaux">Voir plus d'animaux</a>
+        </button>
+    </section>
+</div>
 
 <section class="blogs_section">
     <h3>Blogs de notre refuge</h3>

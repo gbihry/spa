@@ -84,20 +84,20 @@ main h2 {
   padding: 20px;
 }
 
-.card h2{
+.card h2 {
   margin: 0;
   color: var(--secondary);
 }
 
-.card span{
+.card span {
   color: var(--secondary);
 }
 
-.card p{
+.card p {
   margin: 0;
 }
 
-.card .detail_link{
+.card .detail_link {
   padding: 5px;
   border-radius: 10px;
   border: solid 2px var(--secondary);
@@ -108,7 +108,7 @@ main h2 {
   transition: 0.4s;
 }
 
-.card .detail_link:hover{
+.card .detail_link:hover {
   color: white;
   background-color: var(--secondary);
 }
@@ -118,14 +118,14 @@ main h2 {
   display: flex;
   max-width: 200px;
   flex-direction: column;
-  border-radius: 25px;
-  border: 2px solid var(--secondary);
+  box-shadow: var(--primary-25) 0px 5px 20px 5px;
   padding: 20px;
   transition: 0.4s;
+  background-color: white;
 }
 
-.card:hover{
-  box-shadow: 0px 5px 20px 5px;
+.card:hover {
+  box-shadow: var(--primary-50) 0px 5px 20px 5px;
 }
 
 .card .image {
@@ -139,8 +139,8 @@ main h2 {
   border-radius: 10px;
 }
 
-.fa-heart{
-  color:  white;
+.fa-heart {
+  color: white;
   background-color: var(--secondary);
   padding: 5px;
   border-radius: 50%;
@@ -236,16 +236,16 @@ main h2 {
   cursor: pointer;
 }
 
-button a{
+button a {
   text-decoration: none;
   color: black;
 }
 
-.detailBlog h1{
+.detailBlog h1 {
   color: white;
 }
 
-.detailBlog h2{
+.detailBlog h2 {
   border-bottom: 2px solid black;
 }
 
@@ -290,7 +290,7 @@ header a {
   padding: 5px;
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
   text-align: center;
@@ -303,17 +303,16 @@ header ul {
   color: white;
 }
 
-
-.active{
+.active {
   font-weight: bold;
 }
 
-.active::before{
+.active::before {
   width: 10px;
   height: 10px;
   background-color: white;
   position: absolute;
-  left: -10px ;
+  left: -10px;
 }
 
 .hero img {
@@ -325,8 +324,6 @@ header ul {
   object-fit: cover;
   z-index: -10;
 }
-
-
 
 .hero {
   display: flex;
@@ -364,7 +361,7 @@ header ul {
   border-radius: 20px;
 }
 
-.button_container button:hover{
+.button_container button:hover {
   background-color: var(--secondary-75);
 }
 
@@ -395,7 +392,7 @@ header ul {
   transition: 0.4s;
 }
 
-.reasons_container > div:hover{
+.reasons_container > div:hover {
   transform: scale(1.1);
 }
 
@@ -426,7 +423,6 @@ header ul {
 .about_section h2 {
   margin-top: 10px;
 }
-
 
 .about_section .left img {
   min-height: 100%;
@@ -483,7 +479,7 @@ header ul {
   gap: 10px;
 }
 
-.chuck_profil .p_italic{
+.chuck_profil .p_italic {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -492,15 +488,22 @@ header ul {
 
 .chuck_profil {
   display: flex;
-  
 }
+
+.bg_animaux_section {
+  background-color: var(--primary-10);
+}
+
 .animaux_section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-.animaux_trie{
+.animaux_trie {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -515,24 +518,18 @@ header ul {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.4s;
+}
+
+.animaux_section button:hover {
+  background-color: var(--secondary-25);
 }
 
 .animaux_container {
   display: flex;
   justify-content: space-between;
-}
-
-.animaux_container .animaux {
-  background-color: red;
-  height: 400px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-
-.animaux > div {
-  padding: 10px;
+  max-width: 1024px;
+  width: 100%;
 }
 
 .animaux_description {
@@ -546,7 +543,7 @@ header ul {
   gap: 20px;
 }
 
-.blog{
+.blog {
   margin-top: 10%;
   padding: 20px;
   background-color: var(--primary-10);
@@ -554,7 +551,7 @@ header ul {
   border: solid 2px black;
 }
 
-.blogs a{
+.blogs a {
   text-decoration: none;
 }
 
@@ -595,7 +592,7 @@ header ul {
   gap: 10px;
 }
 
-.blog_right img{
+.blog_right img {
   max-width: 250px;
 }
 
@@ -683,8 +680,6 @@ footer .contact {
 .right_signup h1 {
   color: var(--secondary);
 }
-
-
 
 .login_right,
 .right_signup {
@@ -1160,12 +1155,12 @@ tr {
   cursor: pointer;
 }
 
-.detail span{
+.detail span {
   color: white;
 }
 
 .blog_edit,
-.add_blog_form{
+.add_blog_form {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -1173,12 +1168,12 @@ tr {
 }
 
 .blog_edit label,
-.add_blog_form label{
+.add_blog_form label {
   background-color: var(--primary-25);
   padding: 10px;
   border-radius: 10px;
 }
 
-.blog_edit img{
+.blog_edit img {
   max-width: 500px;
 }
