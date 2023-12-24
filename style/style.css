@@ -259,6 +259,7 @@ button a {
 
 header {
   display: flex;
+  align-items: center;
   position: sticky;
   top: 0px;
   max-width: 1024px;
@@ -276,6 +277,10 @@ header {
   background-color: var(--primary-50);
 }
 
+.mobile_menu {
+  display: none;
+}
+
 header a {
   display: block;
   width: max-content;
@@ -290,10 +295,20 @@ header h3 {
 
 .connexion_link {
   background-color: var(--secondary-75);
+  border-radius: 10px;
 }
 
 .inscription_link {
   background-color: var(--secondary-50);
+  border-radius: 10px;
+}
+
+.inscription_link:hover {
+  background-color: var(--secondary);
+}
+
+.connexion_link:hover {
+  background-color: var(--secondary);
 }
 
 .lien {
@@ -380,6 +395,10 @@ header ul {
   color: var(--secondary);
 }
 
+.pourquoi_adopter .p_italic {
+  color: var(--secondary);
+}
+
 .text_pourquoi {
   display: flex;
   justify-content: space-between;
@@ -395,7 +414,7 @@ header ul {
   justify-content: space-between;
 }
 
-.h3_pink{
+.h3_pink {
   color: var(--secondary);
 }
 
@@ -448,7 +467,7 @@ header ul {
   flex-direction: column;
 }
 
-.about_section .right p{
+.about_section .right p {
   margin: 0;
 }
 
@@ -1191,4 +1210,126 @@ tr {
 
 .blog_edit img {
   max-width: 500px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1080px) {
+  section {
+    padding: 30px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .menu {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: var(--secondary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  header {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .mobile_menu {
+    display: block;
+    position: fixed;
+    z-index: 11111; 
+    top: 40px;
+    right: 30px;
+  }
+
+  .hero {
+    padding: 30px;
+    margin-top: 10px;
+  }
+
+  .button_container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .reasons_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .reasons_container > div {
+    min-width: 50%;
+  }
+
+  .about_section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .about_section .left img {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .animaux_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .blogs_container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .hero h1 {
+    font-size: 55px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero span {
+    font-size: 20px;
+  }
+
+  .pourquoi_adopter h2,
+  .pourquoi_adopter span {
+    font-size: 40px;
+  }
+
+  .about_section h2,
+  .about_section span {
+    font-size: 40px;
+  }
+
+  .citation span {
+    font-size: 20px;
+  }
+
+  footer nav {
+    display: none;
+  }
+
+  footer .contact {
+    display: flex;
+    justify-content: space-between;
+  }
 }
