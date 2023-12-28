@@ -108,5 +108,6 @@ let mobile_nav = document.querySelector(".menu")
 hamburger.addEventListener("click", reveal)
 
 function reveal(){
-    mobile_nav.classList.toggle("menu_reveal")
+    mobile_nav.classList.toggle(".menu_reveal")
+    console.log("ça marche")
 }

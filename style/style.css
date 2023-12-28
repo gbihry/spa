@@ -144,6 +144,11 @@ main h2 {
   background-color: var(--secondary);
   padding: 5px;
   border-radius: 50%;
+  transition: 0.4s;
+}
+
+.fa-heart:hover{
+  transform: scale(1.1);
 }
 
 .card .image a {
@@ -797,7 +802,7 @@ input::placeholder {
 .trie {
   display: flex;
   flex-wrap: wrap;
-  background-color: var(--secondary-25);
+  background-color: var(--primary-10);
   width: 100%;
   padding: 30px;
   margin: 0;
@@ -819,17 +824,14 @@ input::placeholder {
   padding: 10px;
   font-size: 12px;
   font-weight: bold;
+  border-radius: 10px;
+  border: none;
 }
 
 .trie .valid_button {
   background-color: var(--secondary-75);
   color: white;
-  font-weight: bold;
-  font-size: 24px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+
 }
 
 .valid_button {
@@ -842,6 +844,11 @@ input::placeholder {
   border-radius: 10px;
   cursor: pointer;
   width: fit-content;
+  transition: 0.4s;
+}
+
+.valid_button:hover{
+  background-color: var(--secondary-50);
 }
 
 .remove_filter {
@@ -1237,7 +1244,7 @@ tr {
   }
 
   .menu_reveal {
-    transform: translate(0);
+    background-color: red;
   }
 
   header {
