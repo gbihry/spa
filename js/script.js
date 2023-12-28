@@ -99,3 +99,14 @@ function modalVerif (el, value, typeAction, id){
         redirect.click();
     })
 }
+
+//MOBILE NAV
+
+let hamburger = document.querySelector(".mobile_menu")
+let mobile_nav = document.querySelector(".menu")
+
+hamburger.addEventListener("click", reveal)
+
+function reveal(){
+    mobile_nav.classList.toggle("menu_reveal")
+}
