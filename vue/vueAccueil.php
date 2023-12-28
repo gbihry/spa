@@ -236,7 +236,6 @@ ob_start();
     </div>
 
     <button>Voir plus de Blogs</button>
-
 </section>
 
 <?php
