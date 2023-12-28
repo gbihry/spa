@@ -167,15 +167,6 @@ main h2 {
   left: 40%;
 }
 
-.trie {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  gap: 30px;
-  margin: 40px;
-  border-radius: 10px;
-}
-
 .title {
   text-align: center;
 }
@@ -543,6 +534,7 @@ header ul {
 .animaux_trie {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
 }
 
@@ -809,6 +801,11 @@ input::placeholder {
   width: 100%;
   padding: 30px;
   margin: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px;
+  border-radius: 10px;
 }
 
 .trie label {
@@ -968,7 +965,7 @@ input::placeholder {
   background-color: rgba(255, 255, 255, 0.59);
   padding: 30px;
   border-radius: 10px;
-  width: 50%;
+  width: 70%;
 }
 
 .user_right label {
@@ -1236,6 +1233,11 @@ tr {
     left: 0;
     width: 100%;
     height: 100%;
+    transform: translate(100%);
+  }
+
+  .menu_reveal {
+    transform: translate(0);
   }
 
   header {
@@ -1245,10 +1247,9 @@ tr {
 
   .mobile_menu {
     display: block;
-    position: fixed;
-    z-index: 11111; 
-    top: 40px;
-    right: 30px;
+    position: relative;
+    z-index: 11111;
+    cursor: pointer;
   }
 
   .hero {
@@ -1282,6 +1283,53 @@ tr {
   .about_section .left img {
     min-width: 100%;
   }
+
+  .trie{
+    width: 80%;
+  }
+
+  .animals{
+    width: 80%;
+    gap: 20px;
+  }
+
+  .login_section img{
+    display: none;
+  }
+
+  .signup_section img{
+    display: none;
+  }
+
+  .user_interface{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user_infos{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user_edit_link{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .user_infos h2{
+    background-color: blue;
+  }
+
+  .user_right h2{
+    font-size: 30px;
+  }
+
+  .infos_animals_admin{
+
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -1297,6 +1345,12 @@ tr {
     display: flex;
     flex-direction: column;
   }
+
+  .blog_info{
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 @media screen and (max-width: 760px) {

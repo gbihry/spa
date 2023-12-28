@@ -25,7 +25,7 @@ ob_start();
             </div>
 
             <div>
-                <p> <span>Nom :</span> </br>
+                <p> <span>Nom :</span>
                     <?= $utilisateur['prenom'] ?>
                 </p>
             </div>

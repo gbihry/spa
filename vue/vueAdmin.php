@@ -91,7 +91,7 @@ ob_start();
             </div>
         </div>
 
-        <div class="table-admin">
+        <div class="table-admin infos_animals_admin">
 
             <div class="header_table_admin">
                 <h1>Animal</h1>
