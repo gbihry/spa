@@ -102,12 +102,10 @@ function modalVerif (el, value, typeAction, id){
 
 //MOBILE NAV
 
+
 let hamburger = document.querySelector(".mobile_menu")
-let mobile_nav = document.querySelector(".menu")
+let menu = document.querySelector(".menu")
 
-hamburger.addEventListener("click", reveal)
-
-function reveal(){
-    mobile_nav.classList.toggle(".menu_reveal")
-    console.log("ça marche")
-}
+hamburger.addEventListener('click',()=>{
+    menu.classList.toggle('menu_reveal')
+})
