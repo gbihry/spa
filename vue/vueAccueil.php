@@ -9,7 +9,19 @@ ob_start();
 ?>
 <section class="home">
     <div class="hero">
-        <img src="./assets/fond_home.png" alt="" srcset="">
+        <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_200.png 200w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_464.png 464w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_627.png 627w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_783.png 783w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_923.png 923w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_999.png 999w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_1107.png 1107w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_1201.png 1201w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_1288.png 1288w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_1349.png 1349w,
+                ./assets/fond_home/fond_home_x42khs_c_scale,w_1400.png 1400w" src="fond_home_x42khs_c_scale,w_1400.png"
+            alt="">
         <h1>Adoptez sans compter</h1>
 
         <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
@@ -113,7 +125,18 @@ ob_start();
 
 <section class="about_section">
     <div class="left">
-        <img src="./assets/about_manoir.png" alt="" srcset="">
+        <img sizes="(max-width: 403px) 100vw, 403px" srcset="
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_200.png 200w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_231.png 231w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_258.png 258w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_288.png 288w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_312.png 312w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_338.png 338w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_362.png 362w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_384.png 384w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_399.png 399w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_403.png 403w"
+            src="about_manoir_fx8rxw_c_scale,w_403.png" alt="">
     </div>
 
     <div class="right">
@@ -189,9 +212,21 @@ ob_start();
 
     <div class="blogs_container">
         <div class="blog_left">
+            <img sizes="(max-width: 403px) 100vw, 403px" srcset="
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_200.png 200w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_231.png 231w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_258.png 258w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_288.png 288w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_312.png 312w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_338.png 338w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_362.png 362w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_384.png 384w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_399.png 399w,
+            ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_403.png 403w"
+                src="about_manoir_fx8rxw_c_scale,w_403.png" alt="">
             <div class="text">
-                <span>La création de la Sp-Hess</span>
-                <p>Nous retraçons l'histoire de notre association à travers ce blog</p>
+                <span>Blogs de la SP-Hess</span>
+                <p>Ici vous trouverez l'ensemble de nos blogs </p>
             </div>
         </div>
         <div class="blog_right">
@@ -235,7 +270,9 @@ ob_start();
 
     </div>
 
-    <button>Voir plus de Blogs</button>
+    <a href="index.php?action=blogs">
+        <button>Voir plus de Blogs</button>
+    </a>
 </section>
 
 <?php

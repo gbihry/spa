@@ -7,7 +7,23 @@ ob_start();
 ?>
 
 <section class="hero">
-<img src="./assets/favoris_img/favoris_background.png" alt="">
+    <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_200.png 200w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_382.png 382w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_516.png 516w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_626.png 626w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_728.png 728w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_816.png 816w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_905.png 905w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_979.png 979w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1050.png 1050w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1126.png 1126w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1196.png 1196w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1261.png 1261w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1328.png 1328w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1393.png 1393w,
+        ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1400.png 1400w"
+ src="favoris_background_b13ea8_c_scale,w_1400.png" alt="">
     <h1>Vos favoris</h1>
     <span>Ici vous trouvez tout vos chouchous mis en favoris</span>
 </section>

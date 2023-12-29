@@ -14,7 +14,19 @@ ob_start();
 <section class="animaux_hero">
 
     <div class="hero">
-        <img src="./assets/animaux_page/background_animaux.png" alt="">
+        <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_200.png 200w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_443.png 443w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_613.png 613w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_736.png 736w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_855.png 855w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_966.png 966w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1040.png 1040w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1139.png 1139w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1168.png 1168w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1326.png 1326w,
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1400.png 1400w" src="background_animaux_mgesgl_c_scale,w_1400.png"
+            alt="">
         <h1>Choisissez votre compagnon</h1>
         <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
     </div>

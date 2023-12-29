@@ -9,7 +9,20 @@ ob_start();
 <section class="blog_section">
 
     <div class="hero">
-        <img src="./assets/blog_img/blog_background.png" alt="">
+        <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_200.png 200w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_403.png 403w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_560.png 560w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_696.png 696w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_819.png 819w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_923.png 923w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1021.png 1021w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1111.png 1111w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1209.png 1209w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1300.png 1300w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1392.png 1392w,
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1400.png 1400w" 
+            src="blog_background_gn5jdl_c_scale,w_1400.png" alt="">
         <h1>Découvrez nos blogs sur la vie animal</h1>
         <span>Des informations sur le refuge ou plus généralement sur les SPA de France</span>
     </div>
