@@ -22,7 +22,7 @@
                     </h3>
                 </a></div>
             <nav>
-                <ul class="menu">
+                <ul>
                     <?php
                     if (!isset($_SESSION['USER'])) {
                         echo ('<a class="lien " href="index.php">home</a>');

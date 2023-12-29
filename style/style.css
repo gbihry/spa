@@ -147,7 +147,7 @@ main h2 {
   transition: 0.4s;
 }
 
-.fa-heart:hover{
+.fa-heart:hover {
   transform: scale(1.1);
 }
 
@@ -831,7 +831,6 @@ input::placeholder {
 .trie .valid_button {
   background-color: var(--secondary-75);
   color: white;
-
 }
 
 .valid_button {
@@ -845,10 +844,13 @@ input::placeholder {
   cursor: pointer;
   width: fit-content;
   transition: 0.4s;
+  border: solid 2px transparent;
 }
 
-.valid_button:hover{
+.valid_button:hover {
   background-color: var(--secondary-50);
+  color: white;
+  border: solid 2px var(--primary);
 }
 
 .remove_filter {
@@ -1012,10 +1014,15 @@ input {
   gap: 30px;
 }
 
+.user_right .valid_button:hover{
+  background-color: var(--secondary-75);
+  color: white;
+}
+
 .user_infos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+
 }
 
 .user_infos p {
@@ -1218,8 +1225,8 @@ tr {
 
 /* RESPONSIVE */
 
-.menu_reveal{
-  background-color: red;
+.menu_reveal {
+  transform: translate(0);
 }
 
 .mobile_menu {
@@ -1231,16 +1238,14 @@ tr {
 @media screen and (max-width: 1080px) {
   section {
     padding: 30px;
-    min-height: 50svh;
+    min-height: 70svh;
   }
 
   header nav {
     display: none;
-    
   }
 
-
-  .menu {
+  header ul {
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -1253,10 +1258,10 @@ tr {
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translate(90%);
+    transform: translate(100%);
   }
 
-  .mobile_menu{
+  .mobile_menu {
     display: inline-block;
     z-index: 50;
   }
@@ -1267,7 +1272,6 @@ tr {
     position: sticky;
     z-index: 5;
   }
-
 
   .hero {
     padding: 30px;
@@ -1301,49 +1305,52 @@ tr {
     min-width: 100%;
   }
 
-  .trie{
+  .blog_left{
+    display: none;
+  }
+
+  .trie {
     width: 80%;
   }
 
-  .animals{
+  .animals {
     width: 80%;
     gap: 20px;
   }
 
-  .login_section img{
+  .login_section img {
     display: none;
   }
 
-  .signup_section img{
+  .signup_section img {
     display: none;
   }
 
-  .user_interface{
+  .user_interface {
     display: flex;
     flex-direction: column;
   }
 
-  .user_infos{
+  .user_infos {
     display: flex;
     flex-direction: column;
   }
 
-  .user_edit_link{
+  .user_edit_link {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  .user_infos h2{
+  .user_infos h2 {
     background-color: blue;
   }
 
-  .user_right h2{
+  .user_right h2 {
     font-size: 30px;
   }
 
-  .infos_animals_admin{
-
+  .infos_animals_admin {
     display: flex;
     flex-direction: column;
   }
@@ -1363,11 +1370,10 @@ tr {
     flex-direction: column;
   }
 
-  .blog_info{
+  .blog_info {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media screen and (max-width: 760px) {
