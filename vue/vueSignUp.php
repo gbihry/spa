@@ -18,7 +18,7 @@ if (!isset($_SESSION['acces'])) {
     ?>
     <main class="signup_section">
         <div class="left_signup">
-            <img src="./assets/login_img/login_background.png" alt="">
+            <img src="./assets/login_img/login_background.png" alt="fond d'écran du login">
         </div>
 
         <div class="right_signup">

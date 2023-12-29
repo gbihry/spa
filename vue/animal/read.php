@@ -25,8 +25,8 @@ ob_start();
             ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1139.png 1139w,
             ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1168.png 1168w,
             ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1326.png 1326w,
-            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1400.png 1400w" src="background_animaux_mgesgl_c_scale,w_1400.png"
-            alt="">
+            ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1400.png 1400w"
+            src="background_animaux_mgesgl_c_scale,w_1400.png" alt="image d'écran de la page animal">
         <h1>Choisissez votre compagnon</h1>
         <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
     </div>

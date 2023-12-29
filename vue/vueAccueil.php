@@ -21,7 +21,7 @@ ob_start();
                 ./assets/fond_home/fond_home_x42khs_c_scale,w_1288.png 1288w,
                 ./assets/fond_home/fond_home_x42khs_c_scale,w_1349.png 1349w,
                 ./assets/fond_home/fond_home_x42khs_c_scale,w_1400.png 1400w" src="fond_home_x42khs_c_scale,w_1400.png"
-            alt="">
+            alt="fond d'écran home">
         <h1>Adoptez sans compter</h1>
 
         <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
@@ -136,7 +136,7 @@ ob_start();
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_384.png 384w,
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_399.png 399w,
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_403.png 403w"
-            src="about_manoir_fx8rxw_c_scale,w_403.png" alt="">
+            src="about_manoir_fx8rxw_c_scale,w_403.png" alt="image du manoir de la sp-hess">
     </div>
 
     <div class="right">
@@ -223,7 +223,7 @@ ob_start();
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_384.png 384w,
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_399.png 399w,
             ./assets/about_manoir/about_manoir_fx8rxw_c_scale,w_403.png 403w"
-                src="about_manoir_fx8rxw_c_scale,w_403.png" alt="">
+                src="about_manoir_fx8rxw_c_scale,w_403.png" alt="image du manoir de la sp-hess">
             <div class="text">
                 <span>Blogs de la SP-Hess</span>
                 <p>Ici vous trouverez l'ensemble de nos blogs </p>
