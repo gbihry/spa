@@ -16,12 +16,13 @@
     if (!isset($showHeader)) {
         ?>
         <header>
+        <nav>
             <div><a href="index.php">
                     <h3>
                         <?= $header ?>
                     </h3>
                 </a></div>
-            <nav>
+            
                 <ul>
                     <?php
                     if (!isset($_SESSION['USER'])) {
@@ -48,7 +49,7 @@
 
             <div class="mobile_menu">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                    stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>

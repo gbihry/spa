@@ -258,20 +258,25 @@ header {
   align-items: center;
   position: sticky;
   top: 0px;
-  max-width: 1024px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
   position: sticky;
   padding: 10px;
   color: white;
   text-decoration: none;
-  border: solid 2px rgba(255, 255, 255, 0.525);
-  border-radius: 20px;
   z-index: 10;
-  background-color: var(--primary-50);
+  background-color: white;
+  box-shadow: var(--primary-25) 0px 10px 10px;
 }
+
+header > nav{
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 .mobile_menu {
   display: none;
@@ -280,7 +285,7 @@ header {
 header a {
   display: block;
   width: max-content;
-  color: white;
+  color: black;
   text-decoration: none;
   font-size: 20px;
 }
@@ -315,13 +320,15 @@ nav {
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+  color: black;
 }
 
 header ul {
   display: flex;
   align-items: center;
   gap: 30px;
-  color: white;
+  color: black;
 }
 
 .active {
@@ -1198,6 +1205,11 @@ tr {
   border-radius: 5px;
   width: fit-content;
   cursor: pointer;
+  transition: 0.4s;
+}
+
+.delete_img_animal:hover{
+  background-color: var(--secondary-75);
 }
 
 .detail span {
@@ -1239,26 +1251,26 @@ tr {
   section {
     padding: 30px;
     min-height: 70svh;
-  }
-
-  header nav {
-    display: none;
+    max-width: none;
   }
 
   header ul {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     justify-content: center;
-    font-size: 30px;
-    background-color: var(--secondary);
+    font-size: 40px;
+    background-color:white;
+    border-right: solid 4px var(--secondary);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    padding: 30px;
     height: 100%;
-    transform: translate(100%);
+    transform: translate(-100%);
+    margin: 0;
+    transition: 0.4s;
   }
 
   .mobile_menu {
@@ -1267,8 +1279,6 @@ tr {
   }
 
   header {
-    margin-left: 20px;
-    margin-right: 20px;
     position: sticky;
     z-index: 5;
   }
@@ -1357,6 +1367,13 @@ tr {
 }
 
 @media screen and (max-width: 850px) {
+
+  header ul{
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+  }
+
   .animaux_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
