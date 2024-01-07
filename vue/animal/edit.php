@@ -81,7 +81,7 @@ if (isset($_SESSION['USER'])) {
             </div>
             <input type="submit" class="valid valid_button" name="ok" value="Valider informations">
         </form>
-        <h1>Modifier les photos Photos</h1>
+        <h1>Modifier les photos</h1>
         <form action=<?= $_SERVER['PHP_SELF'] . "?action=modifierOrdre&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST">
             <div class="editOrdre">
                 <?php
