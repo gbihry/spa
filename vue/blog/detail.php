@@ -11,7 +11,7 @@ if ($blog['dateModification'] != null) {
 }
 
 ?>
-<div class="background_user_interface"></div>
+<!-- <div class="background_user_interface"></div> -->
 <section class="edit_page_admin_section">
     <div class="detailBlog">
         <h1>

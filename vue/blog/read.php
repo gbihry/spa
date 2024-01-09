@@ -21,7 +21,7 @@ ob_start();
             ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1209.png 1209w,
             ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1300.png 1300w,
             ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1392.png 1392w,
-            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1400.png 1400w" 
+            ./assets/blog_img/blog_background/blog_background_gn5jdl_c_scale,w_1400.png 1400w"
             src="blog_background_gn5jdl_c_scale,w_1400.png" alt="image d'écran de la page blog">
         <h1>Découvrez nos blogs sur la vie animal</h1>
         <span>Des informations sur le refuge ou plus généralement sur les SPA de France</span>
@@ -46,17 +46,19 @@ ob_start();
                     <div class="blog_info">
                         <img src="photoBlog/<?= $blog['image'] ?>" alt="">
                         <div class="blog_info_text">
-                            <p>Fait le
-                                <span>
-                                    <?= $dateCreation[0] ?>
-                                </span> à
-                                <span>
-                                    <?= $dateCreation[1] ?>
-                                </span>
-                            </p>
-                            <p>
-                                <?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?>
-                            </p>
+                            <div>
+                                <p>Fait le
+                                    <span>
+                                        <?= $dateCreation[0] ?>
+                                    </span> à
+                                    <span>
+                                        <?= $dateCreation[1] ?>
+                                    </span>
+                                </p>
+                                <p>
+                                    <?= isset($dateModification) ? "Modifié le " . $dateModification[0] . " à " . $dateModification[1] : "" ?>
+                                </p>
+                            </div>
                             <a href="index.php?action=blog&&idBlog=<?= $blog['id_blog'] ?>">Voir le blog</a>
                         </div>
                     </div>
