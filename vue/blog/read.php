@@ -82,7 +82,7 @@ ob_start();
 
     </section>
     <?php
-    if ($_SESSION['ROLE'] == "ADMIN")
+    if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == "ADMIN")
         echo (' <a class="add_blog" href="index.php?action=ajouterBlog">
         
             <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">

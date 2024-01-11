@@ -451,7 +451,7 @@ header ul a:hover{
 
 .second_reason {
   color: white;
-  background-image: url(/assets/fond_pourquoi_case.png);
+  background-image: url(../assets/fond_pourquoi_case.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
