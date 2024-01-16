@@ -106,6 +106,8 @@ main h2 {
   justify-content: center;
   text-decoration: none;
   transition: 0.4s;
+  color: black;
+  font-weight: 600;
 }
 
 .card .detail_link:hover {
@@ -267,16 +269,14 @@ header {
   box-shadow: var(--primary-25) 0px 10px 10px;
 }
 
-header > nav{
+header > nav {
   max-width: 1024px;
   width: 100%;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
 }
-
-
 
 .mobile_menu {
   display: none;
@@ -336,11 +336,11 @@ header ul {
   font-weight: 600;
 }
 
-header ul a{
+header ul a {
   border-bottom: solid 3px transparent;
 }
 
-header ul a:hover{
+header ul a:hover {
   border-bottom: solid 2px black;
 }
 
@@ -831,8 +831,8 @@ input::placeholder {
   margin: 40px;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 .trie label {
@@ -866,6 +866,7 @@ input::placeholder {
   width: fit-content;
   transition: 0.4s;
   border: solid 2px transparent;
+  align-items: center;
 }
 
 .valid_button:hover {
@@ -932,7 +933,7 @@ input::placeholder {
   transition: 0.4s;
 }
 
-.blog_info_text a:hover{
+.blog_info_text a:hover {
   background-color: var(--secondary-50);
 }
 
@@ -963,7 +964,7 @@ input::placeholder {
 }
 
 .edti_blog,
-.supp_blog:hover{
+.supp_blog:hover {
   transition: 0.4s;
   background-color: var(--secondary);
 }
@@ -1049,7 +1050,7 @@ input {
   gap: 30px;
 }
 
-.user_right .valid_button:hover{
+.user_right .valid_button:hover {
   background-color: var(--secondary-75);
   color: white;
 }
@@ -1057,7 +1058,6 @@ input {
 .user_infos {
   display: flex;
   flex-direction: column;
-
 }
 
 .user_infos p {
@@ -1148,18 +1148,18 @@ tr {
   padding-top: 10px;
 }
 
-tr a{
+tr a {
   background-color: var(--secondary);
   text-decoration: none;
   color: white;
   font-weight: 600;
   padding: 5px;
-  border-radius: 10px; 
+  border-radius: 10px;
   transition: 0.4s;
   cursor: pointer;
 }
 
-tr a:hover{
+tr a:hover {
   background-color: var(--secondary-50);
 }
 
@@ -1253,7 +1253,7 @@ tr a:hover{
   transition: 0.4s;
 }
 
-.delete_img_animal:hover{
+.delete_img_animal:hover {
   background-color: var(--secondary-75);
 }
 
@@ -1306,7 +1306,7 @@ tr a:hover{
     align-items: end;
     justify-content: center;
     font-size: 40px;
-    background-color:white;
+    background-color: white;
     border-right: solid 4px var(--secondary);
     position: fixed;
     top: 0;
@@ -1360,7 +1360,7 @@ tr a:hover{
     min-width: 100%;
   }
 
-  .blog_left{
+  .blog_left {
     display: none;
   }
 
@@ -1412,8 +1412,7 @@ tr a:hover{
 }
 
 @media screen and (max-width: 850px) {
-
-  header ul{
+  header ul {
     width: 100%;
     align-items: center;
     overflow: hidden;
@@ -1430,6 +1429,13 @@ tr a:hover{
   .blogs_container {
     display: flex;
     flex-direction: column;
+  }
+
+  .text_pourquoi {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
 
   .blog_info {
@@ -1470,5 +1476,78 @@ tr a:hover{
   footer .contact {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero img {
+    height: 80%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero {
+    padding: 0;
+    width: 100%;
+  }
+
+  .citation .p_italic,
+  p {
+    text-align: start;
+  }
+
+  .about_section img {
+    width: 70%;
+    height: 50%;
+  }
+
+  .achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .achievements div {
+    border-top: 2px solid black;
+  }
+
+  .animaux_section h3{
+    font-size: 30px;
+  }
+
+  .animaux_container{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 500px){
+  
+  
+
+  .blogs{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+
+  .blogs p,
+  .blogs a{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .blogs button{
+    padding: 5px;
+    background-color: var(--secondary-50);
+    border-radius: 15px;
   }
 }

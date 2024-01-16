@@ -32,7 +32,7 @@ ob_start();
             ./assets/admin_img/Admin_background/Admin_background_her9tf_c_scale,w_1400.png 1400w" 
             src="Admin_background_her9tf_c_scale,w_1400.png" alt="fond de la section admin">
         <h1>Voici le panel administrateur</h1>
-        <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
+        <span>Ici nous mettons tout les animaux à l’honneur, qu’ils souffrent de handicap ou non.</span>
     </div>
 </section>
 

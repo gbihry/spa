@@ -56,7 +56,7 @@ ob_start();
                         href="index.php?action=supprimerFavoris&&idAnimal=<?= $favori['id_animal'] ?>&&idUser=<?= $_SESSION['IDUSER'] ?>"><i
                             class="fa-solid fa-heart"></i></a>
                 </div>
-                <a href="index.php?action=animal&&idAnimal=<?= $favori['id_animal'] ?>">détail</a>
+                <a class="detail_link" href="index.php?action=animal&&idAnimal=<?= $favori['id_animal'] ?>">détail</a>
             </div>
             <?php
         }

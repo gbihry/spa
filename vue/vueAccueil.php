@@ -24,7 +24,7 @@ ob_start();
             alt="fond d'écran home">
         <h1>Adoptez sans compter</h1>
 
-        <span>Adoptez chez nous par pitié ou je m'énerver de zinzin aller bouboubinks en sah de sah</span>
+        <span>Ici nous mettons tout les animaux à l’honneur, qu’ils souffrent de handicap ou non.</span>
 
         <div class="button_container">
             <?php
@@ -142,7 +142,7 @@ ob_start();
     <div class="right">
         <h2>Notre association, une <span>vocation</span></h2>
 
-        <p>Nous existons depuis 2023, 3 personnes unis pour le bien être animak </p>
+        <p>Nous existons depuis 2023, 3 personnes unis pour le bien être des animaux du refuge. </p>
 
         <div class="achievements">
             <div>
