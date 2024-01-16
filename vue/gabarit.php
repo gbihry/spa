@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?= $title ?>
     </title>
@@ -16,13 +17,13 @@
     if (!isset($showHeader)) {
         ?>
         <header>
-        <nav>
-            <div><a href="index.php">
-                    <h3>
-                        <?= $header ?>
-                    </h3>
-                </a></div>
-            
+            <nav>
+                <div><a href="index.php">
+                        <h3>
+                            <?= $header ?>
+                        </h3>
+                    </a></div>
+
                 <ul>
                     <?php
                     if (!isset($_SESSION['USER'])) {
@@ -54,7 +55,7 @@
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
-                </div>
+            </div>
 
         </header>
         <?php
