@@ -1416,6 +1416,7 @@ tr a:hover {
     width: 100%;
     align-items: center;
     overflow: hidden;
+    padding: 0;
   }
 
   .animaux_container {
@@ -1489,7 +1490,7 @@ tr a:hover {
   }
 
   .hero {
-    padding: 0;
+    padding: 10px;
     width: 100%;
   }
 
@@ -1513,41 +1514,78 @@ tr a:hover {
     border-top: 2px solid black;
   }
 
-  .animaux_section h3{
+  .animaux_section h3 {
     font-size: 30px;
   }
 
-  .animaux_container{
+  .animaux_container {
     display: flex;
     flex-direction: column;
   }
-
 }
 
-
-@media (max-width: 500px){
-  
-  
-
-  .blogs{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 500px) {
+  .blogs_section {
+    align-items: center;
+    justify-content: center;
   }
 
-
+  .blogs {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 
   .blogs p,
-  .blogs a{
+  .blogs a {
     text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
   }
 
-  .blogs button{
+  .blogs button {
     padding: 5px;
     background-color: var(--secondary-50);
     border-radius: 15px;
   }
+
+  .animaux_trie h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .animaux_trie label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .favoris_section h2 {
+    font-size: 35px;
+  }
+
+  .favoris_text span {
+    font-size: 15px;
+  }
+
+  .blog h3{
+    font-size: 25px;
+  }
+
+  .blog span{
+    font-size: 20;
+  }
+
+  .blog p{
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .admin_link_blog{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .edit_animals
 }
