@@ -1284,6 +1284,7 @@ tr a:hover {
 
 .menu_reveal {
   transform: translate(0);
+  overflow: hidden;
 }
 
 .mobile_menu {
@@ -1482,7 +1483,46 @@ tr a:hover {
 
 @media (max-width: 600px) {
   .hero img {
-    height: 80%;
+    height: 90%;
+  }
+
+  .login_section form,
+  .signup_section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .login_section h1,
+  .signup_section h1{
+    font-size: 40px;
+  }
+
+  .login_right{
+    height: 100svh;
+  }
+
+  .right_signup{
+    padding-top: 60px ;
+    overflow-x: auto;
+  }
+
+  .login_section label,
+  .right_signup label{
+    align-items: center;
+    text-align: center;
+  }
+
+  .login_section input
+  .signup_section input{
+   width: 80%;
+  }
+
+  .signup_section p{
+    align-items: center;
+    text-align: center;
   }
 
   .hero h1 {
@@ -1522,6 +1562,27 @@ tr a:hover {
     display: flex;
     flex-direction: column;
   }
+
+  .admin_panel_text{
+    flex-direction: column;
+  }
+
+  .admin_panel_text p{
+    text-align: center;
+  }
+
+  .infos_animals_admin{
+    display: none;
+  }
+
+  .table-admin{
+    padding: 5px;
+  }
+
+  .table-admin h1{
+    font-size: 40px;
+  }
+
 }
 
 @media (max-width: 500px) {
