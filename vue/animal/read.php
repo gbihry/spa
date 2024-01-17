@@ -28,7 +28,7 @@ ob_start();
             ./assets/animaux_page/background_animaux/background_animaux_mgesgl_c_scale,w_1400.png 1400w"
             src="background_animaux_mgesgl_c_scale,w_1400.png" alt="image d'écran de la page animal">
         <h1>Choisissez votre compagnon</h1>
-        <span>Venez chez nous ou ça vous braque en légende petit chien de merde.</span>
+        <span>Ici nous mettons tout les animaux à l’honneur, qu’ils souffrent de handicap ou non.</span>
     </div>
 </section>
 
