@@ -1647,6 +1647,18 @@ tr a:hover {
     display: flex;
     flex-direction: column;
   }
+}
 
-  
+@media screen and (max-width:450px){
+  .hero img{
+    height: 70%;
+  }
+
+  .home{
+    height: 80%;
+  }
+
+  .animaux_hero{
+    height: 70%;
+  }
 }
