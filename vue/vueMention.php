@@ -1,5 +1,2 @@
-<?php
-
-echo("c'est les mentions, accepete ou on te fait du sale");
-
-?>
+<a href="index.php?action=signup">Retour</a>
+<p>Accepte ou on te fait des choses</p>
