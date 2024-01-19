@@ -57,23 +57,25 @@ function signup() {
             $localisation = htmlspecialchars($_POST['localisation']);
             $mdp = $_POST['mdp'];
             $mdp_verif = $_POST['mdp_verif'];
+            $mention = $_POST['mention'];
+            if ($mention == "on"){
+                if ($mdp === $mdp_verif){
+                    $mdp = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
+                    $mdp_verif = password_hash($_POST['mdp_verif'], PASSWORD_BCRYPT);
 
-            if ($mdp === $mdp_verif){
-                $mdp = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
-                $mdp_verif = password_hash($_POST['mdp_verif'], PASSWORD_BCRYPT);
+                    $ObjectUtilisateur = new Utilisateur();
 
-                $ObjectUtilisateur = new Utilisateur();
+                    $utilisateur = $ObjectUtilisateur->getUtilisateurByPseudo($pseudo);
 
-                $utilisateur = $ObjectUtilisateur->getUtilisateurByPseudo($pseudo);
-
-                if(isset($utilisateur[0])){
-                    $verifPseudo = false;
+                    if(isset($utilisateur[0])){
+                        $verifPseudo = false;
+                    }else{
+                        $ObjectUtilisateur->createUser($nom, $prenom, $pseudo, $localisation, $mdp);
+                        header('Location: index.php?action=login');
+                    }
                 }else{
-                    $ObjectUtilisateur->createUser($nom, $prenom, $pseudo, $localisation, $mdp);
-                    header('Location: index.php?action=login');
+                    $verifMDP = false;
                 }
-            }else{
-                $verifMDP = false;
             }
         }else{
             $verifChamp = false;

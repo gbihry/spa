@@ -62,6 +62,10 @@ if (!isset($_SESSION['acces'])) {
                         <input type="password" name="mdp_verif" class="texte" required>
                     </label>
                 </div>
+                <div class="form_elt">
+                        <input type="checkbox" id="mention" name="mention" required/>
+                        <label for="mention">Accepter les <a href="index.php?action=mention">mentions légales</a></label>
+                </div>
                 <input type="submit" class="valid button_valid" name="ok" value="Valider">
             </form>
 

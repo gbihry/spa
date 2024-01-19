@@ -31,6 +31,10 @@ function admin(){
     require "vue/vueAdmin.php";
 }
 
+function mention(){
+    require "vue/vueMention.php";
+}
+
 function erreur($message) {
     require "vue/vueErreur.php";
 }
