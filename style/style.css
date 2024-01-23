@@ -744,6 +744,16 @@ footer .contact {
   width: 150%;
 }
 
+.mention{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.right_signup{
+  overflow: auto;
+}
+
 .edit_page_admin_section label {
   display: flex;
   align-items: center;
@@ -855,8 +865,8 @@ input::placeholder {
 }
 
 .valid_button {
-  background-color: white;
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: white;
   font-weight: bold;
   font-size: 24px;
   padding: 10px;
@@ -953,25 +963,29 @@ input::placeholder {
   padding: 10px;
   background-color: var(--secondary-25);
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .edit_blog {
   padding: 10px;
-  background-color: var(--secondary-75);
+  background-color: var(--secondary-55);
   cursor: pointer;
   text-decoration: none;
   color: white;
+  border-radius: 10px;
 }
 
-.edti_blog,
+.edit_blog,
 .supp_blog:hover {
   transition: 0.4s;
-  background-color: var(--secondary);
+  background-color: var(--secondary-75);
 }
 
 .admin_link_blog {
   margin-top: 30px;
   margin-bottom: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 /* FAVORIS PAGE */
@@ -983,15 +997,6 @@ input::placeholder {
 
 /* USER PAGE */
 
-.background_user_interface {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: var(--secondary);
-  top: 0;
-  left: 0;
-  z-index: -10;
-}
 
 .user_interface {
   display: flex;
@@ -1003,6 +1008,11 @@ input::placeholder {
   width: fit-content;
 }
 
+.user_interface .hero h1,
+.user_interface .hero span{
+  color: var(--secondary);
+}
+
 .user_right {
   display: flex;
   flex-direction: column;
@@ -1011,6 +1021,8 @@ input::placeholder {
   padding: 30px;
   border-radius: 10px;
   width: 70%;
+  border: solid 2px black;
+  box-shadow: 0px 5px 5px 5px var(--primary-25);
 }
 
 .user_right label {
@@ -1023,9 +1035,13 @@ input::placeholder {
   padding: 10px;
 }
 
+.user_right label input{
+  border: solid 2px var(--secondary-50);
+}
+
 input {
   border-radius: 10px;
-  border: none;
+  border: 1px solid black;
   padding: 10px;
 }
 
@@ -1098,10 +1114,10 @@ input {
 
 .table-admin {
   width: 100%;
-  border: solid 3px var(--secondary);
+  border: solid 1px var(--primary);
+  box-shadow: 0px 10px 5px 5px var(--primary-25) ;
   margin-top: 50px;
   padding: 10px;
-  background-color: var(--primary-10);
   border-radius: 10px;
 }
 
@@ -1123,6 +1139,11 @@ input {
   border: solid 1px var(--primary-50);
   border-radius: 10px;
   font-weight: bold;
+  transition: 0.4s;
+}
+
+.header_table_admin a:hover{
+  background-color: var(--secondary-25);
 }
 
 table {
@@ -1145,7 +1166,7 @@ tr {
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px black;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 tr a {
@@ -1192,10 +1213,11 @@ tr a:hover {
 }
 
 .header_table_items {
-  width: 100%;
+  width: 95%;
   display: flex;
   gap: 30px;
   justify-content: space-between;
+  text-align: end;
 }
 
 .type_admin {
@@ -1229,7 +1251,7 @@ tr a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  background-color: white;
+  box-shadow: 0px 4px 10px 5px var(--primary-25);
   padding: 20px;
   border-radius: 10px;
 }
@@ -1651,7 +1673,11 @@ tr a:hover {
 
 @media screen and (max-width:450px){
   .hero img{
-    height: 70%;
+    height: 80%;
+  }
+
+  .hero{
+    gap: 5px;
   }
 
   .home{
