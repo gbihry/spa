@@ -7,7 +7,6 @@ ob_start();
 
 if (isset($_SESSION['USER'])) {
     ?>
-    <div class="background_user_interface"></div>
     <section class="edit_page_admin_section">
         <h1>Modifier animal</h1>
         <form class="edit_animals_admin" action=<?= $_SERVER['PHP_SELF'] . "?action=modifierAnimal&&idAnimal=" . $_GET['idAnimal'] . "" ?> method="POST">
@@ -34,14 +33,14 @@ if (isset($_SESSION['USER'])) {
             </div>
             <div class="form_elt">
                 <label for="">
-                    <span>Poid (kg)</span>
+                    <span>Poids (kg)</span>
                     <input type="number" name="poid" min="0" value="<?= $animal['poid'] ?>" class="texte" id=""
                         placeholder="indiquez poid" required>
                 </label>
             </div>
             <div class="form_elt">
                 <label for="">
-                    <span>Handicape ?</span>
+                    <span>Handicap ?</span>
                     <input type="radio" id="contactChoice1" <?= $animal['handicape'] == 1 ? "checked" : "" ?> name="handicape"
                         value="1" />
                     <label for="contactChoice1">Oui</label>

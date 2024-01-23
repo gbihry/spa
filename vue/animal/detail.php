@@ -7,7 +7,7 @@ ob_start();
 
 $dateArrivee = $ObjectAnimal->getDate($animal['dateArrivee']);
 ?>
-<div class="background_user_interface"></div>
+
 <section class="edit_page_admin_section">
     <h2><?="Plus d'infos sur :" . $animal['nom']?></h2>
     <div class="detail">
@@ -20,13 +20,13 @@ $dateArrivee = $ObjectAnimal->getDate($animal['dateArrivee']);
         <p>Taille :
            <span> <?= $animal['taille'] ?></span>
         </p>
-        <p>Poid :
+        <p>Poids :
            <span> <?= $animal['poid'] ?></span>
         </p>
         <p>Handicapé :
            <span> <?= $animal['handicape'] == 1 ? "Oui" : "Non" ?></span>
         </p>
-        <p>Arrivée le
+        <p>Arrivé le
            <span> <?= $dateArrivee ?></span>
         </p>
         <h2>Photo(s) :</h2>

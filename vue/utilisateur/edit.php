@@ -7,7 +7,7 @@ ob_start();
 
 if (isset($_SESSION['USER'])) {
     ?>
-    <div class="background_user_interface"></div>
+
     <section class="user_interface">
 
         <div class="hero">

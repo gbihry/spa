@@ -7,7 +7,6 @@ ob_start();
 
 if (isset($_SESSION['USER'])) {
     ?>
-    <div class="background_user_interface"></div>
     <section class="edit_page_admin_section">
         <h1>Créer un blog</h1>
         <form class="add_blog_form" enctype="multipart/form-data" action=<?= $_SERVER['PHP_SELF'] . "?action=ajouterBlog" ?> method="POST">

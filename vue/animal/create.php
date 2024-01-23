@@ -10,7 +10,7 @@ if (isset($_SESSION['USER'])) {
         echo ('<p class="error">Veuillez remplir tous les champs</p>');
     }
     ?>
-    <div class="background_user_interface"></div>
+
     <section class="edit_page_admin_section">
         <h1>Créer animal</h1>
         <form enctype="multipart/form-data" class="create_animals" action="index.php?action=ajouterAnimal" method="POST">
@@ -34,13 +34,13 @@ if (isset($_SESSION['USER'])) {
             </div>
             <div class="form_elt">
                 <label for="">
-                    <span>Poid (kg)</span>
+                    <span>Poids (kg)</span>
                     <input type="number" name="poid" min="0" class="texte" id="" placeholder="indiquez poid" required>
                 </label>
             </div>
             <div class="form_elt">
                 <label for="">
-                    <span>Handicape ?</span>
+                    <span>Handicap ?</span>
                     <input type="radio" id="contactChoice1" name="handicape" value="1" />
                     <label for="contactChoice1">Oui</label>
 

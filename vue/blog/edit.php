@@ -8,7 +8,7 @@ ob_start();
 if (isset($_SESSION['USER'])) {
     ?>
     
-    <div class="background_user_interface"></div>
+
     <section class="edit_page_admin_section">
     <h1>Modifier blog</h1>
         <form class="blog_edit" enctype="multipart/form-data" action=<?= $_SERVER['PHP_SELF'] . "?action=modifierBlog&&idBlog=" . $_GET['idBlog'] ?>
