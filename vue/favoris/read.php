@@ -23,9 +23,9 @@ ob_start();
         ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1328.png 1328w,
         ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1393.png 1393w,
         ./assets/favoris_img/favoris_background/favoris_background_b13ea8_c_scale,w_1400.png 1400w"
- src="favoris_background_b13ea8_c_scale,w_1400.png" alt="image d'écran de la page favoris">
+        src="favoris_background_b13ea8_c_scale,w_1400.png" alt="image d'écran de la page favoris">
     <h1>Vos favoris</h1>
-    <span>Ici vous trouvez tout vos chouchous mis en favoris</span>
+    <span>Ici vous trouvez tous vos chouchous mis en favoris</span>
 </section>
 
 <section class="favoris_section">
