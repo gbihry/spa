@@ -248,7 +248,7 @@ button a {
 }
 
 .detailBlog span {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .detailBlog p {
@@ -966,6 +966,11 @@ input::placeholder {
   width: fit-content;
 }
 
+.blog img{
+  object-fit: cover;
+  width: 50%;
+}
+
 .supp_blog {
   padding: 10px;
   background-color: var(--secondary-25);
@@ -1314,8 +1319,12 @@ tr a:hover {
 
 .mentions_legal {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 50px;
+}
+
+.mentions_bot{
+  display: flex;
 }
 
 .back {
@@ -1719,6 +1728,12 @@ tr a:hover {
   }
 
   .animaux_hero {
+    height: 70%;
+  }
+}
+
+@media screen and (min-width:1010px){
+  .hero img{
     height: 70%;
   }
 }
