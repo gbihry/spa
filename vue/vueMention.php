@@ -63,26 +63,28 @@ ob_start();
             ou sources externes.<br>
         </div>
 
-        <div>
-            <span>Éditeur du Site :</span><br>
-            <ul>
-                <li>Nom de l'Organisation : SP-HESS</li>
-                <li>Forme juridique : Association</li>
-                <li>Adresse du siège : 47 Rue de la Sinne, Mulhouse 68100</li>
-                <li>Téléphone : 06 01 02 03 04</li>
-                <li>E-mail : contact@sp-hess.fr</li>
-                <li>Directeur de la publication : BIHRY Guillaume, REITZER Thibaud, BLASER Marvin</li>
-            </ul><br>
-        </div>
+        <div class="mentions_bot">
+            <div>
+                <span>Éditeur du Site :</span><br>
+                <ul>
+                    <li>Nom de l'Organisation : SP-HESS</li>
+                    <li>Forme juridique : Association</li>
+                    <li>Adresse du siège : 47 Rue de la Sinne, Mulhouse 68100</li>
+                    <li>Téléphone : 06 01 02 03 04</li>
+                    <li>E-mail : contact@sp-hess.fr</li>
+                    <li>Directeur de la publication : BIHRY Guillaume, REITZER Thibaud, BLASER Marvin</li>
+                </ul><br>
+            </div>
 
 
-        <div>
-            <span>Hébergement :</span><br>
-            <ul>
-                <li>Nom de l'hébergeur : WinSCP</li>
-                <li>Adresse de l'hébergeur : 61 rue Albert Camus, Mulhouse 68100</li>
-                <li>Téléphone de l'hébergeur : 03 89 33 74 00</li>
-            </ul>
+            <div>
+                <span>Hébergement :</span><br>
+                <ul>
+                    <li>Nom de l'hébergeur : WinSCP</li>
+                    <li>Adresse de l'hébergeur : 61 rue Albert Camus, Mulhouse 68100</li>
+                    <li>Téléphone de l'hébergeur : 03 89 33 74 00</li>
+                </ul>
+            </div>
         </div>
 
     </div>
