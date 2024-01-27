@@ -744,13 +744,20 @@ footer .contact {
   width: 150%;
 }
 
-.mention{
+.mention {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin-top: 10px;
 }
 
-.right_signup{
+.mention_text {
+  margin: 10px;
+}
+
+.mention p {
+  margin: 0;
+}
+
+.right_signup {
   overflow: auto;
 }
 
@@ -997,7 +1004,6 @@ input::placeholder {
 
 /* USER PAGE */
 
-
 .user_interface {
   display: flex;
   align-items: center;
@@ -1009,7 +1015,7 @@ input::placeholder {
 }
 
 .user_interface .hero h1,
-.user_interface .hero span{
+.user_interface .hero span {
   color: var(--secondary);
 }
 
@@ -1035,7 +1041,7 @@ input::placeholder {
   padding: 10px;
 }
 
-.user_right label input{
+.user_right label input {
   border: solid 2px var(--secondary-50);
 }
 
@@ -1115,7 +1121,7 @@ input {
 .table-admin {
   width: 100%;
   border: solid 1px var(--primary);
-  box-shadow: 0px 10px 5px 5px var(--primary-25) ;
+  box-shadow: 0px 10px 5px 5px var(--primary-25);
   margin-top: 50px;
   padding: 10px;
   border-radius: 10px;
@@ -1142,7 +1148,7 @@ input {
   transition: 0.4s;
 }
 
-.header_table_admin a:hover{
+.header_table_admin a:hover {
   background-color: var(--secondary-25);
 }
 
@@ -1279,10 +1285,6 @@ tr a:hover {
   background-color: var(--secondary-75);
 }
 
-.detail span {
-  color: white;
-}
-
 .blog_edit,
 .add_blog_form {
   display: flex;
@@ -1300,6 +1302,40 @@ tr a:hover {
 
 .blog_edit img {
   max-width: 500px;
+}
+
+/* mentions légals */
+
+.mentions_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mentions_legal {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.back {
+  background-color: var(--secondary);
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.4s;
+  border: solid 2px transparent;
+  align-items: center;
+  text-decoration: none;
+}
+
+.back:hover {
+  background-color: var(--secondary-75);
 }
 
 /* RESPONSIVE */
@@ -1509,7 +1545,7 @@ tr a:hover {
   }
 
   .login_section form,
-  .signup_section form{
+  .signup_section form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1518,31 +1554,30 @@ tr a:hover {
   }
 
   .login_section h1,
-  .signup_section h1{
+  .signup_section h1 {
     font-size: 40px;
   }
 
-  .login_right{
+  .login_right {
     height: 100svh;
   }
 
-  .right_signup{
-    padding-top: 60px ;
+  .right_signup {
+    padding-top: 60px;
     overflow-x: auto;
   }
 
   .login_section label,
-  .right_signup label{
+  .right_signup label {
     align-items: center;
     text-align: center;
   }
 
-  .login_section input
-  .signup_section input{
-   width: 80%;
+  .login_section input .signup_section input {
+    width: 80%;
   }
 
-  .signup_section p{
+  .signup_section p {
     align-items: center;
     text-align: center;
   }
@@ -1585,26 +1620,25 @@ tr a:hover {
     flex-direction: column;
   }
 
-  .admin_panel_text{
+  .admin_panel_text {
     flex-direction: column;
   }
 
-  .admin_panel_text p{
+  .admin_panel_text p {
     text-align: center;
   }
 
-  .infos_animals_admin{
+  .infos_animals_admin {
     display: none;
   }
 
-  .table-admin{
+  .table-admin {
     padding: 5px;
   }
 
-  .table-admin h1{
+  .table-admin h1 {
     font-size: 40px;
   }
-
 }
 
 @media (max-width: 500px) {
@@ -1650,41 +1684,41 @@ tr a:hover {
     font-size: 15px;
   }
 
-  .blog h3{
+  .blog h3 {
     font-size: 25px;
   }
 
-  .blog span{
+  .blog span {
     font-size: 20;
   }
 
-  .blog p{
+  .blog p {
     margin: 2px;
     display: flex;
     flex-wrap: wrap;
   }
 
-  .admin_link_blog{
+  .admin_link_blog {
     gap: 10px;
     display: flex;
     flex-direction: column;
   }
 }
 
-@media screen and (max-width:450px){
-  .hero img{
+@media screen and (max-width: 450px) {
+  .hero img {
     height: 80%;
   }
 
-  .hero{
+  .hero {
     gap: 5px;
   }
 
-  .home{
+  .home {
     height: 80%;
   }
 
-  .animaux_hero{
+  .animaux_hero {
     height: 70%;
   }
 }
