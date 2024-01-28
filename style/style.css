@@ -247,6 +247,11 @@ button a {
   border-bottom: 2px solid black;
 }
 
+.detailBlog img{
+  object-fit: cover;
+  max-width: 60%;
+}
+
 .detailBlog span {
   font-weight: 700;
 }
@@ -1732,8 +1737,13 @@ tr a:hover {
   }
 }
 
-@media screen and (min-width:1010px){
-  .hero img{
-    height: 70%;
-  }
+@media screen and (max-width:1400px){
+ .hero img{
+  height: 80%;
+ }
+
+ section{
+  min-height: 75vh;
+ }
+
 }
