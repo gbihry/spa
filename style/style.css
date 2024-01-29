@@ -974,6 +974,7 @@ input::placeholder {
 .blog img{
   object-fit: cover;
   width: 50%;
+  height: 50%;
 }
 
 .supp_blog {
@@ -1747,3 +1748,23 @@ tr a:hover {
  }
 
 }
+
+
+@media screen and (max-width:1440px){
+  .hero img{
+   height: 60%;
+  }
+ 
+  section{
+   min-height: 65vh;
+  }
+
+  .login_left img{
+    height: 100vh;
+  }
+
+  .left_signup img{
+    height: 100vh;
+  }
+ 
+ }
