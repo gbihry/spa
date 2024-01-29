@@ -1750,7 +1750,7 @@ tr a:hover {
 }
 
 
-@media screen and (max-width:1440px){
+@media screen and (min-width:1401px){
   .hero img{
    height: 60%;
   }
@@ -1768,3 +1768,5 @@ tr a:hover {
   }
  
  }
+/* 
+ @media screen and (max-width:) */
