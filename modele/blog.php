@@ -54,9 +54,15 @@ class Blog extends database
     }
 
     public function editBlog($titre, $sousTitre, $contenu, $idBlog){
-        $nomFichier = "default.jpg";
         $dateCreation = $this->getBlog($idBlog)['dateCreation'];
         $dateModification = date("Y-m-d H:i:s");
+
+        $nomFichier = $this->getBlog($idBlog)['image'];
+
+        if ($_FILES['photoBlog']['tmp_name'] && $nomFichier != "default.jpg"){
+            unlink('photoBlog/' . $nomFichier);
+        }
+
         if ($_FILES['photoBlog']['tmp_name']) {
             if (!$_FILES['photoBlog']['error'] == 0) {
                 throw new Exception("Erreur de transfert");
