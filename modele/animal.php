@@ -6,12 +6,11 @@ class Animal extends database {
 
     public function getAnimals(){
         $req = ' 
-        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, dateArrivee, type.libelle AS "type", spa.nom AS "spaNom", uniqid_img AS "nomImg", image.ordre
-        FROM `animal` 
+        SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, dateArrivee, type.libelle AS "type", spa.nom AS "spaNom", 
+               (SELECT uniqid_img FROM image WHERE animal.id_animal = image.id_animal LIMIT 1) AS nomImg
+        FROM animal 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
-        JOIN image on animal.id_animal = image.id_animal
-        WHERE image.ordre = 1
         ';
         $res = $this->execReq($req);
 
@@ -175,7 +174,11 @@ class Animal extends database {
         ';
         $res = $this->execReqPrep($req, array($nom, $age, $taille, $poid, $handicape, $dateArrivee, $idSPA, $idType));
 
-        $idAnimal = $this->getAnimalByName($nom)['id_animal'];
+        $req = ' 
+        SELECT max(id_animal) as "idAnimal"
+        FROM animal
+        ';
+        $idAnimal = $this->execReq($req)[0]["idAnimal"];
 
         $req = ' 
         INSERT INTO
