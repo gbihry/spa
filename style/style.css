@@ -1366,11 +1366,21 @@ tr a:hover {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1250px){
+  .hero img{
+    height: 90%;
+  }
+}
+
 @media screen and (max-width: 1080px) {
   section {
     padding: 30px;
     min-height: 70svh;
     max-width: none;
+  }
+
+  .hero img{
+    height: 110%;
   }
 
   header ul {
@@ -1738,7 +1748,7 @@ tr a:hover {
   }
 }
 
-@media screen and (max-width:1400px){
+@media screen and (min-width:1400px){
  .hero img{
   height: 80%;
  }
@@ -1750,7 +1760,7 @@ tr a:hover {
 }
 
 
-@media screen and (min-width:1401px){
+/* @media screen and (min-width:1401px){
   .hero img{
    height: 60%;
   }
@@ -1767,6 +1777,6 @@ tr a:hover {
     height: 100vh;
   }
  
- }
+ } */
 /* 
  @media screen and (max-width:) */
