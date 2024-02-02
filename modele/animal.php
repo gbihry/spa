@@ -7,7 +7,7 @@ class Animal extends database {
     public function getAnimals(){
         $req = ' 
         SELECT animal.id_animal, animal.nom, age, taille, poid, handicape, dateArrivee, type.libelle AS "type", spa.nom AS "spaNom", 
-               (SELECT uniqid_img FROM image WHERE animal.id_animal = image.id_animal LIMIT 1) AS nomImg
+               (SELECT uniqid_img FROM image WHERE animal.id_animal = image.id_animal AND image.ordre = 1 LIMIT 1 ) AS nomImg
         FROM animal 
         JOIN type ON animal.id_type = type.id_type
         JOIN spa ON animal.id_spa = spa.id_spa
